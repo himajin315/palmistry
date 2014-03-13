@@ -15,9 +15,6 @@ group :test do
   gem 'rake'
 end
 
-
-
-
 gem 'sass-rails', '4.0.1'
 gem 'uglifier', '2.1.1'
 gem 'coffee-rails', '4.0.1'
@@ -36,3 +33,5 @@ end
 
 # Twitter Bootstrap 3.0
 gem 'bootstrap-sass', '3.0.2.0'
+
+gem 'jquery-ui-rails'
