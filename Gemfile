@@ -4,16 +4,16 @@ ruby '2.0.0'
 
 gem 'rails', '4.0.2'
 
-group :development, :test do
-  gem 'sqlite3', '1.3.8'
-  gem 'rspec-rails', '2.13.1'
-end
-
 group :test do
-  gem 'selenium-webdriver', '2.35.1'
-  gem 'capybara'
   gem 'rake'
+  gem 'rspec-rails'
+  gem 'capybara'
+  gem 'selenium-webdriver'
+  gem 'database_cleaner'
+  gem 'turnip'
+  gem "capybara-webkit"
 end
+gem 'rails_12factor', group: :production
 
 gem 'sass-rails', '4.0.1'
 gem 'uglifier', '2.1.1'

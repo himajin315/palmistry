@@ -151,7 +151,7 @@ PLATFORMS
 
 DEPENDENCIES
   bootstrap-sass (= 3.0.2.0)
-  capybara (= 2.1.0)
+  capybara
   coffee-rails (= 4.0.1)
   jbuilder (= 1.0.2)
   jquery-rails (= 3.0.4)
