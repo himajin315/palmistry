@@ -156,6 +156,7 @@ DEPENDENCIES
   pg (= 0.15.1)
   rails (= 4.0.2)
   rails_12factor (= 0.0.2)
+  rake
   rspec-rails (= 2.13.1)
   sass-rails (= 4.0.1)
   sdoc (= 0.3.20)
