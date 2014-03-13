@@ -4,14 +4,11 @@ ruby '2.0.0'
 
 gem 'rails', '4.0.2'
 
+
 group :test do
   gem 'rake'
   gem 'rspec-rails'
-  gem 'capybara'
-  gem 'selenium-webdriver'
-  gem 'database_cleaner'
-  gem 'turnip'
-  gem "capybara-webkit"
+  gem "capybara"
 end
 
 gem 'sass-rails', '4.0.1'
