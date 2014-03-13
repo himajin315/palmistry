@@ -1,3 +1,10 @@
 language: ruby
 rvm:
-  - 2.0.0
+- 2.0.0
+deploy:
+  provider: heroku
+  api_key:
+    secure: ACJHdaI3wvd9By2U7+KxTvovhIepXDZnCWekkXi4OZr0r+Z4fReVp08+F3Iy32dlZF2JKcHiI/GEgh1kYT/Re8hmMjKe381fQfHwTrDV3Ji4k/4GstLrDjofG3DvCMXSB9n35k4YN0ahr/QNw1fdMFTvJVJ9mQaPgdABAUI2+Ac=
+  app: protected-lowlands-6704
+  on:
+    repo: himajin315/palmistry
