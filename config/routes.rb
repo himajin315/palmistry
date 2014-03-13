@@ -1,5 +1,5 @@
 Palmistry::Application.routes.draw do
-  get "palmistry/appraisal"
+  root "palmistry#appraisal"
 
   get "palmistry/result"
 
