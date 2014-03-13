@@ -13,7 +13,6 @@ group :test do
   gem 'turnip'
   gem "capybara-webkit"
 end
-gem 'rails_12factor', group: :production
 
 gem 'sass-rails', '4.0.1'
 gem 'uglifier', '2.1.1'
