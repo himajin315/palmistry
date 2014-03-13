@@ -35,4 +35,11 @@ RSpec.configure do |config|
   # the seed, which is printed after each run.
   #     --seed 1234
   config.order = "random"
+
+  Capybara.configure do |config|
+    config.match = :one
+    config.exact_options = false
+    config.ignore_hidden_elements = false
+    config.visible_text_only = true
+  end
 end
