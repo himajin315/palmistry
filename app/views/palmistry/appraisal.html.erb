@@ -2,12 +2,31 @@
 <p>Find me in app/views/palmistry/appraisal.html.erb</p>
 
 <form method="get" action=<%= result_path %>>
-  <select class="form-control">
-    <option>感情線</option>
-    <option>生命線</option>
-    <option>頭脳線</option>
-    <option>運命線</option>
-    <option>金環線</option>
-  </select>
+  <div class="btn-group" data-toggle="buttons">
+    <label class="btn btn-primary">
+      <input type="checkbox"> 感情線
+    </label>
+    <label class="btn btn-primary">
+      <input type="checkbox"> 生命線
+    </label>
+    <label class="btn btn-primary">
+      <input type="checkbox"> 頭脳線
+    </label>
+  </div>
+  <br>
+  <br>
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
+
+  <div class="btn-group" data-toggle="buttons">
+    <label class="btn btn-primary">
+      <input type="radio"> 突発的な恋愛
+    </label>
+    <label class="btn btn-primary">
+      <input type="radio"> 落ち着いた恋愛
+    </label>
+    <label class="btn btn-primary">
+      <input type="radio"> 消極的な恋愛
+    </label>
+  </div>
+  <button type="button" data-toggle="button" class="btn btn-primary">ココを押す</button>
