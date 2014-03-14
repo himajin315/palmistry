@@ -1,32 +1,45 @@
-<h1>Palmistry#appraisal</h1>
-<p>Find me in app/views/palmistry/appraisal.html.erb</p>
-
-<form method="get" action=<%= result_path %>>
-  <div class="btn-group" data-toggle="buttons">
-    <label class="btn btn-primary">
-      <input type="checkbox"> 感情線
-    </label>
-    <label class="btn btn-primary">
-      <input type="checkbox"> 生命線
-    </label>
-    <label class="btn btn-primary">
-      <input type="checkbox"> 頭脳線
-    </label>
+<div class="row">
+  <div class="col-sm-9">
+    <h1 class="page-header">手相鑑定</h1>
+    <form method="get" action=<%= result_path %>>
+      <div class="btn-group" data-toggle="buttons">
+	<label class="btn btn-primary">
+	  <input type="checkbox"> 感情線
+	</label>
+	<label class="btn btn-primary">
+	  <input type="checkbox"> 生命線
+	</label>
+	<label class="btn btn-primary">
+	  <input type="checkbox"> 頭脳線
+	</label>
+      </div>
+      <br>
+      <div class="btn-group" data-toggle="buttons">
+	<label class="btn btn-primary">
+	  <input type="radio"> 突発的な恋愛
+	</label>
+	<label class="btn btn-primary">
+	  <input type="radio"> 落ち着いた恋愛
+	</label>
+	<label class="btn btn-primary">
+	  <input type="radio"> 消極的な恋愛
+	</label>
+      </div>
+      <br>
+      <button type="button" data-toggle="button" class="btn btn-primary">頭の回転が速い</button>
+      <br>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
   </div>
-  <br>
-  <br>
-  <button type="submit" class="btn btn-primary">Submit</button>
-</form>
-
-  <div class="btn-group" data-toggle="buttons">
-    <label class="btn btn-primary">
-      <input type="radio"> 突発的な恋愛
-    </label>
-    <label class="btn btn-primary">
-      <input type="radio"> 落ち着いた恋愛
-    </label>
-    <label class="btn btn-primary">
-      <input type="radio"> 消極的な恋愛
-    </label>
+  <div class="col-sm-3">
+    <div id="sidebar">
+      <ul class="nav">
+	<li>メニュー</li>
+	<li>メニュー</li>
+	<li>メニュー</li>
+	<li>メニュー</li>
+	<li>メニュー</li>
+      </ul>
+    </div>
   </div>
-  <button type="button" data-toggle="button" class="btn btn-primary">ココを押す</button>
+</div>
