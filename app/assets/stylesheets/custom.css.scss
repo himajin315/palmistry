@@ -30,14 +30,16 @@ a {
   background-color: $main;
   border-color: $main;
   &:hover, &:active, &:visited, &:focus {
+    color: $attention;
     background-color: $main-gradient;
     border-color: $main-gradient;
   }
 }
 
 .btn-primary.active {
-    background-color: $dark-gradient;
-    border-color: $dark-gradient;
+  color: $bright;
+  background-color: $dark-gradient;
+  border-color: $dark-gradient;
 }
 .nav > li > a:hover,
 .nav > li > a:focus {
