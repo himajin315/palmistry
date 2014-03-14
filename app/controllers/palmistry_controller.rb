@@ -4,4 +4,7 @@ class PalmistryController < ApplicationController
 
   def result
   end
+
+  def profile
+  end
 end
