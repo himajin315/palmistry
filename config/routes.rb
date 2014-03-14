@@ -1,8 +1,8 @@
 Palmistry::Application.routes.draw do
-  root "palmistry#appraisal"
+  root 'palmistry#appraisal'
 
-  get "palmistry/result"
-  get "palmistry/profile"
+  match '/result' , to:'palmistry#result', via:'get'
+  match '/profile', to:'palmistry#profile',via:'get'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
