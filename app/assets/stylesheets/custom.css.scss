@@ -1,1 +1,36 @@
 @import "bootstrap";
+
+$attention:     #88343f;
+$font:          #344142;
+$dark:          #a58f78;
+$dark-gradient: #b6a089;
+$main:          #dbbea2;
+$main-gradient: #eccfb3;
+$bright:        #f1f2f0;
+
+.navbar-collapse.collapse {
+  background-image: -webkit-gradient(linear,left 0,left 100%,from($main-gradient),to($main));
+  background-image: linear-gradient(to bottom,$main-gradient 0,$main 100%);
+  background-image: -webkit-linear-gradient(top,$main-gradient,0%,$main,100%);
+  background-image: -moz-linear-gradient(top,$main-gradient 0,$main 100%);
+}
+
+body {
+  background-colo: $bright;
+}
+a {
+  color: $font;
+  &:hover {
+    color: $attention;
+  }
+}
+
+.btn-primary {
+  color: $bright;
+  background-color: $dark;
+  border-color: $dark;
+  &:hover ,&:active ,&:visited ,&:focus {
+    background-color: $dark-gradient;
+    border-color: $dark-gradient;
+  }
+}
