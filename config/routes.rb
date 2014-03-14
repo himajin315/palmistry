@@ -2,6 +2,7 @@ Palmistry::Application.routes.draw do
   root "palmistry#appraisal"
 
   get "palmistry/result"
+  get "palmistry/profile"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
