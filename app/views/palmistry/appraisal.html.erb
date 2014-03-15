@@ -1,7 +1,9 @@
 <div class="row">
   <div class="col-sm-9">
     <h1 class="page-header">手相鑑定</h1>
-    <form method="get" action=<%= result_path %>>
+    <form method="post" action=<%= result_path %>>
+	旅行先：<input type="text" name="dest" /><br />
+	人数：<input type="text" name="num" />人<br />
       <div class="btn-group" data-toggle="buttons">
 	<label class="btn btn-info">
 	  <input type="checkbox"> 感情線
@@ -25,8 +27,6 @@
 	  <input type="radio"> 消極的な恋愛
 	</label>
       </div>
-      <br>
-      <button type="button" data-toggle="button" class="btn btn-info">頭の回転が速い</button>
       <br>
       <button type="submit" class="btn btn-primary">鑑定結果</button>
     </form>
