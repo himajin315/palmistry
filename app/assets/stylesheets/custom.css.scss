@@ -1,12 +1,13 @@
 @import "bootstrap";
 
-$attention:     #88343f;
-$font:          #344142;
-$dark:          #a58f78;
-$dark-gradient: #b6a089;
-$main:          #dbbea2;
-$main-gradient: #eccfb3;
-$bright:        #f1f2f0;
+$attention:          #88343f;
+$attention-gradient: #994550;
+$font:               #344142;
+$dark:               #a58f78;
+$dark-gradient:      #b6a089;
+$main:               #dbbea2;
+$main-gradient:      #eccfb3;
+$bright:             #f1f2f0;
 
 .navbar-collapse.collapse {
   background-image: -webkit-gradient(linear,left 0,left 100%,from($main-gradient),to($main));
@@ -25,7 +26,7 @@ a {
   }
 }
 
-.btn-primary {
+.btn-info {
   color: $font;
   background-color: $main;
   border-color: $main;
@@ -36,11 +37,29 @@ a {
   }
 }
 
-.btn-primary.active {
+.btn-info.active {
   color: $bright;
   background-color: $dark-gradient;
   border-color: $dark-gradient;
 }
+
+.btn-primary {
+  color: $bright;
+  background-color: $attention;
+  border-color: $attention;
+  &:hover, &:active, &:visited, &:focus {
+    color: $bright;
+    background-color: $attention-gradient;
+    border-color: $attention-gradient;
+  }
+}
+
+.btn-primary.active {
+  color: $font;
+  background-color: $bright;
+  border-color: $bright;
+}
+
 .nav > li > a:hover,
 .nav > li > a:focus {
   background-color: $main-gradient;
