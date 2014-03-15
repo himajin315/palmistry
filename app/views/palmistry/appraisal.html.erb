@@ -15,7 +15,7 @@
       <div class="btn-group" data-toggle="buttons">
         <% [ '唐突な恋愛', '落ち着いた恋愛', '消極的な恋愛' ].each_with_index do |chk,i| %>
 	  <label class="btn btn-info">
-	  <%= check_box_tag 'chk[' + i.to_s + ']', true, false, {} %>
+	  <%= check_box_tag 'chk[' + i.to_s + ']', chk, false, {} %>
           <%= chk %>
 	  </label>
 	<% end %>
