@@ -1,32 +1,25 @@
 <div class="row">
   <div class="col-sm-9">
     <h1 class="page-header">手相鑑定</h1>
-    <form method="get" action=<%= result_path %>>
+    <form method="post" action=<%= result_path %>>
+	旅行先：<input type="text" name="dest" /><br />
       <div class="btn-group" data-toggle="buttons">
-	<label class="btn btn-info">
-	  <input type="checkbox"> 感情線
-	</label>
-	<label class="btn btn-info">
-	  <input type="checkbox"> 生命線
-	</label>
-	<label class="btn btn-info">
-	  <input type="checkbox"> 頭脳線
-	</label>
+        <% [ '感情線', '生命線', '頭脳線' ].each do |radio| %>
+	  <label class="btn btn-info">
+	  <%= radio_button_tag 'radio', radio, @radio == radio, class:'btn btn-info' %>
+          <%= radio %>
+	  </label>
+	<% end %>
       </div>
       <br>
       <div class="btn-group" data-toggle="buttons">
-	<label class="btn btn-info">
-	  <input type="radio"> 突発的な恋愛
-	</label>
-	<label class="btn btn-info">
-	  <input type="radio"> 落ち着いた恋愛
-	</label>
-	<label class="btn btn-info">
-	  <input type="radio"> 消極的な恋愛
-	</label>
+        <% [ '唐突な恋愛', '落ち着いた恋愛', '消極的な恋愛' ].each_with_index do |chk,i| %>
+	  <label class="btn btn-info">
+	  <%= check_box_tag 'chk[' + i.to_s + ']', chk, false, {} %>
+          <%= chk %>
+	  </label>
+	<% end %>
       </div>
-      <br>
-      <button type="button" data-toggle="button" class="btn btn-info">頭の回転が速い</button>
       <br>
       <button type="submit" class="btn btn-primary">鑑定結果</button>
     </form>
