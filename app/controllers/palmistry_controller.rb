@@ -5,7 +5,8 @@ class PalmistryController < ApplicationController
   end
 
   def result
-    render :text => "旅行先 = #{params[:dest]}, 人数 = #{params[:num]}人"
+    @dest = { name: params['dest'] }
+    @num = { name: params['num'] }
   end
 
   def profile
