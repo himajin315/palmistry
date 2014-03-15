@@ -7,6 +7,8 @@ class PalmistryController < ApplicationController
   def result
     @dest = { name: params['dest'] }
     @num = { name: params['num'] }
+    @radio = params[:radio]
+    @chk = params[:chk]
   end
 
   def profile
