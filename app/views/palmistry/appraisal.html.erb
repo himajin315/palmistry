@@ -23,7 +23,6 @@
 	  </label>
 	<% end %>
       </div>
-      <br>
 
       <h3>生命線 <small>- 健康 -</small></h3>
       <div class="btn-group" data-toggle="buttons">
@@ -36,14 +35,13 @@
       </div>
 
       <div class="btn-group" data-toggle="buttons">
-        <% [ '海外など遠くに住む', 'いろいろなところに行く', '地元に残る'].each_with_index do |life_etc,i| %>
-	  <label class="btn btn-default">
-	  <%= check_box_tag 'life_etc[' + i.to_s + ']', life_etc, false, {} %>
+        <% [ '海外など遠くに住む', 'いろいろなところに行く', '地元に残る' ].each do |life_etc| %>
+	  <label class="btn btn-info">
+	  <%= radio_button_tag 'life_etc', life_etc, @life_etc == life_etc, class:'btn btn-info' %>
           <%= life_etc %>
 	  </label>
 	<% end %>
       </div>
-      <br>
 
       <h3>頭脳線 <small>- 思考 -</small></h3>
       <div class="btn-group" data-toggle="buttons">
