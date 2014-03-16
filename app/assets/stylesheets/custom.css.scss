@@ -37,12 +37,16 @@ a {
   }
 }
 
-.btn-info.active {
+.btn-info.active,
+.btn-default:active,
+.btn-default.active {
   color: $bright;
   background-color: $dark-gradient;
   border-color: $dark-gradient;
 }
-
+.btn-default {
+  border-color: $dark-gradient;
+}
 .btn-primary {
   color: $bright;
   background-color: $attention;
@@ -72,4 +76,23 @@ a {
 #sidebar {
   position: fixed;
   top: 60px;
+}
+
+h3 {
+  padding-left: 7px;
+  border-left: 3px solid $attention;
+  border-bottom: 1px solid #eee;
+}
+
+#radio-info {
+  background-color: $main;
+  border: 1px solid $main;
+  border-radius: 4px;
+}
+
+#check-info {
+  margin-left: 2px;
+  margin-right: 2px;
+  border: 1px solid $attention;
+  border-radius: 4px;
 }

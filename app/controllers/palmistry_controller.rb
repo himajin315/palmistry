@@ -5,10 +5,11 @@ class PalmistryController < ApplicationController
   end
 
   def result
-    @dest = { name: params['dest'] }
-    @num = { name: params['num'] }
-    @radio = params[:radio]
-    @chk = params[:chk]
+    @love = params[:love]
+    @love_etc = params[:love_etc]
+    @life = params[:life]
+    @life_etc = params[:life_etc]
+    @brain = params[:brain]
   end
 
   def profile

@@ -2,24 +2,59 @@
   <div class="col-sm-9">
     <h1 class="page-header">手相鑑定</h1>
     <form method="post" action=<%= result_path %>>
-	旅行先：<input type="text" name="dest" /><br />
+      <p>手相の特徴をすべて選択し、鑑定結果をクリックして下さい。
+      <br><span id="radio-info">　</span>１つ選択  <span id="check-info">　</span>複数選択可</p>
+
+      <h3>感情線 <small>- 恋愛 -</small></h3>
       <div class="btn-group" data-toggle="buttons">
-        <% [ '感情線', '生命線', '頭脳線' ].each do |radio| %>
+        <% [ '唐突な恋愛', '落ち着いた恋愛', '消極的な恋愛', '情が深い', '相手の気持ちになれる'].each do |love| %>
 	  <label class="btn btn-info">
-	  <%= radio_button_tag 'radio', radio, @radio == radio, class:'btn btn-info' %>
-          <%= radio %>
+	  <%= radio_button_tag 'love', love, @love == love, class:'btn btn-info' %>
+          <%= love %>
+	  </label>
+	<% end %>
+      </div>
+
+      <div class="btn-group" data-toggle="buttons">
+        <% [ '人を幸せにする', '数多くの恋愛をする', 'おっとりタイプ' ].each_with_index do |love_etc,i| %>
+	  <label class="btn btn-default">
+	  <%= check_box_tag 'love_etc[' + i.to_s + ']', love_etc, false, {} %>
+          <%= love_etc %>
 	  </label>
 	<% end %>
       </div>
       <br>
+
+      <h3>生命線 <small>- 健康 -</small></h3>
       <div class="btn-group" data-toggle="buttons">
-        <% [ '唐突な恋愛', '落ち着いた恋愛', '消極的な恋愛' ].each_with_index do |chk,i| %>
+        <% [ '生命力は強い', '生命力は弱くない', '病気になりやすい' ].each do |life| %>
 	  <label class="btn btn-info">
-	  <%= check_box_tag 'chk[' + i.to_s + ']', chk, false, {} %>
-          <%= chk %>
+	  <%= radio_button_tag 'life', life, @life == life, class:'btn btn-info' %>
+          <%= life %>
 	  </label>
 	<% end %>
       </div>
+
+      <div class="btn-group" data-toggle="buttons">
+        <% [ '海外など遠くに住む', 'いろいろなところに行く', '地元に残る'].each_with_index do |life_etc,i| %>
+	  <label class="btn btn-default">
+	  <%= check_box_tag 'life_etc[' + i.to_s + ']', life_etc, false, {} %>
+          <%= life_etc %>
+	  </label>
+	<% end %>
+      </div>
+      <br>
+
+      <h3>頭脳線 <small>- 思考 -</small></h3>
+      <div class="btn-group" data-toggle="buttons">
+        <% [ '論理的に考える', '感覚的に捉える', 'なんても平均的にできる', '直感タイプ'].each do |brain| %>
+	  <label class="btn btn-info">
+	  <%= radio_button_tag 'brain', brain, @brain == brain, class:'btn btn-info' %>
+          <%= brain %>
+	  </label>
+	<% end %>
+      </div>
+
       <br>
       <button type="submit" class="btn btn-primary">鑑定結果</button>
     </form>
