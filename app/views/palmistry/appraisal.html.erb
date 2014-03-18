@@ -7,7 +7,7 @@
 
       <h3>感情線 <small>- 恋愛 -</small></h3>
       <%= render partial: "radio_button", locals: { name: "love", list: ['唐突な恋愛', '落ち着いた恋愛', '消極的な恋愛', '情が深い', '相手の気持ちになれる'] } %>
-      <%= render "check_box", val: ['人を幸せにする', '数多くの恋愛をする', 'おっとりタイプ'] %>
+      <%= render partial: "check_box", locals: { name: "love_etc", list: ['人を幸せにする', '数多くの恋愛をする', 'おっとりタイプ'] } %>
 
       <h3>生命線 <small>- 健康 -</small></h3>
       <%= render partial: "radio_button", locals: { name: "life", list: ['生命力は強い', '生命力は弱くない', '病気になりやすい'] } %>
