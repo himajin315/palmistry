@@ -6,15 +6,15 @@
       <br><span id="radio-info">　</span>１つ選択  <span id="check-info">　</span>複数選択可</p>
 
       <h3>感情線 <small>- 恋愛 -</small></h3>
-      <%= render "radio_button", val: ['唐突な恋愛', '落ち着いた恋愛', '消極的な恋愛', '情が深い', '相手の気持ちになれる'] %>
+      <%= render partial: "radio_button", locals: { name: "love", list: ['唐突な恋愛', '落ち着いた恋愛', '消極的な恋愛', '情が深い', '相手の気持ちになれる'] } %>
       <%= render "check_box", val: ['人を幸せにする', '数多くの恋愛をする', 'おっとりタイプ'] %>
 
       <h3>生命線 <small>- 健康 -</small></h3>
-      <%= render "radio_button", val: ['生命力は強い', '生命力は弱くない', '病気になりやすい'] %>
-      <%= render "radio_button", val: ['海外など遠くに住む', 'いろいろなところに行く', '地元に残る'] %>
+      <%= render partial: "radio_button", locals: { name: "life", list: ['生命力は強い', '生命力は弱くない', '病気になりやすい'] } %>
+      <%= render partial: "radio_button", locals: { name: "life_etc", list: ['海外など遠くに住む', 'いろいろなところに行く', '地元に残る'] } %>
 
       <h3>頭脳線 <small>- 思考 -</small></h3>
-      <%= render "radio_button", val: ['論理的に考える', '感覚的に捉える', 'なんても平均的にできる', '直感タイプ'] %>
+      <%= render partial: "radio_button", locals: { name: "brain", list: ['論理的に考える', '感覚的に捉える', 'なんても平均的にできる', '直感タイプ'] } %>
 
       <br>
       <button type="submit" class="btn btn-primary">鑑定結果</button>
