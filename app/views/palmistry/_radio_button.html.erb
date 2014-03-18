@@ -1,0 +1,8 @@
+<div class="btn-group" data-toggle="buttons">
+  <% val.each_with_index do |love,i| %>
+  <label class="btn btn-info">
+    <%= radio_button_tag 'love', love, @love == love, class:'btn btn-info' %>
+    <%= love %>
+  </label>
+  <% end %>
+</div>
