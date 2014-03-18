@@ -1,0 +1,8 @@
+<div class="btn-group" data-toggle="buttons">
+  <% list.each_with_index do |info,i| %>
+  <label class="btn btn-default">
+    <input id=<%= name %> name=<%= name + '[' + i.to_s + ']'%> type="checkbox" value=<%= info %>>
+    <%= info %>
+  </label>
+  <% end %>
+</div>
