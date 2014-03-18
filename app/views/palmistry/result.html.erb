@@ -1,17 +1,17 @@
 <h1 class="page-header">鑑定結果</h1>
 <h2>恋愛／能力</h2>
-<p>love = <%= @love %></p>
+<p><%= @love.html_safe %></p>
 
-<% if @love_etc_0 then%>
-  <p>love_etc_0 = <%= @love_etc_0 %></p>
+<% if @love_etc_happy then%>
+  <p>love_etc_0 = <%= @love_etc_happy %></p>
 <% end %>
-<% if @love_etc_1 then%>
-  <p>love_etc_1 = <%= @love_etc_1 %></p>
+<% if @love_etc_many then%>
+  <p>love_etc_1 = <%= @love_etc_many %></p>
 <% end %>
-<% if @love_etc_2 then%>
-  <p>love_etc_2 = <%= @love_etc_2 %></p>
+<% if @love_etc_slow then%>
+  <p>love_etc_2 = <%= @love_etc_slow %></p>
 <% end %>
 
-<p>life = <%= @life %></p>
-<p>life_etc = <%= @life_etc %></p>
-<p>brain = <%= @brain %></p>
+<p><%= @life %></p>
+<p><%= @life_etc %></p>
+<p><%= @brain %></p>
