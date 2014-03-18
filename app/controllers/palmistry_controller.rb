@@ -18,7 +18,16 @@ class PalmistryController < ApplicationController
       @love = "お"
     end
 
-    @love_etc = params[:love_etc]
+    params[:love_etc].keys.each do |select_num|
+      case select_num
+      when '0' then
+        @love_etc_0 = "が"
+      when '1' then
+        @love_etc_1 = "ぎ"
+      when '2' then
+        @love_etc_2 = "ぐ"
+      end
+    end
 
     @life = params[:life]
     case params[:life]
