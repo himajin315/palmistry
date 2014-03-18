@@ -1,7 +1,7 @@
 <div class="btn-group" data-toggle="buttons">
   <% list.each_with_index do |info,i| %>
   <label class="btn btn-info">
-    <input class="btn btn-info" id=<%= name %> name=<%= name %> type="radio" value=<%= info %>>
+    <input class="btn btn-info" id=<%= name %> name=<%= name %> type="radio" value=<%= i %>>
     <%= info %>
   </label>
   <% end %>
