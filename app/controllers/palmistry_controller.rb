@@ -7,15 +7,15 @@ class PalmistryController < ApplicationController
   def result
     case params[:love]
     when '0' then
-      @love = "あ";
+      @love = "あ"
     when '1' then
-      @love = "い";
+      @love = "い"
     when '2' then
-      @love = "う";
+      @love = "う"
     when '3' then
-      @love = "え";
+      @love = "え"
     when '4' then
-      @love = "お";
+      @love = "お"
     end
 
     @love_etc = params[:love_etc]
@@ -23,31 +23,31 @@ class PalmistryController < ApplicationController
     @life = params[:life]
     case params[:life]
     when '0' then
-      @life = "か";
+      @life = "か"
     when '1' then
-      @life = "き";
+      @life = "き"
     when '2' then
-      @life = "く";
+      @life = "く"
     end
 
     case params[:life_etc]
     when '0' then
-      @life_etc = "さ";
+      @life_etc = "さ"
     when '1' then
-      @life_etc = "し";
+      @life_etc = "し"
     when '2' then
-      @life_etc = "す";
+      @life_etc = "す"
     end
 
     case params[:brain]
     when '0' then
-      @brain = "た";
+      @brain = "た"
     when '1' then
-      @brain = "ち";
+      @brain = "ち"
     when '2' then
-      @brain = "つ";
+      @brain = "つ"
     when '3' then
-      @brain = "て";
+      @brain = "て"
     end
   end
 
