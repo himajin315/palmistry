@@ -3,17 +3,26 @@
 <p>
   <%= @love.html_safe %>
 
-  <% if @love_etc_happy then%>
+  <% if @love_etc_happy then %>
     <%= @love_etc_happy.html_safe %>
   <% end %>
-  <% if @love_etc_many then%>
+  <% if @love_etc_many then %>
     <%= @love_etc_many.html_safe %>
   <% end %>
-  <% if @love_etc_slow then%>
+  <% if @love_etc_slow then %>
     <%= @love_etc_slow.html_safe %>
   <% end %>
 
-  <%= @life.html_safe %>
-  <%= @life_etc.html_safe %>
-  <%= @brain.html_safe %>
+  <% if @brain then %>
+    <%= @brain.html_safe %>
+  <% end %>
+
+  <% if @life_etc then %>
+    <%= @life_etc.html_safe %>
+  <% end %>
+
+  <% if @life then %>
+    <%= @life.html_safe %>
+  <% end %>
+
 </p>
