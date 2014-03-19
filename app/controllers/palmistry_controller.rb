@@ -36,7 +36,7 @@ class PalmistryController < ApplicationController
     when '3' then
       @love = "hogehoge さんは情が深い人です。<br>"
     when '4' then
-      @love = "hogehoge さんは相手の気持ちになれる優しい人です。"
+      @love = "hogehoge さんは相手の気持ちになれる優しい人です。<br>"
     end
 
     love_etc = params[:love_etc]
@@ -44,42 +44,42 @@ class PalmistryController < ApplicationController
       love_etc.keys.each do |select_num|
         case select_num
         when '0' then
-          @love_etc_happy = "が"
+          @love_etc_happy = "が<br>"
         when '1' then
-          @love_etc_many = "ぎ"
+          @love_etc_many = "ぎ<br>"
         when '2' then
-          @love_etc_slow = "ぐ"
+          @love_etc_slow = "ぐ<br>"
         end
       end
     end
     @life = params[:life]
     case params[:life]
     when '0' then
-      @life = "か"
+      @life = "か<br>"
     when '1' then
-      @life = "き"
+      @life = "き<br>"
     when '2' then
-      @life = "く"
+      @life = "く<br>"
     end
 
     case params[:life_etc]
     when '0' then
-      @life_etc = "さ"
+      @life_etc = "さ<br>"
     when '1' then
-      @life_etc = "し"
+      @life_etc = "し<br>"
     when '2' then
-      @life_etc = "す"
+      @life_etc = "す<br>"
     end
 
     case params[:brain]
     when '0' then
-      @brain = "た"
+      @brain = "た<br>"
     when '1' then
-      @brain = "ち"
+      @brain = "ち<br>"
     when '2' then
-      @brain = "つ"
+      @brain = "つ<br>"
     when '3' then
-      @brain = "て"
+      @brain = "て<br>"
     end
   end
 
