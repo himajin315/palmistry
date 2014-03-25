@@ -17,6 +17,27 @@
 
       <h3>頭脳線 <small>- 思考 -</small></h3>
       <%= render partial: "radio_button", locals: { name: "brain", list: ['論理的に考える', '感覚的に捉える', 'なんても平均的にできる', '直感タイプ'] } %>
+      <%= render partial: "radio_button", locals: { name: "brain_life", list: ['常識がある', '慎重派', '行動派', '疑心暗鬼'] } %>
+      <%= render partial: "check_box", locals: { name: "brain_etc", list: ['能力が高い', '努力家'] } %>
+
+      <h3>木星丘 <small>- 権力 -</small></h3>
+      <%= render partial: "check_box", locals: { name: "jupiter", list: ['社会的に成功したい', 'リーダータイプ'] } %>
+
+      <h3>太陽丘 <small>- 出世 -</small></h3>
+      <%= render partial: "radio_button", locals: { name: "sun", list: ['地道な努力', '才能を活かして出世', '才能を活かしきれてない'] } %>
+      <%= render partial: "check_box", locals: { name: "sun_etc", list: ['魅力的な人'] } %>
+
+      <h3>水星丘 <small>- 金運 -</small></h3>
+      <%= render partial: "radio_button", locals: { name: "mercury", list: ['お金に困ってる', 'お金は入るが出て行く', 'お金には困ってない'] } %>
+
+      <h3>金星丘 <small>- 生命力 -</small></h3>
+      <%= render partial: "check_box", locals: { name: "venus", list: ['徳がある', '情が深い'] } %>
+
+      <h3>月丘 <small>- 人気 -</small></h3>
+      <%= render partial: "check_box", locals: { name: "moon", list: ['好かれやすい', '疲れがたまってる'] } %>
+
+      <h3>病気関係</h3>
+      <%= render partial: "check_box", locals: { name: "illness", list: ['呼吸器系に負担', '循環器系に負担', '目への負担', '消化器科に負担', '腎臓・肝臓に負担'] } %>
 
       <br>
       <button type="submit" class="btn btn-primary">鑑定結果</button>
