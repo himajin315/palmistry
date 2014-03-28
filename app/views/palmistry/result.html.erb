@@ -13,6 +13,9 @@
   <% if @love_etc_slow then %>
     <%= @love_etc_slow.html_safe %>
   <% end %>
+  <% if @sun_etc then %>
+    <%= @sun_etc_charm.html_safe %>
+  <% end %>
   <% if @brain_life then %>
     <%= @brain_life.html_safe %>
   <% end %>
@@ -23,6 +26,9 @@
     <%= @jupiter_social.html_safe %>
   <% end %>
 
+  <% if @sun_not then %>
+    <%= @sun_not.html_safe %>
+  <% end %>
   <% if @brain then %>
     <%= @brain.html_safe %>
   <% end %>
@@ -32,10 +38,17 @@
   <% if @jupiter_reader then %>
     <%= @jupiter_reader.html_safe %>
   <% end %>
-
   <% if @life_etc then %>
     <%= @life_etc.html_safe %>
   <% end %>
+  <% if @sun and @mercury then %>
+    <%= @mercury.html_safe %>
+  <% end %>
+  <% if @sun then %>
+    <%= @sun.html_safe %>
+  <% end %>
+
+
 
   <% if @life then %>
     <%= @life.html_safe %>

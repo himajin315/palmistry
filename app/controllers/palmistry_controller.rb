@@ -219,6 +219,52 @@ class PalmistryController < ApplicationController
         end
       end
     end
+
+    case params[:sun]
+    when '0' then
+      @sun = @uname + " さんは地道な努力で出世するタイプです。<br>
+      「継続は力なり」がピッタリな人です。<br>
+      続けることで周りから認められる存在となります。<br>
+      うまくいなかいからと言ってすぐに諦めるのではなく、根気よく続けていくことが大事になってきます。<br>
+      そうすることで、地位や名声を得られることでしょう。<br>"
+    when '1' then
+      @sun = @uname + " さんは才能を活かして出世するタイプです。<br>
+      自分の才能を活かせる場にいるかどうかで、出世ができるかどうかが決まってきます。<br>
+      職業や場所がとても重要な要素でしょう。<br>
+      自分のやりたいこととできることは違います。<br>
+      やりたいことも大事ですが、才能にあった職を見つけることも大事です。<br>
+      " + @uname + " さんを必要としている場所に行くことでお金には困らない生活をすることでしょう。<br>"
+    when '2' then
+      @sun_not = "ただ、" + @uname + " さんは現在才能を活かしきれていません。<br>
+      今やりたいことはありますか。<br>
+      " + @uname + " さんの才能に合ったことがうまくできていません。<br>
+      今やっていること辞めろってわけではありません。<br>
+      今やっていることに" + @uname + " さんの才能を活かすことが必要になってきます。<br>"
+    end
+
+    sun_etc = params[:sun_etc]
+    if sun_etc then
+      sun_etc.keys.each do |select_num|
+        case select_num
+        when '0' then
+          @sun_etc_charm = @uname + " さんは魅力的な人でもあります。<br>
+          異性から好かれやすいようです。<br>
+          所謂、モテる人でしょう。<br>"
+        end
+      end
+    end
+
+    case params[:mercury]
+    when '0' then
+      @mercury = @uname + " さんは現在お金に困っています。<br>
+      現在の収入に満足していません。<br>"
+    when '1' then
+      @mercury = @uname + " さんはお金は入ってきますが、すぐに出て行く状態です。
+      貯金がしにくい状態のようです。<br>"
+    when '2' then
+      @mercury = @uname + " さんはお金には困らない生活をしています。<br>
+      特にお金に困るようなこともなく、お金に縛られない生活ができています。<br>"
+    end
   end
 
   def profile
