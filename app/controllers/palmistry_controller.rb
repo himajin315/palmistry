@@ -271,12 +271,53 @@ class PalmistryController < ApplicationController
       venus.keys.each do |select_num|
         case select_num
         when '0' then
-          @venus_virtuous = "さらに、" + @uname + " 周りからの信頼も厚いです。<br>
+          @venus_virtuous = "さらに、" + @uname + " さんは周りからの信頼も厚いです。<br>
           自分のことよりも周りへの貢献を優先させるような人です。<br>
           とても素晴らしい人でしょう。<br>"
         when '1' then
           @venus_kindheart =  @uname + " さんは結婚後は子供を大切にします。<br>
           家族のことを優先的に考え、家族を大切にする良い[お母さん|お父さん]になるタイプでしょう。<br>"
+        end
+      end
+    end
+
+    moon = params[:moon]
+    if moon then
+      moon.keys.each do |select_num|
+        case select_num
+        when '0' then
+          @moon_like = "さらに、" + @uname + " さんは好かれやすい人でもあります。<br>
+          接客業や営業など人と接することが多い仕事に就くのもよいでしょう。<br>"
+        when '1' then
+          @moon_fatigue =  @uname + " さんは現在疲れがたまっているます。<br>
+          休める時にはちゃんと休むようにして下さい。<br>"
+        end
+      end
+    end
+
+    illness = params[:illness]
+    if illness then
+      illness.keys.each do |select_num|
+        case select_num
+        when '0' then
+          @illness_breath = @uname + " さんは呼吸器系が弱っています。<br>
+          部屋の空気を綺麗にし、住み良い環境を作るようにして下さい。<br>"
+        when '1' then
+          @illness_blood =  @uname + " さんは循環器系に負担をかけています。<br>
+          脂っこい食事や塩分の摂り過ぎには注意してください。<br>"
+        when '2' then
+          @illness_head =  @uname + " さんは注意力が足りないため、事故に合いやすいです。<br>
+          疲れがたまってる時の運転など、無理のないよう気をつけて下さい。<br>"
+        when '3' then
+          @illness_eyes =  @uname + " さんは目の疲れが溜まっています。<br>
+          視力低下や目の病気になりやすいです。<br>
+          目を酷使させすぎないよう休ませるようにして下さい。<br>"
+        when '4' then
+          @illness_stomach =  @uname + " さんは胃や小腸などの消化器官系に負担をかけています。<br>
+          おかなを壊しやすい状態なので、食生活の改善が必要です。<br>"
+        when '5' then
+          @illness_liver =  @uname + " さんは腎臓・肝臓に負担をかけています。<br>
+          お酒の飲み過ぎには注意してください。たまには休肝日を設けるとよいでしょう。<br>"
         end
       end
     end

@@ -37,6 +37,9 @@
   <% if @brain then %>
     <%= @brain.html_safe %>
   <% end %>
+  <% if @moon_like then %>
+    <%= @moon_like.html_safe %>
+  <% end %>
   <% if @brain_etc_genius then %>
     <%= @brain_etc_genius.html_safe %>
   <% end %>
@@ -68,6 +71,33 @@
   <!-- 健康 -->
   <% if @life then %>
     <%= @life.html_safe %>
+  <% end %>
+  <% if @moon_fatigue then %>
+    <%= @moon_fatigue.html_safe %>
+    また、
+  <% end %>
+  <% if @illness_breath then %>
+    <%= @illness_breath.html_safe %>
+    さらに、
+  <% end %>
+  <% if @illness_blood then %>
+    <%= @illness_blood.html_safe %>
+    さらに、
+  <% end %>
+  <% if @illness_head then %>
+    <%= @illness_head.html_safe %>
+    さらに、
+  <% end %>
+  <% if @illness_eyes then %>
+    <%= @illness_eyes.html_safe %>
+    さらに、
+  <% end %>
+  <% if @illness_stomach then %>
+    <%= @illness_stomach.html_safe %>
+    さらに、
+  <% end %>
+  <% if @illness_liver then %>
+    <%= @illness_liver.html_safe %>
   <% end %>
 
 </p>
