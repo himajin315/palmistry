@@ -1,8 +1,9 @@
 <h1>鑑定結果</h1>
 <h3>恋愛／能力</h3>
 <p>
-  <%= @love.html_safe %>
-
+  <% if @love then %>
+    <%= @love.html_safe %>
+  <% end %>
   <% if @love_etc_happy then %>
     <%= @love_etc_happy.html_safe %>
   <% end %>
@@ -12,9 +13,18 @@
   <% if @love_etc_slow then %>
     <%= @love_etc_slow.html_safe %>
   <% end %>
+  <% if @brain_life then %>
+    <%= @brain_life.html_safe %>
+  <% end %>
+  <% if @brain_etc_hardworker then %>
+    <%= @brain_etc_hardworker.html_safe %>
+  <% end %>
 
   <% if @brain then %>
     <%= @brain.html_safe %>
+  <% end %>
+  <% if @brain_etc_genius then %>
+    <%= @brain_etc_genius.html_safe %>
   <% end %>
 
   <% if @life_etc then %>
