@@ -32,3 +32,4 @@ end
 gem 'bootstrap-sass', '3.0.2.0'
 
 gem 'jquery-ui-rails'
+gem 'thread_safe', '0.2.0'
