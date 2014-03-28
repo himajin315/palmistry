@@ -266,6 +266,21 @@ class PalmistryController < ApplicationController
       特にお金に困るようなこともなく、お金に縛られない生活ができています。<br>"
     end
 
+    venus = params[:venus]
+    if venus then
+      venus.keys.each do |select_num|
+        case select_num
+        when '0' then
+          @venus_virtuous = "さらに、" + @uname + " 周りからの信頼も厚いです。<br>
+          自分のことよりも周りへの貢献を優先させるような人です。<br>
+          とても素晴らしい人でしょう。<br>"
+        when '1' then
+          @venus_kindheart =  @uname + " さんは結婚後は子供を大切にします。<br>
+          家族のことを優先的に考え、家族を大切にする良い[お母さん|お父さん]になるタイプでしょう。<br>"
+        end
+      end
+    end
+
     hand_shape = params[:hand_shape]
     if hand_shape then
       hand_shape.keys.each do |select_num|
@@ -281,7 +296,6 @@ class PalmistryController < ApplicationController
         end
       end
     end
-
   end
 
   def profile

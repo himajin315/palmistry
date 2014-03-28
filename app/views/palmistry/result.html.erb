@@ -1,6 +1,7 @@
 <h1>鑑定結果</h1>
 <h3>恋愛／能力</h3>
 <p>
+  <!-- 恋愛 -->
   <% if @love then %>
     <%= @love.html_safe %>
   <% end %>
@@ -25,7 +26,11 @@
   <% if @jupiter_social then %>
     <%= @jupiter_social.html_safe %>
   <% end %>
+  <% if @venus_kindheart then %>
+    <%= @venus_kindheart.html_safe %>
+  <% end %>
 
+  <!-- 能力 -->
   <% if @sun_not then %>
     <%= @sun_not.html_safe %>
   <% end %>
@@ -41,8 +46,8 @@
   <% if @hand_shape_report then %>
     <%= @hand_shape_report.html_safe %>
   <% end %>
-  <% if @life_etc then %>
-    <%= @life_etc.html_safe %>
+  <% if @venus_virtuous then %>
+    <%= @venus_virtuous.html_safe %>
   <% end %>
   <% if @sun and @mercury then %>
     <%= @mercury.html_safe %>
@@ -56,7 +61,11 @@
   <% if @hand_shape_waste then %>
     <%= @hand_shape_waste.html_safe %>
   <% end %>
+  <% if @life_etc then %>
+    <%= @life_etc.html_safe %>
+  <% end %>
 
+  <!-- 健康 -->
   <% if @life then %>
     <%= @life.html_safe %>
   <% end %>
