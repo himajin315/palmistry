@@ -39,6 +39,8 @@
       <h3>病気関係</h3>
       <%= render partial: "check_box", locals: { name: "illness", list: ['呼吸器系に負担', '循環器系に負担', '頭関係の病気', '目への負担', '消化器科に負担', '腎臓・肝臓に負担'] } %>
 
+      <h3>手の開き</h3>
+      <%= render partial: "check_box", locals: { name: "illness", list: ['浪費家', '伝えるのが上手'] } %>
       <br>
       <button type="submit" class="btn btn-primary">鑑定結果</button>
     </form>
