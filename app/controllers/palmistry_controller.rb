@@ -259,12 +259,29 @@ class PalmistryController < ApplicationController
       @mercury = @uname + " さんは現在お金に困っています。<br>
       現在の収入に満足していません。<br>"
     when '1' then
-      @mercury = @uname + " さんはお金は入ってきますが、すぐに出て行く状態です。
+      @mercury = @uname + " さんはお金は入ってきますが、すぐに出て行く状態です。<br>
       貯金がしにくい状態のようです。<br>"
     when '2' then
       @mercury = @uname + " さんはお金には困らない生活をしています。<br>
       特にお金に困るようなこともなく、お金に縛られない生活ができています。<br>"
     end
+
+    hand_shape = params[:hand_shape]
+    if hand_shape then
+      hand_shape.keys.each do |select_num|
+        case select_num
+        when '0' then
+          if params[:mercury] == '1' then
+            @hand_shape_waste = "ただ、" + @uname + " さんは浪費家です。<br>
+            入った分だけ使ってしまうので、いくらお金があっても満足はしません。<br>"
+          end
+        when '1' then
+          @hand_shape_report = "さらに" + @uname + " さんは文章で伝える能力が高いです。<br>
+          自分の考えを伝える時は文章にまとめて伝える方が良いでしょう。<br>"
+        end
+      end
+    end
+
   end
 
   def profile

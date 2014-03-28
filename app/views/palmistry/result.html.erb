@@ -38,17 +38,24 @@
   <% if @jupiter_reader then %>
     <%= @jupiter_reader.html_safe %>
   <% end %>
+  <% if @hand_shape_report then %>
+    <%= @hand_shape_report.html_safe %>
+  <% end %>
   <% if @life_etc then %>
     <%= @life_etc.html_safe %>
   <% end %>
   <% if @sun and @mercury then %>
     <%= @mercury.html_safe %>
   <% end %>
+  <% if @hand_shape_waste then %>
+    <%= @hand_shape_waste.html_safe %>
+  <% end %>
   <% if @sun then %>
     <%= @sun.html_safe %>
   <% end %>
-
-
+  <% if @hand_shape_waste then %>
+    <%= @hand_shape_waste.html_safe %>
+  <% end %>
 
   <% if @life then %>
     <%= @life.html_safe %>
