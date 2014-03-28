@@ -1,8 +1,10 @@
 <h1>鑑定結果</h1>
 <h3>恋愛／能力</h3>
 <p>
-  <%= @love.html_safe %>
-
+  <!-- 恋愛 -->
+  <% if @love then %>
+    <%= @love.html_safe %>
+  <% end %>
   <% if @love_etc_happy then %>
     <%= @love_etc_happy.html_safe %>
   <% end %>
@@ -12,17 +14,90 @@
   <% if @love_etc_slow then %>
     <%= @love_etc_slow.html_safe %>
   <% end %>
+  <% if @sun_etc then %>
+    <%= @sun_etc_charm.html_safe %>
+  <% end %>
+  <% if @brain_life then %>
+    <%= @brain_life.html_safe %>
+  <% end %>
+  <% if @brain_etc_hardworker then %>
+    <%= @brain_etc_hardworker.html_safe %>
+  <% end %>
+  <% if @jupiter_social then %>
+    <%= @jupiter_social.html_safe %>
+  <% end %>
+  <% if @venus_kindheart then %>
+    <%= @venus_kindheart.html_safe %>
+  <% end %>
 
+  <!-- 能力 -->
+  <% if @sun_not then %>
+    <%= @sun_not.html_safe %>
+  <% end %>
   <% if @brain then %>
     <%= @brain.html_safe %>
   <% end %>
-
+  <% if @moon_like then %>
+    <%= @moon_like.html_safe %>
+  <% end %>
+  <% if @brain_etc_genius then %>
+    <%= @brain_etc_genius.html_safe %>
+  <% end %>
+  <% if @jupiter_reader then %>
+    <%= @jupiter_reader.html_safe %>
+  <% end %>
+  <% if @hand_shape_report then %>
+    <%= @hand_shape_report.html_safe %>
+  <% end %>
+  <% if @venus_virtuous then %>
+    <%= @venus_virtuous.html_safe %>
+  <% end %>
+  <% if @sun and @mercury then %>
+    <%= @mercury.html_safe %>
+  <% end %>
+  <% if @hand_shape_waste then %>
+    <%= @hand_shape_waste.html_safe %>
+  <% end %>
+  <% if @sun then %>
+    <%= @sun.html_safe %>
+  <% end %>
+  <% if @hand_shape_waste then %>
+    <%= @hand_shape_waste.html_safe %>
+  <% end %>
   <% if @life_etc then %>
     <%= @life_etc.html_safe %>
   <% end %>
 
+  <!-- 健康 -->
   <% if @life then %>
     <%= @life.html_safe %>
+  <% end %>
+  <% if @moon_fatigue then %>
+    <%= @moon_fatigue.html_safe %>
+    また、
+  <% end %>
+  <% if @illness_breath then %>
+    <%= @illness_breath.html_safe %>
+    さらに、
+  <% end %>
+  <% if @illness_blood then %>
+    <%= @illness_blood.html_safe %>
+    さらに、
+  <% end %>
+  <% if @illness_head then %>
+    <%= @illness_head.html_safe %>
+    さらに、
+  <% end %>
+  <% if @illness_eyes then %>
+    <%= @illness_eyes.html_safe %>
+    さらに、
+  <% end %>
+  <% if @illness_stomach then %>
+    <%= @illness_stomach.html_safe %>
+    さらに、
+  <% end %>
+  <% if @illness_liver then %>
+    <%= @illness_liver.html_safe %>
   <% end %>
 
 </p>
