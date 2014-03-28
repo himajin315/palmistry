@@ -19,12 +19,18 @@
   <% if @brain_etc_hardworker then %>
     <%= @brain_etc_hardworker.html_safe %>
   <% end %>
+  <% if @jupiter_social then %>
+    <%= @jupiter_social.html_safe %>
+  <% end %>
 
   <% if @brain then %>
     <%= @brain.html_safe %>
   <% end %>
   <% if @brain_etc_genius then %>
     <%= @brain_etc_genius.html_safe %>
+  <% end %>
+  <% if @jupiter_reader then %>
+    <%= @jupiter_reader.html_safe %>
   <% end %>
 
   <% if @life_etc then %>

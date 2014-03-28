@@ -185,6 +185,40 @@ class PalmistryController < ApplicationController
         end
       end
     end
+
+    brain_etc = params[:brain_etc]
+    if brain_etc then
+      brain_etc.keys.each do |select_num|
+        case select_num
+        when '0' then
+          @brain_etc_genius = @uname + " さんは能力が高い人です。<br>
+          人よりも物事の習得が早くすることができます。<br>
+          ただ、能力が高いが故に怠け者でもあります。<br>
+          周りよりも仕事を早く終わらせて、バレないように怠けいることでしょう。<br>
+          こういう人は自分の好きなことを仕事にすると良いです。<br>
+          夢中になれることを行うことで、怠けず能力を十分に発揮することでしょう。<br>"
+        when '1' then
+          @brain_etc_hardworker = @uname + " さんは努力家の人です。<br>
+          努力を努力と思っていないため、すごく頑張ることができる人です。<br>
+          大きな目標があると、誰もできないようなこともできることができる人です。<br>
+          辛いことも辛いと感じず、愚直に頑張ることができる人です。<br>"
+        end
+      end
+    end
+
+    jupiter = params[:jupiter]
+    if jupiter then
+      jupiter.keys.each do |select_num|
+        case select_num
+        when '0' then
+          @jupiter_social = "さらに" + @uname + " さんは社会的に成功したいと思っている人です。<br>
+          仕事に対して真面目で、一生懸命に頑張ることができます。<br>"
+        when '1' then
+          @jupiter_reader = "さらに" + @uname + " さんはリーダータイプでもあります。<br>
+          誰かに指示されて動くよりも、自分から周りを引っ張っていく方が良いでしょう。<br>"
+        end
+      end
+    end
   end
 
   def profile
