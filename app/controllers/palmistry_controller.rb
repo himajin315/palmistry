@@ -7,6 +7,16 @@ class PalmistryController < ApplicationController
   def result
     @uname = params[:uname]
 
+    marriageable_age = params[:marriageable]
+    @marriageable = ""
+    marriageable_age.each_with_index do |select_num,i|
+      @marriageable += select_num
+      if marriageable_age.length-1 != i then
+        @marriageable += ", "
+      end
+    end
+    @marriageable += "歳<br>この時期には結婚したいと思う人がいることでしょう。<br> "
+
     case params[:love]
     when '0' then
       @love = @uname + " さんは突発的な恋愛をするタイプです。<br>

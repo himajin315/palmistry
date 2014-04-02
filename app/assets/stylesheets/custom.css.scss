@@ -93,8 +93,12 @@ h3 {
 #check-info {
   margin-left: 2px;
   margin-right: 2px;
-  border: 1px solid $attention;
+  border: 1px solid $dark;
   border-radius: 4px;
+}
+
+#click-descriptiono {
+  margin-top: 40px;
 }
 
 //profile.html.erb
