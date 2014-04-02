@@ -4,9 +4,16 @@
     <form method="post" action=<%= result_path %>>
       <p>あなたの名前を入力して下さい。</p>
       <input type="text" class="form-control" name="uname" placeholder='(例)大城佳明' required='true'><br />
+
       <p>手相の特徴をすべて選択し、鑑定結果をクリックして下さい。
       <br><span id="radio-info">　</span>１つ選択  <span id="check-info">　</span>複数選択可</p>
 
+      <h3>婚期</h3>
+      <select multiple class="form-control" name="marriageable[]">
+	<% for i in 18...50 do %>
+	  <option value=<%= i %>><%= i %> 歳</option>
+	<% end %>
+      </select>
       <h3>感情線 <small>- 恋愛 -</small></h3>
       <%= render partial: "radio_button", locals: { name: "love", list: ['唐突な恋愛', '落ち着いた恋愛', '消極的な恋愛', '情が深い', '相手の気持ちになれる', '一途な恋愛'] } %>
       <%= render partial: "check_box", locals: { name: "love_etc", list: ['人を幸せにする', '数多くの恋愛をする', 'おっとりタイプ'] } %>
