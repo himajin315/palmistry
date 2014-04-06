@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="col-sm-9">
+<!--  <div class="col-sm-9">-->
     <h1 class="page-header">手相鑑定</h1>
     <form method="post" action=<%= result_path %>>
       <h3>名前</h3>
@@ -30,6 +30,9 @@
       <%= render partial: "radio_button", locals: { name: "brain_life", list: ['常識がある', '慎重派', '行動派', '疑心暗鬼'] } %>
       <%= render partial: "check_box", locals: { name: "brain_etc", list: ['能力が高い', '努力家'] } %>
 
+      <h3>ますかけ線 <small>- 特殊 -</small></h3>
+      <%= render partial: "check_box", locals: { name: "masukake", list: ['ますかけ線'] } %>
+
       <h3>木星丘 <small>- 権力 -</small></h3>
       <%= render partial: "check_box", locals: { name: "jupiter", list: ['社会的に成功したい', 'リーダータイプ'] } %>
 
@@ -51,14 +54,19 @@
 
       <h3>手の開き</h3>
       <%= render partial: "check_box", locals: { name: "hand_shape", list: ['浪費家', '伝えるのが上手'] } %>
+
+      <h3>人生の流れ</h3>
       <br>
       <button type="submit" class="btn btn-primary">鑑定結果</button>
+
     </form>
   </div>
+<!--
   <div class="col-sm-3">
     <div id="sidebar">
       <ul class="nav">
       </ul>
     </div>
   </div>
+-->
 </div>
