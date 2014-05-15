@@ -9,10 +9,12 @@ class PalmistryController < ApplicationController
 
     marriageable_age = params[:marriageable]
     @marriageable = ""
-    marriageable_age.each_with_index do |select_num,i|
-      @marriageable += select_num
-      if marriageable_age.length-1 != i then
-        @marriageable += ", "
+    if marriageable_age then
+      marriageable_age.each_with_index do |select_num,i|
+        @marriageable += select_num
+        if marriageable_age.length-1 != i then
+          @marriageable += ", "
+        end
       end
     end
     @marriageable += "歳<br>この時期には結婚したいと思う人がいることでしょう。<br> "
