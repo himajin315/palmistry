@@ -6,6 +6,8 @@ class PalmistryController < ApplicationController
 
   def result
     @uname = params[:uname]
+    @sex = params[:sex]
+    @sex_human = sex = 0 ? "お父さん":"お母さん"
 
     marriageable_age = params[:marriageable]
     @marriageable = ""
@@ -77,9 +79,9 @@ class PalmistryController < ApplicationController
       嫌いな人ともうまく付き合うようにしないと、人間関係が悪くなることもあります。<br>
       恋愛は一途な恋愛をするタイプの人です。<br>
       好きな人には積極的に動くため、恋愛は成功しやすいタイプです。<br>
-      家庭を大事にするため、結婚後は良い奥さんになることでしょう。<br>
+      家庭を大事にするため、結婚後は良い" + @sex_human +"になることでしょう。<br>
       また、情が深い人でもあるため、子供を大切にします。<br>
-      良いお母さんになります。（良妻賢母）<br>"
+      良い" + @sex_human +"になります。<br>"
     end
 
     love_etc = params[:love_etc]
@@ -308,7 +310,7 @@ class PalmistryController < ApplicationController
           とても素晴らしい人でしょう。<br>"
         when '1' then
           @venus_kindheart =  @uname + " さんは結婚後は子供を大切にします。<br>
-          家族のことを優先的に考え、家族を大切にする良い[お母さん|お父さん]になるタイプでしょう。<br>"
+          家族のことを優先的に考え、家族を大切にする良い" + @sex_human +"になるタイプでしょう。<br>"
         end
       end
     end
