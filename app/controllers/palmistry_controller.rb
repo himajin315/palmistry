@@ -205,7 +205,7 @@ class PalmistryController < ApplicationController
       brain_etc.keys.each do |select_num|
         case select_num
         when '0' then
-          @brain_etc_genius = @uname + " さんは能力が高い人です。<br>
+          @brain_etc_genius = "さらに、" + @uname + " さんは能力が高い人です。<br>
           人よりも物事の習得が早くすることができます。<br>
           ただ、能力が高いが故に怠け者でもあります。<br>
           周りよりも仕事を早く終わらせて、バレないように怠けいることでしょう。<br>
@@ -216,6 +216,24 @@ class PalmistryController < ApplicationController
           努力を努力と思っていないため、すごく頑張ることができる人です。<br>
           大きな目標があると、誰もできないようなこともできることができる人です。<br>
           辛いことも辛いと感じず、愚直に頑張ることができる人です。<br>"
+        when '2' then
+          @brain_etc_manyskil = "また、" + @uname + " さんは多才なの人です。<br>
+	  やろうと思えばなんでもできる素晴らしい才能の持ち主です。<br>
+	  やりたいことはなんでもできるので、自信を持って自分のやりたいことをやるべきでしょう。<br>"
+        when '3' then
+          @brain_etc_speedbrain = "さらに、" + @uname + " さんは頭の回転が早いの人です。<br>
+	  他の人には持っていない特殊なことができる力があります。<br>
+	  霊感があったり、周りには真似できない特技を持つことができるでしょう。<br>"
+        when '4' then
+          @brain_etc_indecision = @uname + " さんは優柔不断な面があります。<br>
+	  なかなか物事を決めることができないでしょう。<br>
+	  一度決めたことも、次の日には変わっていたりします。<br>
+	  誰かに決めてもらったほうが楽な時もありますが、大きな決断の時は迷ってもいいので、ちゃんと自分の意思で決断して下さい。<br>"
+	  if params[:brain] = 3 then
+            @brain_etc_indecision = "しかし、" + @uname + " 優柔不断な面があります。<br>
+	    なかなか決めることができないため、悩むことも多いでしょう。<br>" + 
+	    @uname + " さんはいい直感力を持っています。たまには自分の直感を信じてみてはどうでしょうか。<br>"
+          end
         end
       end
     end
