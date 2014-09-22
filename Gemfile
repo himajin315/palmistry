@@ -4,6 +4,8 @@ gem 'rails', '4.1.3'
 
 group :development, :test do
   gem 'sqlite3', '1.3.8'
+  gem 'spring'
+  gem 'spring-commands-rspec'
 end
 
 group :test do
