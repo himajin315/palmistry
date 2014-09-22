@@ -3,6 +3,10 @@ ENV["RAILS_ENV"] ||= 'test'
 require File.expand_path("../../config/environment", __FILE__)
 require 'rspec/rails'
 require 'rspec/autorun'
+require 'rubygems'
+require 'bundler/setup'
+
+Dir.glob("spec/steps/**/*steps.rb") { |f| load f, true }
 
 # Requires supporting ruby files with custom matchers and macros, etc,
 # in spec/support/ and its subdirectories.
