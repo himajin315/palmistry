@@ -48,9 +48,26 @@
         ] } %>
 
       <h3>頭脳線 <small>- 思考 -</small></h3>
-      <%= render partial: "radio_button", locals: { name: "brain", list: ['論理的に考える', '感覚的に捉える', 'なんても平均的にできる', '直感タイプ','ますかけ線'] } %>
-      <%= render partial: "radio_button", locals: { name: "brain_life", list: ['常識がある', '慎重派', '行動派', '疑心暗鬼'] } %>
-      <%= render partial: "check_box", locals: { name: "brain_etc", list: ['能力が高い', '努力家', '多才', '頭の回転が早い', '優柔不断'] } %>
+      <%= render partial: "radio_button_images", locals: { name: "brain", list: [
+        ['brain-left.png','論理的に考える','真っ直ぐな線'],
+        ['brain-right.png','感覚的に捉える','線が下に向かう'],
+        ['brain-average.png','なんても平均的にできる','線が斜め下に向かう'],
+        ['brain-short.png','直感タイプ','線が短い(中指の下で止まる)'],
+        ['brain-masukake.png','ますかけ線','感情線と頭脳線が一緒になってる']
+        ] } %>
+      <%= render partial: "radio_button_images", locals: { name: "brain_life", list: [
+        ['brain-ordinary.png','常識がある','人差し指の下で分かれる'],
+        ['brain-careful.png','慎重派','中指の下で分かれる'],
+        ['brain-active.png','行動派','生命線と頭脳戦が離れてる'],
+        ['brain-suspicion.png','疑心暗鬼',' 頭脳線が生命線の下から始まる'],
+        ] } %>
+      <%= render partial: "check_box_images", locals: { name: "brain_etc", list: [
+        ['brain-genius.png','能力が高い','角がある曲がり方'],
+        ['brain-hardworker.png','努力家','生命線から人差し指に向かう線'],
+        ['brain-manyskil.png','多才','頭脳線から枝分かれがある'],
+        ['brain-speedbrain.png','頭の回転が早い','親指に目がある'],
+        ['brain-indecision.png','優柔不断','蛇行している']
+        ] } %>
 
 
       <h3>木星丘 <small>- 権力 -</small></h3>
