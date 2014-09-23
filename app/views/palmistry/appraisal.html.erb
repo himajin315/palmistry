@@ -21,8 +21,19 @@
 	  <br><span id="radio-info">　</span>１つ選択  <span id="check-info">　</span>複数選択可</p>
       </div>
       <h3>感情線 <small>- 恋愛 -</small></h3>
-      <%= render partial: "radio_button", locals: { name: "love", list: [image_tag("love-sudden.png", class: "palm-img", alt: "唐突な恋愛") + (content_tag :p, "ほぼ直線", class: "palm-img-caption") , image_tag("love-slow.png", class: "palm-img", alt: "落ち着いた恋愛") + (content_tag :p, "ほぼ直線", class: "palm-img-caption"), image_tag("love-short.png", class: "palm-img", alt: "消極的な恋愛") + (content_tag :p, "短い(中指の下)", class: "palm-img-caption"), image_tag("love-strong-feel.png", class: "palm-img", alt: "情が深い") + (content_tag :p, "人差し指の下まで届く", class: "palm-img-caption"), image_tag("love-down.png", class: "palm-img", alt: "相手の気持ちになれる") + (content_tag :p, "先が下に向いている", class: "palm-img-caption"), image_tag("love-onlyone.png", class: "palm-img", alt: "一途な恋愛") + (content_tag :p, "人差し指と中指の間に届く", class: "palm-img-caption")] } %>
-      <%= render partial: "check_box", locals: { name: "love_etc", list: [image_tag("love-divi.png", class: "palm-img", alt: "人を幸せにする") + (content_tag :p, "先が分かれてる", class: "palm-img-caption"), image_tag("love-branch.png", class: "palm-img", alt: "数多くの恋愛をする") + (content_tag :p, "枝分かれが多い", class: "palm-img-caption"), image_tag("love-nature.png", class: "palm-img", alt: "おっとりタイプ") + (content_tag :p, "線の始まりが低い(ほぼ真ん中に近い)", class: "palm-img-caption")] } %>
+      <%= render partial: "radio_button_images", locals: { name: "love", list: [
+        ["love-sudden.png", "唐突な恋愛", "急に上がる"],
+        ["love-slow.png", "落ち着いた恋愛", "ほぼ直線"],
+        ["love-short.png", "消極的な恋愛", "短い(中指の下)"],
+        ["love-strong-feel.png", "情が深い", "人差し指の下まで届く"],
+        ["love-down.png", "相手の気持ちになれる", "先が下に向いている"],
+        ["love-onlyone.png", "一途な恋愛", "人差し指と中指の間に届く"]
+        ] } %>
+      <%= render partial: "check_box_images", locals: { name: "love_etc", list: [
+        ["love-divi.png", "人を幸せにする", "先が分かれてる", ],
+        ["love-branch.png", "数多くの恋愛をする", "枝分かれが多い", ],
+        ["love-nature.png", "おっとりタイプ", "線の始まりが低い(ほぼ真ん中に近い)"]
+        ] } %>
 
       <h3>生命線 <small>- 健康 -</small></h3>
       <%= render partial: "radio_button", locals: { name: "life", list: ['生命力は強い', '生命力は弱くない', '病気になりやすい'] } %>

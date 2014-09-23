@@ -1,0 +1,11 @@
+<div class="btn-group" data-toggle="buttons">
+  <% list.each_with_index do |info,i| %>
+  <% # info[0] => image_name, info[1] => alt, info[2] => caption %>
+  <label class="btn btn-info">
+    <input class="btn btn-info" id=<%= name %> name=<%= name %> type="radio" value=<%= i %>>
+    <%= image_tag(info[0], class: "palm-img", alt: info[1]) %>
+    <p class="palm-img-caption"><%= info[2]%></p>
+  </label>
+  <% end %>
+</div>
+<br>
