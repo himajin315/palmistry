@@ -14,6 +14,8 @@ group :test do
   gem 'rspec-rails'
   gem 'capybara'
   gem 'turnip'
+  gem 'cucumber-rails', :require => false
+  gem 'database_cleaner'
 end
 
 gem 'sass-rails', '~> 4.0.2'
