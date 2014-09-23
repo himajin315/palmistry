@@ -6,6 +6,9 @@ require 'rspec/autorun'
 require 'rubygems'
 require 'capybara/poltergeist'
 require 'bundler/setup'
+require 'turnip'
+require 'turnip/capybara'
+require 'turnip/rspec'
 
 Dir.glob("spec/steps/**/*steps.rb") { |f| load f, true }
 
