@@ -38,12 +38,14 @@ RSpec.configure do |config|
   # order dependency and want to debug it, you can fix the order by providing
   # the seed, which is printed after each run.
   #     --seed 1234
-  config.order = "random"
+  config.infer_spec_type_from_file_location!
 
-  Capybara.configure do |config|
-    config.match = :one
-    config.exact_options = false
-    config.ignore_hidden_elements = false
-    config.visible_text_only = true
-  end
+  config.order = "random"
+end
+
+Capybara.configure do |config|
+  config.run_server        = false
+  config.default_driver    = :poltergeist
+  config.javascript_driver = :poltergeist
+  config.app_host          = ENV['HOST_URL'] || 'http://localhost:3000'
 end
