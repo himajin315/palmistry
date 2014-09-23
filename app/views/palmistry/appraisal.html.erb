@@ -21,7 +21,7 @@
 	  <br><span id="radio-info">　</span>１つ選択  <span id="check-info">　</span>複数選択可</p>
       </div>
       <h3>感情線 <small>- 恋愛 -</small></h3>
-      <%= render partial: "radio_button", locals: { name: "love", list: ['唐突な恋愛', '落ち着いた恋愛', '消極的な恋愛', '情が深い', '相手の気持ちになれる', '一途な恋愛'] } %>
+      <%= render partial: "radio_button", locals: { name: "love", list: [image_tag("love-sudden.png", class: "palm-img", alt: "唐突な恋愛") + (content_tag :p, "ほぼ直線", class: "palm-img-caption") , image_tag("love-slow.png", class: "palm-img", alt: "落ち着いた恋愛") + (content_tag :p, "ほぼ直線", class: "palm-img-caption"), image_tag("love-short.png", class: "palm-img", alt: "消極的な恋愛") + (content_tag :p, "短い(中指の下)", class: "palm-img-caption"), image_tag("love-strong-feel.png", class: "palm-img", alt: "情が深い") + (content_tag :p, "人差し指の下まで届く", class: "palm-img-caption"), image_tag("love-down.png", class: "palm-img", alt: "相手の気持ちになれる") + (content_tag :p, "先が下に向いている", class: "palm-img-caption"), image_tag("love-onlyone.png", class: "palm-img", alt: "一途な恋愛") + (content_tag :p, "人差し指と中指の間に届く", class: "palm-img-caption")] } %>
       <%= render partial: "check_box", locals: { name: "love_etc", list: ['人を幸せにする', '数多くの恋愛をする', 'おっとりタイプ'] } %>
 
       <h3>生命線 <small>- 健康 -</small></h3>

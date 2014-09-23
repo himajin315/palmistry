@@ -2,3 +2,13 @@
   Place all the styles related to the matching controller here.
   They will automatically be included in application.css.
 */
+.palm-img {
+  height: 150px;
+  width: 150px;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+}
+.palm-img-caption {
+  margin: 5px 0 0 0;
+}
