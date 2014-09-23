@@ -6,7 +6,8 @@ group :development, :test do
   gem 'sqlite3', '1.3.8'
   gem 'spring'
   gem 'spring-commands-rspec'
-  gem "poltergeist"
+  gem 'pry-byebug'
+  gem 'pry-rails'
 end
 
 group :test do
@@ -14,6 +15,7 @@ group :test do
   gem 'rspec-rails'
   gem 'capybara'
   gem 'turnip'
+  gem "poltergeist"
   gem 'database_cleaner'
 end
 
