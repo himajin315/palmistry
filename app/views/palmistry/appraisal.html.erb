@@ -22,22 +22,30 @@
       </div>
       <h3>感情線 <small>- 恋愛 -</small></h3>
       <%= render partial: "radio_button_images", locals: { name: "love", list: [
-        ["love-sudden.png", "唐突な恋愛", "急に上がる"],
-        ["love-slow.png", "落ち着いた恋愛", "ほぼ直線"],
-        ["love-short.png", "消極的な恋愛", "短い(中指の下)"],
-        ["love-strong-feel.png", "情が深い", "人差し指の下まで届く"],
-        ["love-down.png", "相手の気持ちになれる", "先が下に向いている"],
-        ["love-onlyone.png", "一途な恋愛", "人差し指と中指の間に届く"]
+        ['love-sudden.png', '唐突な恋愛', '急に上がる'],
+        ['love-slow.png', '落ち着いた恋愛', 'ほぼ直線'],
+        ['love-short.png', '消極的な恋愛', '短い(中指の下)'],
+        ['love-strong-feel.png', '情が深い', '人差し指の下まで届く'],
+        ['love-down.png', '相手の気持ちになれる', '先が下に向いている'],
+        ['love-onlyone.png', '一途な恋愛', '人差し指と中指の間に届く']
         ] } %>
       <%= render partial: "check_box_images", locals: { name: "love_etc", list: [
-        ["love-divi.png", "人を幸せにする", "先が分かれてる", ],
-        ["love-branch.png", "数多くの恋愛をする", "枝分かれが多い", ],
-        ["love-nature.png", "おっとりタイプ", "線の始まりが低い(ほぼ真ん中に近い)"]
+        ['love-divi.png', '人を幸せにする', '先が分かれてる'],
+        ['love-branch.png', '数多くの恋愛をする', '枝分かれが多い'],
+        ['love-nature.png', 'おっとりタイプ', '線の始まりが低い(ほぼ真ん中に近い)']
         ] } %>
 
       <h3>生命線 <small>- 健康 -</small></h3>
-      <%= render partial: "radio_button", locals: { name: "life", list: ['生命力は強い', '生命力は弱くない', '病気になりやすい'] } %>
-      <%= render partial: "radio_button", locals: { name: "life_etc", list: ['海外など遠くに住む', 'いろいろなところに行く', '地元に残る'] } %>
+      <%= render partial: "radio_button_images", locals: { name: "life", list: [
+        ['life-bold.png','生命力は強い','線が太い'],
+        ['life-ordinary.png','生命力は弱くない', '線が薄くて中心に向かってる'],
+        ['life-weak.png','病気になりやすい', '丸いのがある']
+        ] } %>
+      <%= render partial: "radio_button_images", locals: { name: "life_etc", list: [
+        ['life-distance.png','海外など遠くに住む','先が左側に向かってる'],
+        ['life-many-place.png','いろいろなところに行く','先が中央に向かってる'],
+        ['life-stay-home.png','地元に残る','先が右側に向かってる']
+        ] } %>
 
       <h3>頭脳線 <small>- 思考 -</small></h3>
       <%= render partial: "radio_button", locals: { name: "brain", list: ['論理的に考える', '感覚的に捉える', 'なんても平均的にできる', '直感タイプ','ますかけ線'] } %>
