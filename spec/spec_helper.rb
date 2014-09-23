@@ -3,9 +3,13 @@ ENV["RAILS_ENV"] ||= 'test'
 require File.expand_path("../../config/environment", __FILE__)
 require 'rspec/rails'
 require 'rspec/autorun'
+require 'rubygems'
+require 'capybara/poltergeist'
+require 'bundler/setup'
+require 'turnip'
+require 'turnip/capybara'
+require 'turnip/rspec'
 
-# Requires supporting ruby files with custom matchers and macros, etc,
-# in spec/support/ and its subdirectories.
 Dir[Rails.root.join("spec/support/**/*.rb")].each {|f| require f}
 
 RSpec.configure do |config|
@@ -23,7 +27,7 @@ RSpec.configure do |config|
   # If you're not using ActiveRecord, or you'd prefer not to run each of your
   # examples within a transaction, remove the following line or assign false
   # instead of true.
-  config.use_transactional_fixtures = true
+  config.use_transactional_fixtures = false
 
   # If true, the base class of anonymous controllers will be inferred
   # automatically. This will be the default behavior in future versions of
@@ -34,12 +38,14 @@ RSpec.configure do |config|
   # order dependency and want to debug it, you can fix the order by providing
   # the seed, which is printed after each run.
   #     --seed 1234
-  config.order = "random"
+  config.infer_spec_type_from_file_location!
 
-  Capybara.configure do |config|
-    config.match = :one
-    config.exact_options = false
-    config.ignore_hidden_elements = false
-    config.visible_text_only = true
-  end
+  config.order = "random"
+end
+
+Capybara.configure do |config|
+  config.run_server        = false
+  config.default_driver    = :poltergeist
+  config.javascript_driver = :poltergeist
+  config.app_host          = ENV['HOST_URL'] || 'http://localhost:3000'
 end

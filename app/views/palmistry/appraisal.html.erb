@@ -4,7 +4,7 @@
     <form method="post" action=<%= result_path %>>
       <h3>名前</h3>
       <p>あなたの名前を入力して下さい。</p>
-      <input type="text" class="form-control" name="uname" placeholder='(例)大城佳明' required='true'><br />
+      <input type="text" class="form-control" name="uname" for="名前" placeholder='(例)大城佳明' required='true'><br />
 
       <h3>性別</h3>
       <%= render partial: "radio_button", locals: { name: "sex", list: ['男性', '女性'] } %>
