@@ -8,3 +8,6 @@ deploy:
   app: palmistry
   on:
     repo: himajin315/palmistry
+env:
+  - TESTFOLDER=spec
+script: "bundle exec rspec $TESTFOLDER"
