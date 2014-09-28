@@ -123,7 +123,11 @@
         ] } %>
 
       <h3>人生の流れ</h3>
-      <%= render partial: "radio_button", locals: { name: "life_flow", list: ['家族からの支援', '周りからの支援', '自分の道は自分で切り拓く'] } %>
+      <%= render partial: "radio_button_images", locals: { name: "life_flow", list: [
+        ['life-flow-family.png','家族からの支援','右寄り'],
+        ['life-flow-friends.png','周りからの支援','左寄り'],
+        ['life-flow-myself.png','自分の道は自分で切り拓く','中央に一直線']
+        ] } %>
       <br>
       <button type="submit" class="btn btn-primary">鑑定結果</button>
 
