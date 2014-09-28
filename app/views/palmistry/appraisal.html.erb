@@ -88,7 +88,11 @@
         ] } %>
 
       <h3>水星丘 <small>- 金運 -</small></h3>
-      <%= render partial: "radio_button", locals: { name: "mercury", list: ['お金に困ってる', 'お金は入るが出て行く', 'お金には困ってない'] } %>
+      <%= render partial: "radio_button_images", locals: { name: "mercury", list: [
+        ['mercury-nothing.png','お金に困ってる','薄い線がある'],
+        ['mercury-not-enough.png','お金は入るが出て行く','複数線がある'],
+        ['mercury-enough.png','お金には困ってない','濃い線が一本']
+        ] } %>
 
       <h3>金星丘 <small>- 生命力 -</small></h3>
       <%= render partial: "check_box", locals: { name: "venus", list: ['徳がある', '情が深い'] } %>
