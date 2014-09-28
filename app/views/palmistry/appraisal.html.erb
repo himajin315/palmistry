@@ -117,7 +117,10 @@
         ] } %>
 
       <h3>手の開き</h3>
-      <%= render partial: "check_box", locals: { name: "hand_shape", list: ['浪費家', '伝えるのが上手'] } %>
+      <%= render partial: "check_box_images", locals: { name: "hand_shape", list: [
+        ['hand-shape-waste.png','浪費家','小指と薬指の開き間の開きが大きい'],
+        ['hand_shape_report.png','伝えるのが上手','小指が薬指の第2関節より長い']
+        ] } %>
 
       <h3>人生の流れ</h3>
       <%= render partial: "radio_button", locals: { name: "life_flow", list: ['家族からの支援', '周りからの支援', '自分の道は自分で切り拓く'] } %>
