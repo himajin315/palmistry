@@ -72,29 +72,62 @@
 
 
       <h3>木星丘 <small>- 権力 -</small></h3>
-      <%= render partial: "check_box", locals: { name: "jupiter", list: ['社会的に成功したい', 'リーダータイプ'] } %>
+      <%= render partial: "check_box_images", locals: { name: "jupiter", list: [
+        ['jupiter_social.png','社会的に成功したい','人差し指の下に横線'],
+        ['jupiter_reader.png','リーダータイプ','人差し指の下に縦線']
+        ] } %>
 
       <h3>太陽丘 <small>- 出世 -</small></h3>
-      <%= render partial: "radio_button", locals: { name: "sun", list: ['地道な努力', '才能を活かして出世', '才能を活かしきれてない'] } %>
-      <%= render partial: "check_box", locals: { name: "sun_etc", list: ['魅力的な人'] } %>
+      <%= render partial: "radio_button_images", locals: { name: "sun", list: [
+        ['sun-effort.png','地道な努力','先が左側に向いている'],
+        ['sun-brain.png','才能を活かして出世','中央に向かってる'],
+        ['sun-nothing.png','才能を活かしきれてない','ほとんど見えない']
+        ] } %>
+      <%= render partial: "check_box_images", locals: { name: "sun_etc", list: [
+        ['sun-charm.png','魅力的な人','小指と薬指の間と中指と人差し指の間']
+        ] } %>
 
       <h3>水星丘 <small>- 金運 -</small></h3>
-      <%= render partial: "radio_button", locals: { name: "mercury", list: ['お金に困ってる', 'お金は入るが出て行く', 'お金には困ってない'] } %>
+      <%= render partial: "radio_button_images", locals: { name: "mercury", list: [
+        ['mercury-nothing.png','お金に困ってる','薄い線がある'],
+        ['mercury-not-enough.png','お金は入るが出て行く','複数線がある'],
+        ['mercury-enough.png','お金には困ってない','濃い線が一本']
+        ] } %>
 
       <h3>金星丘 <small>- 生命力 -</small></h3>
-      <%= render partial: "check_box", locals: { name: "venus", list: ['徳がある', '情が深い'] } %>
+      <%= render partial: "check_box_images", locals: { name: "venus", list: [
+        ['venus-virtue.png','徳がある','下から伸びる線'],
+        ['venus-love.png','情が深い','網目状が細かい']
+        ] } %>
 
       <h3>月丘 <small>- 人気 -</small></h3>
-      <%= render partial: "check_box", locals: { name: "moon", list: ['好かれやすい', '疲れがたまってる'] } %>
+      <%= render partial: "check_box_images", locals: { name: "moon", list: [
+        ['moon-like.png','好かれやすい','斜めから中央に向かってる'],
+        ['moon-fatigue.png','疲れがたまってる','横に線が入る']
+        ] } %>
 
       <h3>病気関係</h3>
-      <%= render partial: "check_box", locals: { name: "illness", list: ['呼吸器系に負担', '循環器系に負担', '頭関係の病気', '目への負担', '消化器科に負担', '腎臓・肝臓に負担'] } %>
+      <%= render partial: "check_box_images", locals: { name: "illness", list: [
+        ['illness_breath.png','呼吸器系に負担','健康線に丸いのがある'],
+        ['illness_blood.png','循環器系に負担','荒い'],
+        ['illness_head.png','頭関係の病気','頭脳線に丸いのがある'],
+        ['illness_eyes.png','目への負担','薬指の下に丸いのがある'],
+        ['illness_stomach.png','消化器科に負担','切れ切れ'],
+        ['illness_liver.png','腎臓・肝臓に負担','蛇行']
+        ] } %>
 
       <h3>手の開き</h3>
-      <%= render partial: "check_box", locals: { name: "hand_shape", list: ['浪費家', '伝えるのが上手'] } %>
+      <%= render partial: "check_box_images", locals: { name: "hand_shape", list: [
+        ['hand-shape-waste.png','浪費家','小指と薬指の開き間の開きが大きい'],
+        ['hand_shape_report.png','伝えるのが上手','小指が薬指の第2関節より長い']
+        ] } %>
 
       <h3>人生の流れ</h3>
-      <%= render partial: "radio_button", locals: { name: "life_flow", list: ['家族からの支援', '周りからの支援', '自分の道は自分で切り拓く'] } %>
+      <%= render partial: "radio_button_images", locals: { name: "life_flow", list: [
+        ['life-flow-family.png','家族からの支援','右寄り'],
+        ['life-flow-friends.png','周りからの支援','左寄り'],
+        ['life-flow-myself.png','自分の道は自分で切り拓く','中央に一直線']
+        ] } %>
       <br>
       <button type="submit" class="btn btn-primary">鑑定結果</button>
 

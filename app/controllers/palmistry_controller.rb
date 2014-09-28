@@ -231,7 +231,7 @@ class PalmistryController < ApplicationController
 	  誰かに決めてもらったほうが楽な時もありますが、大きな決断の時は迷ってもいいので、ちゃんと自分の意思で決断して下さい。<br>"
 	  if params[:brain] = 3 then
             @brain_etc_indecision = "しかし、" + @uname + " 優柔不断な面があります。<br>
-	    なかなか決めることができないため、悩むことも多いでしょう。<br>" + 
+	    なかなか決めることができないため、悩むことも多いでしょう。<br>" +
 	    @uname + " さんはいい直感力を持っています。たまには自分の直感を信じてみてはどうでしょうか。<br>"
           end
         end
@@ -379,12 +379,12 @@ class PalmistryController < ApplicationController
       hand_shape.keys.each do |select_num|
         case select_num
         when '0' then
-          if params[:mercury] == '1' then
+          if params[:mercury] == '0' then
             @hand_shape_waste = "ただ、" + @uname + " さんは浪費家です。<br>
             入った分だけ使ってしまうので、いくらお金があっても満足はしません。<br>"
           end
         when '1' then
-          @hand_shape_report = "さらに" + @uname + " さんは文章で伝える能力が高いです。<br>
+          @hand_shape_report = "さらに、" + @uname + " さんは文章で伝える能力が高いです。<br>
           自分の考えを伝える時は文章にまとめて伝える方が良いでしょう。<br>"
         end
       end
