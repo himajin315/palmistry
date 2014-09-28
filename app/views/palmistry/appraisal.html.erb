@@ -72,7 +72,10 @@
 
 
       <h3>木星丘 <small>- 権力 -</small></h3>
-      <%= render partial: "check_box", locals: { name: "jupiter", list: ['社会的に成功したい', 'リーダータイプ'] } %>
+      <%= render partial: "check_box_images", locals: { name: "jupiter", list: [
+        ['jupiter_social.png','社会的に成功したい','人差し指の下に横線'],
+        ['jupiter_reader.png','リーダータイプ','人差し指の下に縦線']
+        ] } %>
 
       <h3>太陽丘 <small>- 出世 -</small></h3>
       <%= render partial: "radio_button", locals: { name: "sun", list: ['地道な努力', '才能を活かして出世', '才能を活かしきれてない'] } %>
