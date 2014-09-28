@@ -5,6 +5,7 @@ require 'rspec/rails'
 require 'rspec/autorun'
 require 'rubygems'
 require 'capybara/poltergeist'
+require 'capybara/rails'
 require 'bundler/setup'
 require 'turnip'
 require 'turnip/capybara'
@@ -47,5 +48,4 @@ Capybara.configure do |config|
   config.run_server        = false
   config.default_driver    = :poltergeist
   config.javascript_driver = :poltergeist
-  config.app_host          = ENV['HOST_URL'] || 'http://localhost:3000'
 end
