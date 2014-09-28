@@ -107,7 +107,14 @@
         ] } %>
 
       <h3>病気関係</h3>
-      <%= render partial: "check_box", locals: { name: "illness", list: ['呼吸器系に負担', '循環器系に負担', '頭関係の病気', '目への負担', '消化器科に負担', '腎臓・肝臓に負担'] } %>
+      <%= render partial: "check_box_images", locals: { name: "illness", list: [
+        ['illness_breath.png','呼吸器系に負担','健康線に丸いのがある'],
+        ['illness_blood.png','循環器系に負担','荒い'],
+        ['illness_head.png','頭関係の病気','頭脳線に丸いのがある'],
+        ['illness_eyes.png','目への負担','薬指の下に丸いのがある'],
+        ['illness_stomach.png','消化器科に負担','切れ切れ'],
+        ['illness_liver.png','腎臓・肝臓に負担','蛇行']
+        ] } %>
 
       <h3>手の開き</h3>
       <%= render partial: "check_box", locals: { name: "hand_shape", list: ['浪費家', '伝えるのが上手'] } %>
