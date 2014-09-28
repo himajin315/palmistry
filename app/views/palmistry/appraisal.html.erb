@@ -78,8 +78,14 @@
         ] } %>
 
       <h3>太陽丘 <small>- 出世 -</small></h3>
-      <%= render partial: "radio_button", locals: { name: "sun", list: ['地道な努力', '才能を活かして出世', '才能を活かしきれてない'] } %>
-      <%= render partial: "check_box", locals: { name: "sun_etc", list: ['魅力的な人'] } %>
+      <%= render partial: "radio_button_images", locals: { name: "sun", list: [
+        ['sun-effort.png','地道な努力','先が左側に向いている'],
+        ['sun-brain.png','才能を活かして出世','中央に向かってる'],
+        ['sun-nothing.png','才能を活かしきれてない','ほとんど見えない']
+        ] } %>
+      <%= render partial: "check_box_images", locals: { name: "sun_etc", list: [
+        ['sun-charm.png','魅力的な人','小指と薬指の間と中指と人差し指の間']
+        ] } %>
 
       <h3>水星丘 <small>- 金運 -</small></h3>
       <%= render partial: "radio_button", locals: { name: "mercury", list: ['お金に困ってる', 'お金は入るが出て行く', 'お金には困ってない'] } %>
