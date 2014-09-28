@@ -95,7 +95,10 @@
         ] } %>
 
       <h3>金星丘 <small>- 生命力 -</small></h3>
-      <%= render partial: "check_box", locals: { name: "venus", list: ['徳がある', '情が深い'] } %>
+      <%= render partial: "check_box_images", locals: { name: "venus", list: [
+        ['venus-virtue.png','徳がある','下から伸びる線'],
+        ['venus-love.png','情が深い','網目状が細かい']
+        ] } %>
 
       <h3>月丘 <small>- 人気 -</small></h3>
       <%= render partial: "check_box", locals: { name: "moon", list: ['好かれやすい', '疲れがたまってる'] } %>
