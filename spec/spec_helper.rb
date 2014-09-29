@@ -4,6 +4,7 @@ require File.expand_path("../../config/environment", __FILE__)
 require 'rspec/rails'
 require 'rspec/autorun'
 require 'rubygems'
+require 'capybara/rails'
 require 'capybara/poltergeist'
 require 'bundler/setup'
 require 'turnip'
@@ -44,8 +45,6 @@ RSpec.configure do |config|
 end
 
 Capybara.configure do |config|
-  config.run_server        = false
   config.default_driver    = :poltergeist
   config.javascript_driver = :poltergeist
-  config.app_host          = ENV['HOST_URL'] || 'http://localhost:3000'
 end
