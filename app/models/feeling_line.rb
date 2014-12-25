@@ -89,7 +89,7 @@ class FeelingLine
   def resulet_slow(number_list)
     result = nil
     if number_list.has_key?('2') then
-      @love_etc_slow =
+      @love_other_slow =
       @uname + " さんはおっとりタイプの性格をしてます。<br>
       周りから天然っぽいと思われていることが多いでしょう。<br>
       ゆっくりマイペースなので、周りからの影響を受けにくいです。<br>

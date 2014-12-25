@@ -48,17 +48,17 @@ class PalmistryController < ApplicationController
       疲れている時はちゃんと休むようにして下さい<br>"
     end
 
-    case params[:life_etc]
+    case params[:life_other]
     when '0' then
-      @life_etc = @uname + " さんは実家から遠くに離れる人でしょう。<br>
+      @life_other = @uname + " さんは実家から遠くに離れる人でしょう。<br>
       簡単には帰れない場所なので、海外など飛行機でしか行けないような場所に住むことになります。<br>
       海外の人と結婚する可能性があるでしょう。<br>"
     when '1' then
-      @life_etc = @uname + " さんはいろいろなところに行く人です。<br>
+      @life_other = @uname + " さんはいろいろなところに行く人です。<br>
       単身赴任や出張などが多く、いろいろな場所に飛び回るようなことになります。<br>
       また、別荘を持ってたり住む場所が複数あることもあるでしょう。<br>"
     when '2' then
-      @life_etc = @uname + " さんは地元に残る人です。<br>
+      @life_other = @uname + " さんは地元に残る人です。<br>
       地元が大好きで、実家から出ない可能性が高いです。<br>
       親と一緒に暮らすことになるため、家を継ぐ可能性があります。<br>"
     end
@@ -124,37 +124,37 @@ class PalmistryController < ApplicationController
       時間をかけてゆっくりと相手を信用するため、信用できる人が周りにあまりいないことが多いです。<br>"
     end
 
-    brain_etc = params[:brain_etc]
-    if brain_etc then
-      brain_etc.keys.each do |select_num|
+    brain_other = params[:brain_other]
+    if brain_other then
+      brain_other.keys.each do |select_num|
         case select_num
         when '0' then
-          @brain_etc_genius = "さらに、" + @uname + " さんは能力が高い人です。<br>
+          @brain_other_genius = "さらに、" + @uname + " さんは能力が高い人です。<br>
           人よりも物事の習得が早くすることができます。<br>
           ただ、能力が高いが故に怠け者でもあります。<br>
           周りよりも仕事を早く終わらせて、バレないように怠けいることでしょう。<br>
           こういう人は自分の好きなことを仕事にすると良いです。<br>
           夢中になれることを行うことで、怠けず能力を十分に発揮することでしょう。<br>"
         when '1' then
-          @brain_etc_hardworker = @uname + " さんは努力家の人です。<br>
+          @brain_other_hardworker = @uname + " さんは努力家の人です。<br>
           努力を努力と思っていないため、すごく頑張ることができる人です。<br>
           大きな目標があると、誰もできないようなこともできることができる人です。<br>
           辛いことも辛いと感じず、愚直に頑張ることができる人です。<br>"
         when '2' then
-          @brain_etc_manyskil = "また、" + @uname + " さんは多才なの人です。<br>
+          @brain_other_manyskil = "また、" + @uname + " さんは多才なの人です。<br>
 	  やろうと思えばなんでもできる素晴らしい才能の持ち主です。<br>
 	  やりたいことはなんでもできるので、自信を持って自分のやりたいことをやるべきでしょう。<br>"
         when '3' then
-          @brain_etc_speedbrain = "さらに、" + @uname + " さんは頭の回転が早いの人です。<br>
+          @brain_other_speedbrain = "さらに、" + @uname + " さんは頭の回転が早いの人です。<br>
 	  他の人には持っていない特殊なことができる力があります。<br>
 	  霊感があったり、周りには真似できない特技を持つことができるでしょう。<br>"
         when '4' then
-          @brain_etc_indecision = @uname + " さんは優柔不断な面があります。<br>
+          @brain_other_indecision = @uname + " さんは優柔不断な面があります。<br>
 	  なかなか物事を決めることができないでしょう。<br>
 	  一度決めたことも、次の日には変わっていたりします。<br>
 	  誰かに決めてもらったほうが楽な時もありますが、大きな決断の時は迷ってもいいので、ちゃんと自分の意思で決断して下さい。<br>"
 	  if params[:brain] = 3 then
-            @brain_etc_indecision = "しかし、" + @uname + " 優柔不断な面があります。<br>
+            @brain_other_indecision = "しかし、" + @uname + " 優柔不断な面があります。<br>
 	    なかなか決めることができないため、悩むことも多いでしょう。<br>" +
 	    @uname + " さんはいい直感力を持っています。たまには自分の直感を信じてみてはどうでしょうか。<br>"
           end
@@ -162,19 +162,19 @@ class PalmistryController < ApplicationController
       end
     end
 
-    brain_etc = params[:brain_etc]
-    if brain_etc then
-      brain_etc.keys.each do |select_num|
+    brain_other = params[:brain_other]
+    if brain_other then
+      brain_other.keys.each do |select_num|
         case select_num
         when '0' then
-          @brain_etc_genius = @uname + " さんは能力が高い人です。<br>
+          @brain_other_genius = @uname + " さんは能力が高い人です。<br>
           人よりも物事の習得が早くすることができます。<br>
           ただ、能力が高いが故に怠け者でもあります。<br>
           周りよりも仕事を早く終わらせて、バレないように怠けいることでしょう。<br>
           こういう人は自分の好きなことを仕事にすると良いです。<br>
           夢中になれることを行うことで、怠けず能力を十分に発揮することでしょう。<br>"
         when '1' then
-          @brain_etc_hardworker = @uname + " さんは努力家の人です。<br>
+          @brain_other_hardworker = @uname + " さんは努力家の人です。<br>
           努力を努力と思っていないため、すごく頑張ることができる人です。<br>
           大きな目標があると、誰もできないようなこともできることができる人です。<br>
           辛いことも辛いと感じず、愚直に頑張ることができる人です。<br>"
@@ -218,12 +218,12 @@ class PalmistryController < ApplicationController
       今やっていることに" + @uname + " さんの才能を活かすことが必要になってきます。<br>"
     end
 
-    sun_etc = params[:sun_etc]
-    if sun_etc then
-      sun_etc.keys.each do |select_num|
+    sun_other = params[:sun_other]
+    if sun_other then
+      sun_other.keys.each do |select_num|
         case select_num
         when '0' then
-          @sun_etc_charm = @uname + " さんは魅力的な人でもあります。<br>
+          @sun_other_charm = @uname + " さんは魅力的な人でもあります。<br>
           異性から好かれやすいようです。<br>
           所謂、モテる人でしょう。<br>"
         end
