@@ -30,38 +30,9 @@ class PalmistryController < ApplicationController
       @feeling_slow = feeling_line.resulet_slow(feeling_other)
     end
 
-    @life = params[:life]
-    case params[:life]
-    when '0' then
-      @life = @uname + " さんは生命力が強い人です。<br>
-      徹夜してもピンピンしているような人でしょう。<br>
-      体力の続く限り頑張ることができる人です<br>"
-    when '1' then
-      @life = @uname + " さんは生命力は弱くはありません。<br>
-      体力には問題はありませんが、たまに病気になってしまします。<br>
-      年に一度風邪を引いたりします。<br>
-      ストレスからくる病気にも注意が必要です。<br>"
-    when '2' then
-      @life = @uname + "さんは病気にも注意が必要です。<br>
-      無理をすると体調を崩すことになります。<br>
-      体調管理を優先的に行い、あまり無理のないようにして下さい。<br>
-      疲れている時はちゃんと休むようにして下さい<br>"
-    end
-
-    case params[:life_other]
-    when '0' then
-      @life_other = @uname + " さんは実家から遠くに離れる人でしょう。<br>
-      簡単には帰れない場所なので、海外など飛行機でしか行けないような場所に住むことになります。<br>
-      海外の人と結婚する可能性があるでしょう。<br>"
-    when '1' then
-      @life_other = @uname + " さんはいろいろなところに行く人です。<br>
-      単身赴任や出張などが多く、いろいろな場所に飛び回るようなことになります。<br>
-      また、別荘を持ってたり住む場所が複数あることもあるでしょう。<br>"
-    when '2' then
-      @life_other = @uname + " さんは地元に残る人です。<br>
-      地元が大好きで、実家から出ない可能性が高いです。<br>
-      親と一緒に暮らすことになるため、家を継ぐ可能性があります。<br>"
-    end
+    life_line = LifeLine.new(@uname,@sex_human)
+    @life_power = life_line.result_power(params[:life])
+    @life_live = life_line.result_live(params[:life_other])
 
     case params[:brain]
     when '0' then
@@ -315,7 +286,6 @@ class PalmistryController < ApplicationController
     end
 
     @life_flow = params[:life_flow]
-    p @life_flow
     case params[:life_flow]
     when '0' then
       @life_flow = @uname + " さんは家族からの支援がある人です。<br>
