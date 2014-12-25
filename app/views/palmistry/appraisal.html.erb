@@ -22,7 +22,7 @@
       </select>
 
       <h3>感情線 <small>- 恋愛 -</small></h3>
-      <%= render partial: "radio_button_images", locals: { name: "love", list: [
+      <%= render partial: "radio_button_images", locals: { name: "feeling", list: [
         ['love-sudden.png', '唐突な恋愛', '急に上がる'],
         ['love-slow.png', '落ち着いた恋愛', 'ほぼ直線'],
         ['love-short.png', '消極的な恋愛', '短い(中指の下)'],
@@ -30,7 +30,7 @@
         ['love-down.png', '相手の気持ちになれる', '先が下に向いている'],
         ['love-onlyone.png', '一途な恋愛', '人差し指と中指の間に届く']
         ] } %>
-      <%= render partial: "check_box_images", locals: { name: "love_etc", list: [
+      <%= render partial: "check_box_images", locals: { name: "feeling_other", list: [
         ['love-divi.png', '人を幸せにする', '先が分かれてる'],
         ['love-branch.png', '数多くの恋愛をする', '枝分かれが多い'],
         ['love-nature.png', 'おっとりタイプ', '線の始まりが低い(ほぼ真ん中に近い)']

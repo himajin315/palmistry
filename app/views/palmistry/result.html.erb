@@ -9,17 +9,17 @@
 <h3>恋愛／能力</h3>
 <p>
   <!-- 恋愛 -->
-  <% if @love then %>
-    <%= @love.html_safe %>
+  <% if @feeling_love then %>
+    <%= @feeling_love.html_safe %>
   <% end %>
-  <% if @love_etc_happy then %>
-    <%= @love_etc_happy.html_safe %>
+  <% if @feeling_happy then %>
+    <%= @feeling_happy.html_safe %>
   <% end %>
-  <% if @love_etc_many then %>
-    <%= @love_etc_many.html_safe %>
+  <% if @feeling_many_love then %>
+    <%= @feeling_many_love.html_safe %>
   <% end %>
-  <% if @love_etc_slow then %>
-    <%= @love_etc_slow.html_safe %>
+  <% if @feeling_slow then %>
+    <%= @feeling_slow.html_safe %>
   <% end %>
   <% if @sun_etc_charm then %>
     <%= @sun_etc_charm.html_safe %>

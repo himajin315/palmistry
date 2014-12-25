@@ -21,29 +21,13 @@ class PalmistryController < ApplicationController
     end
     @marriageable += "歳<br>この時期には結婚したいと思う人がいることでしょう。<br> "
 
-    feeling_love = FeelingLove.new(@uname,@sex_human)
-    @love = feeling_love.result(params[:love])
-
-    love_etc = params[:love_etc]
-    if love_etc then
-      love_etc.keys.each do |select_num|
-        case select_num
-        when '0' then
-          @love_etc_happy = @uname + " さんは人を幸せにする力を持っています。<br>" + @uname + " さんの周りの人はとても幸せな気持ちになることでしょう。<br> 結婚するなら" + @uname + " さんのような人がすごく良いでしょう。<br>"
-        when '1' then
-          @love_etc_many = @uname + " さんは数多くの恋愛を経験する人です。<br>
-          恋愛の切り替えが早く、失恋してもすぐに次の恋愛に行ける人です。<br>
-          好きな人がよく変わる人だと思われやすいですが、切り替えが早いのは良いことです。<br>
-          次のチャンスを逃さないためにも、恋愛のチャンスがあるならば飛び込むことも良いことでしょう。<br>"
-        when '2' then
-          @love_etc_slow =
-          @uname + " さんはおっとりタイプの性格をしてます。<br>
-          周りから天然っぽいと思われていることが多いでしょう。<br>
-          ゆっくりマイペースなので、周りからの影響を受けにくいです。<br>
-          また、あまり怒りにくい性格でもあります。<br>
-          自分のペースを大事にすることが精神衛生上によろしいでしょう。<br>"
-        end
-      end
+    feeling_line = FeelingLine.new(@uname,@sex_human)
+    @feeling_love = feeling_line.result_love(params[:feeling])
+    feeling_other = params[:feeling_other]
+    if feeling_other.present? then
+      @feeling_happy = feeling_line.resulet_happy(feeling_other)
+      @feeling_many_love = feeling_line.resulet_many_love(feeling_other)
+      @feeling_slow = feeling_line.resulet_slow(feeling_other)
     end
 
     @life = params[:life]
