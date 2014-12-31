@@ -74,18 +74,11 @@ class PalmistryController < ApplicationController
       @venus_kind_heart = venus_line.result_kind_heart(venus)
     end
 
+    moon_line = MoonLine.new(@uname,@sex_human)
     moon = params[:moon]
-    if moon then
-      moon.keys.each do |select_num|
-        case select_num
-        when '0' then
-          @moon_like = "さらに、" + @uname + " さんは好かれやすい人でもあります。<br>
-          接客業や営業など人と接することが多い仕事に就くのもよいでしょう。<br>"
-        when '1' then
-          @moon_fatigue =  @uname + " さんは現在疲れがたまっているます。<br>
-          休める時にはちゃんと休むようにして下さい。<br>"
-        end
-      end
+    if moon.present? then
+      @moon_like = moon_line.result_like(moon)
+      @moon_fatigue = moon_line.result_fatigue(moon)
     end
 
     illness = params[:illness]
