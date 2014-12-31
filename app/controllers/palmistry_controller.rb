@@ -64,18 +64,8 @@ class PalmistryController < ApplicationController
       @sun_charm = sun_line.result_charm(sun_other)
     end
 
-
-    case params[:mercury]
-    when '0' then
-      @mercury = @uname + " さんは現在お金に困っています。<br>
-      現在の収入に満足していません。<br>"
-    when '1' then
-      @mercury = @uname + " さんはお金は入ってきますが、すぐに出て行く状態です。<br>
-      貯金がしにくい状態のようです。<br>"
-    when '2' then
-      @mercury = @uname + " さんはお金には困らない生活をしています。<br>
-      特にお金に困るようなこともなく、お金に縛られない生活ができています。<br>"
-    end
+    mercury_line = MercuryLine.new(@uname,@sex_human)
+    @mercury_money = mercury_line.result_money(params[:mercury])
 
     venus = params[:venus]
     if venus then
