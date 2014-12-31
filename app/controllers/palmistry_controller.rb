@@ -46,18 +46,11 @@ class PalmistryController < ApplicationController
       @brain_indecision = brain_line.result_indecision(brain_other)
     end
 
+    jupiter_line = JupiterLine.new(@uname,@sex_human)
     jupiter = params[:jupiter]
-    if jupiter then
-      jupiter.keys.each do |select_num|
-        case select_num
-        when '0' then
-          @jupiter_social = "さらに" + @uname + " さんは社会的に成功したいと思っている人です。<br>
-          仕事に対して真面目で、一生懸命に頑張ることができます。<br>"
-        when '1' then
-          @jupiter_reader = "さらに" + @uname + " さんはリーダータイプでもあります。<br>
-          誰かに指示されて動くよりも、自分から周りを引っ張っていく方が良いでしょう。<br>"
-        end
-      end
+    if jupiter.present? then
+      @jupiter_social = jupiter_line.result_social(jupiter)
+      @jupiter_reader = jupiter_line.result_reader(jupiter)
     end
 
     case params[:sun]
