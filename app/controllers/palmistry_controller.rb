@@ -81,31 +81,15 @@ class PalmistryController < ApplicationController
       @moon_fatigue = moon_line.result_fatigue(moon)
     end
 
+    illness_line = IllnessLine.new(@uname,@sex_human)
     illness = params[:illness]
-    if illness then
-      illness.keys.each do |select_num|
-        case select_num
-        when '0' then
-          @illness_breath = @uname + " さんは呼吸器系が弱っています。<br>
-          部屋の空気を綺麗にし、住み良い環境を作るようにして下さい。<br>"
-        when '1' then
-          @illness_blood =  @uname + " さんは循環器系に負担をかけています。<br>
-          脂っこい食事や塩分の摂り過ぎには注意してください。<br>"
-        when '2' then
-          @illness_head =  @uname + " さんは注意力が足りないため、事故に合いやすいです。<br>
-          疲れがたまってる時の運転など、無理のないよう気をつけて下さい。<br>"
-        when '3' then
-          @illness_eyes =  @uname + " さんは目の疲れが溜まっています。<br>
-          視力低下や目の病気になりやすいです。<br>
-          目を酷使させすぎないよう休ませるようにして下さい。<br>"
-        when '4' then
-          @illness_stomach =  @uname + " さんは胃や小腸などの消化器官系に負担をかけています。<br>
-          おかなを壊しやすい状態なので、食生活の改善が必要です。<br>"
-        when '5' then
-          @illness_liver =  @uname + " さんは腎臓・肝臓に負担をかけています。<br>
-          お酒の飲み過ぎには注意してください。たまには休肝日を設けるとよいでしょう。<br>"
-        end
-      end
+    if illness.present? then
+      @illness_breath = illness_line.result_breath(illness)
+      @illness_blood = illness_line.result_blood(illness)
+      @illness_head = illness_line.result_head(illness)
+      @illness_eyes = illness_line.result_eyes(illness)
+      @illness_stomach = illness_line.result_stomach(illness)
+      @illness_liver = illness_line.result_liver(illness)
     end
 
     hand_shape = params[:hand_shape]
