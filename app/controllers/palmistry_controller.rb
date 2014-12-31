@@ -18,8 +18,8 @@ class PalmistryController < ApplicationController
           @marriageable += ", "
         end
       end
+      @marriageable += "歳<br>この時期には結婚したいと思う人がいることでしょう。<br> "
     end
-    @marriageable += "歳<br>この時期には結婚したいと思う人がいることでしょう。<br> "
 
     feeling_line = FeelingLine.new(@uname,@sex_human)
     @feeling_love = feeling_line.result_love(params[:feeling])

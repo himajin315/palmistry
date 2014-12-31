@@ -1,9 +1,9 @@
 <h1><%= @uname %> さんの 手相鑑定結果</h1>
 
-<h3>婚期</h3>
-  <% if @marriageable then %>
-    <%= @marriageable.html_safe %>
-  <% end %>
+<% if @marriageable.present? then %>
+  <h3>婚期</h3>
+  <%= @marriageable.html_safe %>
+<% end %>
 <p>
 </p>
 <h3>恋愛／能力</h3>
