@@ -34,123 +34,16 @@ class PalmistryController < ApplicationController
     @life_power = life_line.result_power(params[:life])
     @life_live = life_line.result_live(params[:life_other])
 
-    case params[:brain]
-    when '0' then
-      @brain = @uname + " さんは論理的に考える左脳タイプの人です。<br>
-      物事を順序立てて考えるのが得意で、計画を立てて実行すると良い結果が出ます。<br>
-      また、物事を客観的に見ることができるため、なにが正しいか正しくないかを判断することができます。<br>
-      現実主義者なので周りからは夢のない人だと思われがちです。<br>
-      相手を説得する力に長けているので、営業などサービス業なども向いています。<br>"
-    when '1' then
-      @brain = @uname + " さんは感覚的に捉える右脳タイプの人です。<br>
-      五感を使った仕事が向いています。<br>
-      音楽や料理、マッサージ師、デザイナーなど人によって五感のどの部分が優れているかは異なりますが、五感を使った仕事が良いでしょう。<br>
-      感覚的に捉えるのが得意なため、人の気持ちがよく分かる人でもあります。<br>
-      なにか相手に伝えたい時は絵や音楽など視覚や聴覚などを使って伝えることが良いでしょう。<br>"
-    when '2' then
-      @brain = @uname + " さんはなんでも平均的にできる人です。<br>
-      なんでもできるタイプなので、なにをやっても成功させることができます。<br>
-      役所などの公務員みたいにいろいろな部署に配属され、いろいろなことが出来る必要がる仕事が向いています。<br>
-      ただ、こういうタイプの人は全てが平均的にできるため、誰にも負けない特技のようなものを見つけるのに時間がかかります。<br>
-      自分のやりたいこと、楽しいことを見つけ、自分にしかできないようなことを見つけることで出世していくことでしょう。<br>"
-    when '3' then
-      @brain = @uname + " さんは直感タイプの人です。<br>
-      感じたままに行動すると成功しやすいです<br>
-      スポーツ選手など瞬時に判断するよな仕事が向いています。<br>
-      瞬時に答えを出すことができるため、本番に強いタイプです。<br>
-      瞬発力が必要な仕事が向いていることでしょう。<br>"
-    when '4' then
-      @brain = @uname + " さんは変わり者です。<br>
-      普通の人と考え方が違っていることが多いでしょう。<br>
-      周りとは違った発想を持っているので、特殊な存在です。<br>
-      これはとても良い特徴です。<br>
-      周りとは違った視点から見ることができるので、新しい発想やアイデアが生まれます。<br>
-      独創的な発想から生み出されるものが誰も真似できないものでしょう。<br>
-      ただ、こういうタイプの人は公務員など事務業などは向いていません。<br>
-      自分の向いている仕事を見つけることができれば、そこで才能を花開かせることができるでしょう。<br>"
-    end
-
-    case params[:brain_life]
-    when '0' then
-      @brain_life = @uname + " さんは常識がある人です。<br>
-      周りの状況にあわせて行動することができます。<br>
-      臨機応変に対応できる柔軟性の高い人です。<br>
-      所謂、空気が読める人です。<br>"
-    when '1' then
-      @brain_life = @uname + " さんは慎重派の人です。<br>
-      よく考えてから行動する石橋を叩いて渡るタイプの人です<br>
-      失敗することはほとんどありませんが、慎重になりすぎてチャンスを逃すこともあります。<br>
-      だからと言って、突発的な行動をすると後で必ず後悔する結果になります。<br>
-      チャンスを逃さないようにするためには、突発的な行動も必要です。<br>
-      後悔することも覚悟で行動することも時には大事になってくることでしょう。<br>"
-    when '2' then
-      @brain_life = @uname + " さんは行動派の人です。<br>
-      思い立ったらすぐ行動することが良いでしょう。<br>
-      ただ、失敗することも多いです。<br>
-      しかし、行動せずに後で「あの時やってたら良かった」と思う方がよっぽど辛いです。<br>
-      後悔しないためにもその行動力は大事にです。<br>"
-    when '3' then
-      @brain_life = @uname + " さんは疑心暗鬼になりやすい人です。<br>
-      あまり人を信用することがないタイプの人です。<br>
-      時間をかけてゆっくりと相手を信用するため、信用できる人が周りにあまりいないことが多いです。<br>"
-    end
-
+    brain_line = BrainLine.new(@uname,@sex_human)
+    @brain_think = brain_line.result_think(params[:brain])
+    @brain_life = brain_line.result_life(params[:brain_life])
     brain_other = params[:brain_other]
-    if brain_other then
-      brain_other.keys.each do |select_num|
-        case select_num
-        when '0' then
-          @brain_other_genius = "さらに、" + @uname + " さんは能力が高い人です。<br>
-          人よりも物事の習得が早くすることができます。<br>
-          ただ、能力が高いが故に怠け者でもあります。<br>
-          周りよりも仕事を早く終わらせて、バレないように怠けいることでしょう。<br>
-          こういう人は自分の好きなことを仕事にすると良いです。<br>
-          夢中になれることを行うことで、怠けず能力を十分に発揮することでしょう。<br>"
-        when '1' then
-          @brain_other_hardworker = @uname + " さんは努力家の人です。<br>
-          努力を努力と思っていないため、すごく頑張ることができる人です。<br>
-          大きな目標があると、誰もできないようなこともできることができる人です。<br>
-          辛いことも辛いと感じず、愚直に頑張ることができる人です。<br>"
-        when '2' then
-          @brain_other_manyskil = "また、" + @uname + " さんは多才なの人です。<br>
-	  やろうと思えばなんでもできる素晴らしい才能の持ち主です。<br>
-	  やりたいことはなんでもできるので、自信を持って自分のやりたいことをやるべきでしょう。<br>"
-        when '3' then
-          @brain_other_speedbrain = "さらに、" + @uname + " さんは頭の回転が早いの人です。<br>
-	  他の人には持っていない特殊なことができる力があります。<br>
-	  霊感があったり、周りには真似できない特技を持つことができるでしょう。<br>"
-        when '4' then
-          @brain_other_indecision = @uname + " さんは優柔不断な面があります。<br>
-	  なかなか物事を決めることができないでしょう。<br>
-	  一度決めたことも、次の日には変わっていたりします。<br>
-	  誰かに決めてもらったほうが楽な時もありますが、大きな決断の時は迷ってもいいので、ちゃんと自分の意思で決断して下さい。<br>"
-	  if params[:brain] = 3 then
-            @brain_other_indecision = "しかし、" + @uname + " 優柔不断な面があります。<br>
-	    なかなか決めることができないため、悩むことも多いでしょう。<br>" +
-	    @uname + " さんはいい直感力を持っています。たまには自分の直感を信じてみてはどうでしょうか。<br>"
-          end
-        end
-      end
-    end
-
-    brain_other = params[:brain_other]
-    if brain_other then
-      brain_other.keys.each do |select_num|
-        case select_num
-        when '0' then
-          @brain_other_genius = @uname + " さんは能力が高い人です。<br>
-          人よりも物事の習得が早くすることができます。<br>
-          ただ、能力が高いが故に怠け者でもあります。<br>
-          周りよりも仕事を早く終わらせて、バレないように怠けいることでしょう。<br>
-          こういう人は自分の好きなことを仕事にすると良いです。<br>
-          夢中になれることを行うことで、怠けず能力を十分に発揮することでしょう。<br>"
-        when '1' then
-          @brain_other_hardworker = @uname + " さんは努力家の人です。<br>
-          努力を努力と思っていないため、すごく頑張ることができる人です。<br>
-          大きな目標があると、誰もできないようなこともできることができる人です。<br>
-          辛いことも辛いと感じず、愚直に頑張ることができる人です。<br>"
-        end
-      end
+    if brain_other.present? then
+      @brain_genius = brain_line.resulet_genius(brain_other)
+      @brain_hardworker = brain_line.resulet_hardwordker(brain_other)
+      @brain_many_skill = brain_line.result_many_skill(brain_other)
+      @brain_speed_think = brain_line.result_speed_think(brain_other)
+      @brain_indecision = brain_line.result_indecision(brain_other)
     end
 
     jupiter = params[:jupiter]
