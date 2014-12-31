@@ -25,9 +25,9 @@ class PalmistryController < ApplicationController
     @feeling_love = feeling_line.result_love(params[:feeling])
     feeling_other = params[:feeling_other]
     if feeling_other.present? then
-      @feeling_happy = feeling_line.resulet_happy(feeling_other)
-      @feeling_many_love = feeling_line.resulet_many_love(feeling_other)
-      @feeling_slow = feeling_line.resulet_slow(feeling_other)
+      @feeling_happy = feeling_line.result_happy(feeling_other)
+      @feeling_many_love = feeling_line.result_many_love(feeling_other)
+      @feeling_slow = feeling_line.result_slow(feeling_other)
     end
 
     life_line = LifeLine.new(@uname,@sex_human)
@@ -39,8 +39,8 @@ class PalmistryController < ApplicationController
     @brain_life = brain_line.result_life(params[:brain_life])
     brain_other = params[:brain_other]
     if brain_other.present? then
-      @brain_genius = brain_line.resulet_genius(brain_other)
-      @brain_hardworker = brain_line.resulet_hardwordker(brain_other)
+      @brain_genius = brain_line.result_genius(brain_other)
+      @brain_hardworker = brain_line.result_hardwordker(brain_other)
       @brain_many_skill = brain_line.result_many_skill(brain_other)
       @brain_speed_think = brain_line.result_speed_think(brain_other)
       @brain_indecision = brain_line.result_indecision(brain_other)
@@ -67,19 +67,11 @@ class PalmistryController < ApplicationController
     mercury_line = MercuryLine.new(@uname,@sex_human)
     @mercury_money = mercury_line.result_money(params[:mercury])
 
+    venus_line = VenusLine.new(@uname,@sex_human)
     venus = params[:venus]
-    if venus then
-      venus.keys.each do |select_num|
-        case select_num
-        when '0' then
-          @venus_virtuous = "さらに、" + @uname + " さんは周りからの信頼も厚いです。<br>
-          自分のことよりも周りへの貢献を優先させるような人です。<br>
-          とても素晴らしい人でしょう。<br>"
-        when '1' then
-          @venus_kindheart =  @uname + " さんは結婚後は子供を大切にします。<br>
-          家族のことを優先的に考え、家族を大切にする良い" + @sex_human +"になるタイプでしょう。<br>"
-        end
-      end
+    if venus.present? then
+      @venus_virtuous = venus_line.result_virtuous(venus)
+      @venus_kind_heart = venus_line.result_kind_heart(venus)
     end
 
     moon = params[:moon]

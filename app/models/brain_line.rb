@@ -69,7 +69,7 @@
       end
     end
 
-    def resulet_genius(number_list)
+    def result_genius(number_list)
       result = nil
       if number_list.has_key?('0') then
         result = "さらに、" + @uname + " さんは能力が高い人です。<br>
@@ -81,7 +81,7 @@
       end
     end
 
-    def resulet_hardwordker(number_list)
+    def result_hardwordker(number_list)
       result = nil
       if number_list.has_key?('1') then
         result = @uname + " さんは努力家の人です。<br>

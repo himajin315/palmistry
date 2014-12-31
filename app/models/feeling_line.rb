@@ -69,14 +69,14 @@ class FeelingLine
     end
   end
 
-  def resulet_happy(number_list)
+  def result_happy(number_list)
     result = nil
     if number_list.has_key?('0') then
       result = @uname + " さんは人を幸せにする力を持っています。<br>" + @uname + " さんの周りの人はとても幸せな気持ちになることでしょう。<br> 結婚するなら" + @uname + " さんのような人がすごく良いでしょう。<br>"
   	end
   end
 
-  def resulet_many_love(number_list)
+  def result_many_love(number_list)
     result = nil
     if number_list.has_key?('1') then
       result = @uname + " さんは数多くの恋愛を経験する人です。<br>
@@ -86,7 +86,7 @@ class FeelingLine
     end
   end
 
-  def resulet_slow(number_list)
+  def result_slow(number_list)
     result = nil
     if number_list.has_key?('2') then
       @love_other_slow =
