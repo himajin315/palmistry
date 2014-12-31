@@ -92,20 +92,13 @@ class PalmistryController < ApplicationController
       @illness_liver = illness_line.result_liver(illness)
     end
 
-    hand_shape = params[:hand_shape]
-    if hand_shape then
-      hand_shape.keys.each do |select_num|
-        case select_num
-        when '0' then
-          if params[:mercury] == '0' then
-            @hand_shape_waste = "ただ、" + @uname + " さんは浪費家です。<br>
-            入った分だけ使ってしまうので、いくらお金があっても満足はしません。<br>"
-          end
-        when '1' then
-          @hand_shape_report = "さらに、" + @uname + " さんは文章で伝える能力が高いです。<br>
-          自分の考えを伝える時は文章にまとめて伝える方が良いでしょう。<br>"
-        end
+    hand_shape = HandShape.new(@uname,@sex_human)
+    hand = params[:hand_shape]
+    if hand.present? then
+      if params[:mercury] == '0' then
+        @hand_shape_waste = hand_shape.result_waste(hand)
       end
+      @hand_shape_report = hand_shape.result_report(hand)
     end
 
     @life_flow = params[:life_flow]
