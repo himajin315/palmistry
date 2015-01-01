@@ -3,7 +3,7 @@ ruby '2.1.2'
 gem 'rails', '4.1.3'
 
 group :development, :test do
-  gem 'sqlite3', '1.3.8'
+  gem 'mysql2'
   gem 'spring'
   gem 'spring-commands-rspec'
   gem 'pry-byebug'
