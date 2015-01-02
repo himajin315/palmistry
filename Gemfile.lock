@@ -79,10 +79,10 @@ GEM
     mini_portile (0.6.2)
     minitest (5.5.0)
     multi_json (1.10.1)
+    mysql (2.9.1)
     mysql2 (0.3.17)
     nokogiri (1.6.5)
       mini_portile (~> 0.6.0)
-    pg (0.15.1)
     poltergeist (1.5.1)
       capybara (~> 2.1)
       cliver (~> 0.3.1)
@@ -207,8 +207,8 @@ DEPENDENCIES
   jbuilder (= 1.0.2)
   jquery-rails (= 3.0.4)
   jquery-ui-rails
+  mysql
   mysql2
-  pg (= 0.15.1)
   poltergeist
   pry-byebug
   pry-rails

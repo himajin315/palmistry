@@ -19,6 +19,7 @@ group :test do
   gem 'database_cleaner'
 end
 
+gem 'mysql'
 gem 'sass-rails', '~> 4.0.2'
 gem 'uglifier', '2.1.1'
 gem 'coffee-rails', '4.0.1'
@@ -33,7 +34,6 @@ group :doc do
 end
 
 group :production do
-  gem 'pg', '0.15.1'
   gem 'rails_12factor', '0.0.2'
 end
 
