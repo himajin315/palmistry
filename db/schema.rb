@@ -11,6 +11,45 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20150102183236) do
+
+  create_table "users", force: true do |t|
+    t.string   "uname"
+    t.integer  "sex"
+    t.integer  "feeling_love"
+    t.boolean  "feeling_happy"
+    t.boolean  "feeling_many_love"
+    t.boolean  "feeling_slow"
+    t.integer  "life_power"
+    t.integer  "life_live"
+    t.integer  "brain_think"
+    t.integer  "brain_life"
+    t.boolean  "brain_genius"
+    t.boolean  "brain_hardworker"
+    t.boolean  "brain_many_skill"
+    t.boolean  "brain_speed_think"
+    t.boolean  "brain_indecision"
+    t.boolean  "jupiter_social"
+    t.boolean  "jupiter_reader"
+    t.boolean  "sun_skill_until"
+    t.boolean  "sun_skill"
+    t.boolean  "sun_charm"
+    t.integer  "mercury_money"
+    t.boolean  "venus_virtuous"
+    t.boolean  "venus_kind_heart"
+    t.boolean  "moon_like"
+    t.boolean  "moon_fatigue"
+    t.boolean  "illness_breath"
+    t.boolean  "illness_blood"
+    t.boolean  "illness_head"
+    t.boolean  "illness_eyes"
+    t.boolean  "illness_stomach"
+    t.boolean  "illness_liver"
+    t.boolean  "hand_shape_waste"
+    t.boolean  "hand_shape_report"
+    t.integer  "life_flow"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end

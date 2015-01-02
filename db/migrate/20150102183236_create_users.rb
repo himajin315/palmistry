@@ -3,14 +3,14 @@ class CreateUsers < ActiveRecord::Migration
     create_table :users do |t|
       t.string :uname
       t.integer :sex
-      t.boolean :feeling_love
+      t.integer :feeling_love
       t.boolean :feeling_happy
       t.boolean :feeling_many_love
       t.boolean :feeling_slow
-      t.boolean :life_power
-      t.boolean :life_live
-      t.boolean :brain_think
-      t.boolean :brain_life
+      t.integer :life_power
+      t.integer :life_live
+      t.integer :brain_think
+      t.integer :brain_life
       t.boolean :brain_genius
       t.boolean :brain_hardworker
       t.boolean :brain_many_skill
@@ -21,7 +21,7 @@ class CreateUsers < ActiveRecord::Migration
       t.boolean :sun_skill_until
       t.boolean :sun_skill
       t.boolean :sun_charm
-      t.boolean :mercury_money
+      t.integer :mercury_money
       t.boolean :venus_virtuous
       t.boolean :venus_kind_heart
       t.boolean :moon_like
@@ -34,7 +34,7 @@ class CreateUsers < ActiveRecord::Migration
       t.boolean :illness_liver
       t.boolean :hand_shape_waste
       t.boolean :hand_shape_report
-      t.boolean :life_flow
+      t.integer :life_flow
 
       t.timestamps
     end
