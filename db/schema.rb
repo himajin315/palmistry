@@ -11,11 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150102183236) do
+ActiveRecord::Schema.define(version: 20150102185422) do
 
-  create_table "users", force: true do |t|
-    t.string   "uname"
-    t.integer  "sex"
+  create_table "marries", force: true do |t|
+    t.integer  "age"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "palms", force: true do |t|
     t.integer  "feeling_love"
     t.boolean  "feeling_happy"
     t.boolean  "feeling_many_love"
@@ -48,6 +52,15 @@ ActiveRecord::Schema.define(version: 20150102183236) do
     t.boolean  "hand_shape_waste"
     t.boolean  "hand_shape_report"
     t.integer  "life_flow"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "users", force: true do |t|
+    t.string   "uname"
+    t.integer  "sex"
+    t.integer  "palm_id"
+    t.integer  "marry_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

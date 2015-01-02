@@ -1,3 +1,5 @@
 class User < ActiveRecord::Base
-  validates :name, length: { maximum: 50 } ,presence: true
+  belongs_to :marry
+  belongs_to :palm
+  validates :uname, length: { maximum: 50 } ,presence: true
 end

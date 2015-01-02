@@ -1,8 +1,6 @@
-class CreateUsers < ActiveRecord::Migration
+class CreatePalms < ActiveRecord::Migration
   def change
-    create_table :users do |t|
-      t.string :uname
-      t.integer :sex
+    create_table :palms do |t|
       t.integer :feeling_love
       t.boolean :feeling_happy
       t.boolean :feeling_many_love
