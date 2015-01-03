@@ -11,13 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150102185422) do
-
-  create_table "marries", force: true do |t|
-    t.integer  "age"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
+ActiveRecord::Schema.define(version: 20150103152021) do
 
   create_table "palms", force: true do |t|
     t.integer  "feeling_love"
@@ -36,7 +30,7 @@ ActiveRecord::Schema.define(version: 20150102185422) do
     t.boolean  "jupiter_social"
     t.boolean  "jupiter_reader"
     t.boolean  "sun_skill_until"
-    t.boolean  "sun_skill"
+    t.integer  "sun_skill"
     t.boolean  "sun_charm"
     t.integer  "mercury_money"
     t.boolean  "venus_virtuous"
@@ -60,7 +54,7 @@ ActiveRecord::Schema.define(version: 20150102185422) do
     t.string   "uname"
     t.integer  "sex"
     t.integer  "palm_id"
-    t.integer  "marry_id"
+    t.text     "marry_age"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
