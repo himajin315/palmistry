@@ -23,7 +23,7 @@ class PalmistryController < ApplicationController
     end
 
     palm_info_insert(user);
-    
+
     feeling_line = FeelingLine.new(user)
     @feeling_love = feeling_line.result_love
     @feeling_happy = feeling_line.result_happy
@@ -127,7 +127,7 @@ class PalmistryController < ApplicationController
     moon_insert(user);
     illness_insert(user);
     hand_shape_insert(user);
-    user.save
+    user.save!
   end
 
   def feeling_insert(user)
