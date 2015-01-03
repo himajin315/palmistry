@@ -7,16 +7,8 @@ class PalmistryController < ApplicationController
   def result
     @uname = params[:uname]
     user = User.create(uname: @uname, sex: params[:sex], marry_age: params[:marriageable])
-    @marriageable = ""
-    if user.marry_age then
-      user.marry_age.each_with_index do |select_num,i|
-        @marriageable += select_num
-        if user.marry_age.length-1 != i then
-          @marriageable += ", "
-        end
-      end
-      @marriageable += "歳<br>この時期には結婚したいと思う人がいることでしょう。<br> "
-    end
+
+    @marriageable = Marriagable.new(user).result_marry_age
 
     palm_info_insert(user);
 
