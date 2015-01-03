@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150103105437) do
+ActiveRecord::Schema.define(version: 20150103152021) do
 
   create_table "palms", force: true do |t|
     t.integer  "feeling_love"
@@ -30,7 +30,7 @@ ActiveRecord::Schema.define(version: 20150103105437) do
     t.boolean  "jupiter_social"
     t.boolean  "jupiter_reader"
     t.boolean  "sun_skill_until"
-    t.boolean  "sun_skill"
+    t.integer  "sun_skill"
     t.boolean  "sun_charm"
     t.integer  "mercury_money"
     t.boolean  "venus_virtuous"
