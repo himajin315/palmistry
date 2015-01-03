@@ -1,13 +1,13 @@
 class FeelingLine
-  def initialize(uname,sex_human)
-    @uname = uname
-    @sex_human = sex_human
+  def initialize(user)
+    @user = user
+    @sex_human = user.sex_human
   end
 
-  def result_love(select_num)
-    case select_num
+  def result_love
+    case @user.palm.feeling_love
     when '0' then
-      result = @uname + " さんは突発的な恋愛をするタイプです。<br>
+      result = @user.uname + " さんは突発的な恋愛をするタイプです。<br>
       人を好きになるまでが早く、一目惚れタイプです。<br>
       出会ってから付き合うまでに期間が短いタイプです。<br>
       合コンや友達の紹介など出会いの数だけのチャンスを掴み取ることができます。<br>
@@ -18,14 +18,14 @@ class FeelingLine
       長く続けることができる恋愛は運命の人だけです。<br>
       多くの恋愛から運命の人を見つけて下さい。<br>"
     when '1' then
-      result = @uname + " さんはゆっくり落ち着いた恋愛をします。<br>
+      result = @user.uname + " さんはゆっくり落ち着いた恋愛をします。<br>
       相手を好きになりまでに時間がかかるタイプです。<br>
       好きになると相手のことがとても大事にします。<br>
       愛情が深く、相手のためにいろいろと頑張ることでしょう。<br>
       相手の気持を考えながら、自分の気持もコントロールできるため、恋愛の仕方が上手な人です。<br>
       結婚したらとても良い奥さんになるタイプです。<br>"
     when '2' then
-      result = @uname + " さんは恋愛には消極的な人です。<br>
+      result = @user.uname + " さんは恋愛には消極的な人です。<br>
       あまり感情を表に出さないタイプなので、好きな人に好きと言えないです。<br>
       そのため、相手に気持ちが伝わりにくいことが多く、すれ違いなどが多いでしょう。<br>
       せっかく両思いでも結果的に付き合わないということもあります。<br>
@@ -35,7 +35,7 @@ class FeelingLine
       素直になることで恋愛を成功させることができます。<br>
       伝えづらいことは手紙やメールなど文章にして伝えることが良いでしょう。<br>"
     when '3' then
-      result = @uname + " さんは情が深い人です。<br>
+      result = @user.uname + " さんは情が深い人です。<br>
       相手を思いやる気持ちがとても強く、相手のために一生懸命になれます。<br>
       ゆっくりじっくり愛を育むことになるので、一目惚れはしないタイプです。<br>
       長い間ずっと一緒にいた人や告白された後に好きになっていくことでしょう。<br>
@@ -45,7 +45,7 @@ class FeelingLine
       お金の貸し借りは可能な限りしないようにして下さい。<br>
       トラブルの原因になります。<br>"
     when '4' then
-      result = @uname + " さんは相手の気持ちになれる優しい人です。<br>
+      result = @user.uname + " さんは相手の気持ちになれる優しい人です。<br>
       涙もろい面もあり、人情深い人でしょう。<br>
       人のために頑張ることができる人です。<br>
       周りから相談されやすいタイプの人でしょう。<br>
@@ -53,10 +53,10 @@ class FeelingLine
       自分がいなきゃダメだ。相手のためになるためには自分が必要だと考えるタイプです。<br>
       尽くすタイプでもありますが、お節介なところもあります。<br>
       人に優しくするのは良いことですが、相手の成長のためにも見守ることも大事です。<br>
-      すべて" + @uname + " さんがやるのではなく、相手にも努力をさせるようにしてください。<br>
+      すべて" + @user.uname + " さんがやるのではなく、相手にも努力をさせるようにしてください。<br>
       そうすることで良い人間関係を築くことができるでしょう。<br>"
     when '5' then
-      result = @uname + " は好き嫌いがハッキリいしている人です。<br>
+      result = @user.uname + " は好き嫌いがハッキリいしている人です。<br>
       好きなこと好きな人にはとても積極的に行動します。<br>
       ただ、嫌いなことや嫌いな人にはかなり拒絶反応をします。<br>
       周りから見ても好きな人と嫌いな人がハッキリわかるようなタイプでしょう。<br>
@@ -69,28 +69,28 @@ class FeelingLine
     end
   end
 
-  def result_happy(number_list)
+  def result_happy
     result = nil
-    if number_list.has_key?('0') then
-      result = @uname + " さんは人を幸せにする力を持っています。<br>" + @uname + " さんの周りの人はとても幸せな気持ちになることでしょう。<br> 結婚するなら" + @uname + " さんのような人がすごく良いでしょう。<br>"
+    if @user.palm.feeling_happy then
+      result = @user.uname + " さんは人を幸せにする力を持っています。<br>" + @user.uname + " さんの周りの人はとても幸せな気持ちになることでしょう。<br> 結婚するなら" + @user.uname + " さんのような人がすごく良いでしょう。<br>"
   	end
   end
 
-  def result_many_love(number_list)
+  def result_many_love
     result = nil
-    if number_list.has_key?('1') then
-      result = @uname + " さんは数多くの恋愛を経験する人です。<br>
+    if @user.palm.feeling_many_love then
+      result = @user.uname + " さんは数多くの恋愛を経験する人です。<br>
       恋愛の切り替えが早く、失恋してもすぐに次の恋愛に行ける人です。<br>
       好きな人がよく変わる人だと思われやすいですが、切り替えが早いのは良いことです。<br>
       次のチャンスを逃さないためにも、恋愛のチャンスがあるならば飛び込むことも良いことでしょう。<br>"
     end
   end
 
-  def result_slow(number_list)
+  def result_slow
     result = nil
-    if number_list.has_key?('2') then
+    if @user.palm.feeling_slow then
       @love_other_slow =
-      @uname + " さんはおっとりタイプの性格をしてます。<br>
+      @user.uname + " さんはおっとりタイプの性格をしてます。<br>
       周りから天然っぽいと思われていることが多いでしょう。<br>
       ゆっくりマイペースなので、周りからの影響を受けにくいです。<br>
       また、あまり怒りにくい性格でもあります。<br>
