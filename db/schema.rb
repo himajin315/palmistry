@@ -11,13 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150102185422) do
-
-  create_table "marries", force: true do |t|
-    t.integer  "age"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
+ActiveRecord::Schema.define(version: 20150103105437) do
 
   create_table "palms", force: true do |t|
     t.integer  "feeling_love"
@@ -60,7 +54,7 @@ ActiveRecord::Schema.define(version: 20150102185422) do
     t.string   "uname"
     t.integer  "sex"
     t.integer  "palm_id"
-    t.integer  "marry_id"
+    t.text     "marry_age"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
