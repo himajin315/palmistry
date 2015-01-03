@@ -7,7 +7,7 @@ class PalmistryController < ApplicationController
   def result
     @uname = params[:uname]
     @sex = params[:sex]
-    @sex_human = sex = 0 ? "お父さん":"お母さん"
+    user = User.create(uname: params[:uname], sex: params[:sex])
 
     marriageable_age = params[:marriageable]
     @marriageable = ""
