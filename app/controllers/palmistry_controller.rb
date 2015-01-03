@@ -30,21 +30,18 @@ class PalmistryController < ApplicationController
     @feeling_many_love = feeling_line.result_many_love
     @feeling_slow = feeling_line.result_slow
 
-    life_line = LifeLine.new(@uname,@sex_human)
-    @life_power = life_line.result_power(params[:life])
-    @life_live = life_line.result_live(params[:life_other])
+    life_line = LifeLine.new(user)
+    @life_power = life_line.result_power
+    @life_live = life_line.result_live
 
-    brain_line = BrainLine.new(@uname,@sex_human)
-    @brain_think = brain_line.result_think(params[:brain])
-    @brain_life = brain_line.result_life(params[:brain_life])
-    brain_other = params[:brain_other]
-    if brain_other.present? then
-      @brain_genius = brain_line.result_genius(brain_other)
-      @brain_hardworker = brain_line.result_hardwordker(brain_other)
-      @brain_many_skill = brain_line.result_many_skill(brain_other)
-      @brain_speed_think = brain_line.result_speed_think(brain_other)
-      @brain_indecision = brain_line.result_indecision(brain_other)
-    end
+    brain_line = BrainLine.new(user)
+    @brain_think = brain_line.result_think
+    @brain_life = brain_line.result_life
+    @brain_genius = brain_line.result_genius
+    @brain_hardworker = brain_line.result_hardworker
+    @brain_many_skill = brain_line.result_many_skill
+    @brain_speed_think = brain_line.result_speed_think
+    @brain_indecision = brain_line.result_indecision
 
     jupiter_line = JupiterLine.new(@uname,@sex_human)
     jupiter = params[:jupiter]
