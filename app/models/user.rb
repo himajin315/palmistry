@@ -2,6 +2,7 @@ class User < ActiveRecord::Base
   belongs_to :marry
   belongs_to :palm
   validates :uname, length: { maximum: 50 } ,presence: true
+  validates :twitter_link, length: { maximum: 500 }
   serialize :marry_age
 
   validates_uniqueness_of :access_token
