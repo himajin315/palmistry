@@ -65,13 +65,13 @@ class PalmistryController < ApplicationController
   end
 
   def create
-    @user = User.create(uname: params[:uname], sex: params[:sex], marry_age: params[:marriageable])
-    palm_info_insert(@user);
+    user = User.create(uname: params[:uname], sex: params[:sex], marry_age: params[:marriageable])
+    palm_info_insert(user);
 
     respond_to do |format|
-      if @user.save!
-        format.html { redirect_to "/palmistry/#{@user.id}" }
-        format.json { render action: 'show', status: :created, location: "/palmistry/#{@user.id}" }
+      if user.save
+        format.html { redirect_to "/palmistry/#{user.id}" }
+        format.json { render action: 'show', status: :created, location: "/palmistry/#{user.id}" }
       end
     end
   end
@@ -98,6 +98,7 @@ class PalmistryController < ApplicationController
     moon_insert(user);
     illness_insert(user);
     hand_shape_insert(user);
+    user.palm.save!
   end
 
   def feeling_insert(user)
