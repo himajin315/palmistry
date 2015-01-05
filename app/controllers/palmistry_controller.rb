@@ -70,11 +70,8 @@ class PalmistryController < ApplicationController
 
     respond_to do |format|
       if @user.save!
-        format.html { redirect_to palmistry_path, notice: 'Micropost was successfully created.' }
-        format.json { render action: 'show', status: :created, location: palmistry_path }
-      else
-        format.html { render action: 'new' }
-        format.json { render json: @user.errors, status: :unprocessable_entity }
+        format.html { redirect_to "/palmistry/#{@user.id}" }
+        format.json { render action: 'show', status: :created, location: "/palmistry/#{@user.id}" }
       end
     end
   end
