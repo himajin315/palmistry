@@ -8,7 +8,7 @@ class PalmistryController < ApplicationController
     user = User.find_by(access_token: params[:access_token]) if params[:access_token]
     @uname = user.uname
     @marriageable = Marriagable.new(user).result_marry_age
-
+    @twitter_link = user.twitter_link
     feeling_line = FeelingLine.new(user)
     @feeling_love = feeling_line.result_love
     @feeling_happy = feeling_line.result_happy
@@ -66,6 +66,7 @@ class PalmistryController < ApplicationController
 
   def create
     user = User.create(uname: params[:uname], sex: params[:sex], marry_age: params[:marriageable])
+    twitter_link_insert(user);
     palm_info_insert(user);
 
     respond_to do |format|
@@ -80,6 +81,13 @@ class PalmistryController < ApplicationController
   end
 
   private
+  def twitter_link_insert(user)
+    twitter_link = params[:twitter_link]
+    if ( twitter_link.include?('@himajin315') or twitter_link.include?('@tesou_himajin') ) and !twitter_link.include?('script') then
+      user.twitter_link = twitter_link
+    end
+  end
+
   def palm_info_insert(user)
     user.palm = Palm.create!({
       feeling_love: params[:feeling],

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150105170637) do
+ActiveRecord::Schema.define(version: 20150105174307) do
 
   create_table "palms", force: true do |t|
     t.integer  "feeling_love"
@@ -58,6 +58,7 @@ ActiveRecord::Schema.define(version: 20150105170637) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "access_token", limit: 8, null: false
+    t.text     "twitter_link"
   end
 
 end

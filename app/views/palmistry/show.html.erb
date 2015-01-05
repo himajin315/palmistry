@@ -1,122 +1,131 @@
 <h1><%= @uname %> さんの 手相鑑定結果</h1>
+<div class="row">
+  <div class="col-sm-7" id="profile">
+    <% if @marriageable.present? then %>
+      <h3>婚期</h3>
+      <%= @marriageable.html_safe %>
+    <% end %>
+    <p>
+    </p>
+    <h3>恋愛／能力</h3>
+    <p>
+      <!-- 恋愛 -->
+      <% if @feeling_love then %>
+        <%= @feeling_love.html_safe %>
+      <% end %>
+      <% if @feeling_happy then %>
+        <%= @feeling_happy.html_safe %>
+      <% end %>
+      <% if @feeling_many_love then %>
+        <%= @feeling_many_love.html_safe %>
+      <% end %>
+      <% if @feeling_slow then %>
+        <%= @feeling_slow.html_safe %>
+      <% end %>
+      <% if @sun_charm then %>
+        <%= @sun_charm.html_safe %>
+      <% end %>
+      <% if @brain_life then %>
+        <%= @brain_life.html_safe %>
+      <% end %>
+      <% if @brain_hardworker then %>
+        <%= @brain_hardworker.html_safe %>
+      <% end %>
+      <% if @jupiter_social then %>
+        <%= @jupiter_social.html_safe %>
+      <% end %>
+      <% if @venus_kind_heart then %>
+        <%= @venus_kind_heart.html_safe %>
+      <% end %>
 
-<% if @marriageable.present? then %>
-  <h3>婚期</h3>
-  <%= @marriageable.html_safe %>
-<% end %>
-<p>
-</p>
-<h3>恋愛／能力</h3>
-<p>
-  <!-- 恋愛 -->
-  <% if @feeling_love then %>
-    <%= @feeling_love.html_safe %>
-  <% end %>
-  <% if @feeling_happy then %>
-    <%= @feeling_happy.html_safe %>
-  <% end %>
-  <% if @feeling_many_love then %>
-    <%= @feeling_many_love.html_safe %>
-  <% end %>
-  <% if @feeling_slow then %>
-    <%= @feeling_slow.html_safe %>
-  <% end %>
-  <% if @sun_charm then %>
-    <%= @sun_charm.html_safe %>
-  <% end %>
-  <% if @brain_life then %>
-    <%= @brain_life.html_safe %>
-  <% end %>
-  <% if @brain_hardworker then %>
-    <%= @brain_hardworker.html_safe %>
-  <% end %>
-  <% if @jupiter_social then %>
-    <%= @jupiter_social.html_safe %>
-  <% end %>
-  <% if @venus_kind_heart then %>
-    <%= @venus_kind_heart.html_safe %>
-  <% end %>
+      <!-- 能力 -->
+      <% if @sun_skill_until then %>
+        <%= @sun_skill_until.html_safe %>
+      <% end %>
+      <% if @brain_think then %>
+        <%= @brain_think.html_safe %>
+      <% end %>
+      <% if @brain_indecision then %>
+        <%= @brain_indecision.html_safe %>
+      <% end %>
+      <% if @moon_like then %>
+        <%= @moon_like.html_safe %>
+      <% end %>
+      <% if @brain_many_skill then %>
+        <%= @brain_many_skill.html_safe %>
+      <% end %>
+      <% if @brain_speed_think then %>
+        <%= @brain_speed_think.html_safe %>
+      <% end %>
+      <% if @brain_genius then %>
+        <%= @brain_genius.html_safe %>
+      <% end %>
+      <% if @jupiter_reader then %>
+        <%= @jupiter_reader.html_safe %>
+      <% end %>
+      <% if @hand_shape_report then %>
+        <%= @hand_shape_report.html_safe %>
+      <% end %>
+      <% if @venus_virtuous then %>
+        <%= @venus_virtuous.html_safe %>
+      <% end %>
+      <% if @mercury_money then %>
+        <%= @mercury_money.html_safe %>
+      <% end %>
+      <% if @hand_shape_waste then %>
+        <%= @hand_shape_waste.html_safe %>
+      <% end %>
+      <% if @sun_skill then %>
+        <%= @sun_skill.html_safe %>
+      <% end %>
+      <% if @life_live then %>
+        <%= @life_live.html_safe %>
+      <% end %>
 
-  <!-- 能力 -->
-  <% if @sun_skill_until then %>
-    <%= @sun_skill_until.html_safe %>
-  <% end %>
-  <% if @brain_think then %>
-    <%= @brain_think.html_safe %>
-  <% end %>
-  <% if @brain_indecision then %>
-    <%= @brain_indecision.html_safe %>
-  <% end %>
-  <% if @moon_like then %>
-    <%= @moon_like.html_safe %>
-  <% end %>
-  <% if @brain_many_skill then %>
-    <%= @brain_many_skill.html_safe %>
-  <% end %>
-  <% if @brain_speed_think then %>
-    <%= @brain_speed_think.html_safe %>
-  <% end %>
-  <% if @brain_genius then %>
-    <%= @brain_genius.html_safe %>
-  <% end %>
-  <% if @jupiter_reader then %>
-    <%= @jupiter_reader.html_safe %>
-  <% end %>
-  <% if @hand_shape_report then %>
-    <%= @hand_shape_report.html_safe %>
-  <% end %>
-  <% if @venus_virtuous then %>
-    <%= @venus_virtuous.html_safe %>
-  <% end %>
-  <% if @mercury_money then %>
-    <%= @mercury_money.html_safe %>
-  <% end %>
-  <% if @hand_shape_waste then %>
-    <%= @hand_shape_waste.html_safe %>
-  <% end %>
-  <% if @sun_skill then %>
-    <%= @sun_skill.html_safe %>
-  <% end %>
-  <% if @life_live then %>
-    <%= @life_live.html_safe %>
-  <% end %>
-
-  <!-- 健康 -->
-  <% if @life_power then %>
-    <%= @life_power.html_safe %>
-  <% end %>
-  <% if @moon_fatigue then %>
-    <%= @moon_fatigue.html_safe %>
-    また、
-  <% end %>
-  <% if @illness_breath then %>
-    <%= @illness_breath.html_safe %>
-    さらに、
-  <% end %>
-  <% if @illness_blood then %>
-    <%= @illness_blood.html_safe %>
-    さらに、
-  <% end %>
-  <% if @illness_head then %>
-    <%= @illness_head.html_safe %>
-    さらに、
-  <% end %>
-  <% if @illness_eyes then %>
-    <%= @illness_eyes.html_safe %>
-    さらに、
-  <% end %>
-  <% if @illness_stomach then %>
-    <%= @illness_stomach.html_safe %>
-    さらに、
-  <% end %>
-  <% if @illness_liver then %>
-    <%= @illness_liver.html_safe %>
-  <% end %>
-</p>
-<h3>人生の流れ</h3>
-<p>
-  <!-- 人生の流れ -->
-  <% if @life_flow then %>
-    <%= @life_flow.html_safe %>
-  <% end %>
-</p>
+      <!-- 健康 -->
+      <% if @life_power then %>
+        <%= @life_power.html_safe %>
+      <% end %>
+      <% if @moon_fatigue then %>
+        <%= @moon_fatigue.html_safe %>
+        また、
+      <% end %>
+      <% if @illness_breath then %>
+        <%= @illness_breath.html_safe %>
+        さらに、
+      <% end %>
+      <% if @illness_blood then %>
+        <%= @illness_blood.html_safe %>
+        さらに、
+      <% end %>
+      <% if @illness_head then %>
+        <%= @illness_head.html_safe %>
+        さらに、
+      <% end %>
+      <% if @illness_eyes then %>
+        <%= @illness_eyes.html_safe %>
+        さらに、
+      <% end %>
+      <% if @illness_stomach then %>
+        <%= @illness_stomach.html_safe %>
+        さらに、
+      <% end %>
+      <% if @illness_liver then %>
+        <%= @illness_liver.html_safe %>
+      <% end %>
+    </p>
+    <h3>人生の流れ</h3>
+    <p>
+      <!-- 人生の流れ -->
+      <% if @life_flow then %>
+        <%= @life_flow.html_safe %>
+      <% end %>
+    </p>
+  </div>
+  <div class="col-sm-5">
+    <% if @twitter_link then %>
+      <%= @twitter_link.html_safe %>
+      <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+    <% end %>
+  </div>
+</div>
