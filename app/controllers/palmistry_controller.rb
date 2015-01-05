@@ -5,7 +5,7 @@ class PalmistryController < ApplicationController
   end
 
   def show
-    user = User.find(params[:id]) if params[:id]
+    user = User.find_by(access_token: params[:access_token]) if params[:access_token]
     @uname = user.uname
     @marriageable = Marriagable.new(user).result_marry_age
 
@@ -70,8 +70,8 @@ class PalmistryController < ApplicationController
 
     respond_to do |format|
       if user.save
-        format.html { redirect_to "/palmistry/#{user.id}" }
-        format.json { render action: 'show', status: :created, location: "/palmistry/#{user.id}" }
+        format.html { redirect_to "/palmistry/#{user.access_token}" }
+        format.json { render action: 'show', status: :created, location: "/palmistry/#{user.access_token}" }
       end
     end
   end
