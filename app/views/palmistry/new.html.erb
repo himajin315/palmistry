@@ -1,0 +1,135 @@
+<div class="row">
+    <h1 class="page-header">暇人の手相鑑定</h1>
+    <div id="click-descriptiono">
+      <p>手相の特徴をすべて選択し、鑑定結果をクリックして下さい。
+        <br><span id="radio-info">　</span>１つ選択  <span id="check-info">　</span>複数選択可</p>
+    </div>
+
+    <form method="post" action="/palmistry">
+      <h3>名前</h3>
+      <p>あなたの名前を入力して下さい。</p>
+      <input type="text" class="form-control" name="uname" placeholder='(例) himajin315' required='true'><br />
+
+      <h3>性別</h3>
+      <%= render partial: "radio_button", locals: { name: "sex", list: ['男性', '女性'] } %>
+
+      <h3>婚期</h3>
+      <select multiple class="form-control" name="marriageable[]">
+	<% for i in 18...50 do %>
+	  <option value=<%= i %>><%= i %> 歳</option>
+	<% end %>
+      </select>
+
+      <h3>感情線 <small>- 恋愛 -</small></h3>
+      <%= render partial: "radio_button_images", locals: { name: "feeling", list: [
+        ['love-sudden.png', '唐突な恋愛', '急に上がる'],
+        ['love-slow.png', '落ち着いた恋愛', 'ほぼ直線'],
+        ['love-short.png', '消極的な恋愛', '短い(中指の下)'],
+        ['love-strong-feel.png', '情が深い', '人差し指の下まで届く'],
+        ['love-down.png', '相手の気持ちになれる', '先が下に向いている'],
+        ['love-onlyone.png', '一途な恋愛', '人差し指と中指の間に届く']
+        ] } %>
+      <%= render partial: "check_box_images", locals: { name: "feeling_other", list: [
+        ['love-divi.png', '人を幸せにする', '先が分かれてる'],
+        ['love-branch.png', '数多くの恋愛をする', '枝分かれが多い'],
+        ['love-nature.png', 'おっとりタイプ', '線の始まりが低い(ほぼ真ん中に近い)']
+        ] } %>
+
+      <h3>生命線 <small>- 健康 -</small></h3>
+      <%= render partial: "radio_button_images", locals: { name: "life", list: [
+        ['life-bold.png','生命力は強い','線が太い'],
+        ['life-ordinary.png','生命力は弱くない', '線が薄くて中心に向かってる'],
+        ['life-weak.png','病気になりやすい', '丸いのがある']
+        ] } %>
+      <%= render partial: "radio_button_images", locals: { name: "life_other", list: [
+        ['life-distance.png','海外など遠くに住む','先が左側に向かってる'],
+        ['life-many-place.png','いろいろなところに行く','先が中央に向かってる'],
+        ['life-stay-home.png','地元に残る','先が右側に向かってる']
+        ] } %>
+
+      <h3>頭脳線 <small>- 思考 -</small></h3>
+      <%= render partial: "radio_button_images", locals: { name: "brain", list: [
+        ['brain-left.png','論理的に考える','真っ直ぐな線'],
+        ['brain-right.png','感覚的に捉える','線が下に向かう'],
+        ['brain-average.png','なんても平均的にできる','線が斜め下に向かう'],
+        ['brain-short.png','直感タイプ','線が短い(中指の下で止まる)'],
+        ['brain-masukake.png','ますかけ線','感情線と頭脳線が一緒になってる']
+        ] } %>
+      <%= render partial: "radio_button_images", locals: { name: "brain_life", list: [
+        ['brain-ordinary.png','常識がある','人差し指の下で分かれる'],
+        ['brain-careful.png','慎重派','中指の下で分かれる'],
+        ['brain-active.png','行動派','生命線と頭脳戦が離れてる'],
+        ['brain-suspicion.png','疑心暗鬼',' 頭脳線が生命線の下から始まる'],
+        ] } %>
+      <%= render partial: "check_box_images", locals: { name: "brain_other", list: [
+        ['brain-genius.png','能力が高い','角がある曲がり方'],
+        ['brain-hardworker.png','努力家','生命線から人差し指に向かう線'],
+        ['brain-manyskil.png','多才','頭脳線から枝分かれがある'],
+        ['brain-speedbrain.png','頭の回転が早い','親指に目がある'],
+        ['brain-indecision.png','優柔不断','蛇行している']
+        ] } %>
+
+
+      <h3>木星丘 <small>- 権力 -</small></h3>
+      <%= render partial: "check_box_images", locals: { name: "jupiter", list: [
+        ['jupiter_social.png','社会的に成功したい','人差し指の下に横線'],
+        ['jupiter_reader.png','リーダータイプ','人差し指の下に縦線']
+        ] } %>
+
+      <h3>太陽丘 <small>- 出世 -</small></h3>
+      <%= render partial: "radio_button_images", locals: { name: "sun", list: [
+        ['sun-effort.png','地道な努力','先が左側に向いている'],
+        ['sun-brain.png','才能を活かして出世','中央に向かってる'],
+        ['sun-nothing.png','才能を活かしきれてない','ほとんど見えない']
+        ] } %>
+      <%= render partial: "check_box_images", locals: { name: "sun_other", list: [
+        ['sun-charm.png','魅力的な人','小指と薬指の間と中指と人差し指の間']
+        ] } %>
+
+      <h3>水星丘 <small>- 金運 -</small></h3>
+      <%= render partial: "radio_button_images", locals: { name: "mercury", list: [
+        ['mercury-nothing.png','お金に困ってる','薄い線がある'],
+        ['mercury-not-enough.png','お金は入るが出て行く','複数線がある'],
+        ['mercury-enough.png','お金には困ってない','濃い線が一本']
+        ] } %>
+
+      <h3>金星丘 <small>- 生命力 -</small></h3>
+      <%= render partial: "check_box_images", locals: { name: "venus", list: [
+        ['venus-virtue.png','徳がある','下から伸びる線'],
+        ['venus-love.png','情が深い','網目状が細かい']
+        ] } %>
+
+      <h3>月丘 <small>- 人気 -</small></h3>
+      <%= render partial: "check_box_images", locals: { name: "moon", list: [
+        ['moon-like.png','好かれやすい','斜めから中央に向かってる'],
+        ['moon-fatigue.png','疲れがたまってる','横に線が入る']
+        ] } %>
+
+      <h3>病気関係</h3>
+      <%= render partial: "check_box_images", locals: { name: "illness", list: [
+        ['illness_breath.png','呼吸器系に負担','健康線に丸いのがある'],
+        ['illness_blood.png','循環器系に負担','荒い'],
+        ['illness_head.png','頭関係の病気','頭脳線に丸いのがある'],
+        ['illness_eyes.png','目への負担','薬指の下に丸いのがある'],
+        ['illness_stomach.png','消化器科に負担','切れ切れ'],
+        ['illness_liver.png','腎臓・肝臓に負担','蛇行']
+        ] } %>
+
+      <h3>手の開き</h3>
+      <%= render partial: "check_box_images", locals: { name: "hand_shape", list: [
+        ['hand-shape-waste.png','浪費家','小指と薬指の開き間の開きが大きい'],
+        ['hand_shape_report.png','伝えるのが上手','小指が薬指の第2関節より長い']
+        ] } %>
+
+      <h3>人生の流れ</h3>
+      <%= render partial: "radio_button_images", locals: { name: "life_flow", list: [
+        ['life-flow-family.png','家族からの支援','右寄り'],
+        ['life-flow-friends.png','周りからの支援','左寄り'],
+        ['life-flow-myself.png','自分の道は自分で切り拓く','中央に一直線']
+        ] } %>
+      <br>
+      <button type="submit" class="btn btn-primary">鑑定結果</button>
+
+    </form>
+  </div>
+</div>
