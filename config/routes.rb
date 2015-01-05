@@ -1,5 +1,5 @@
 Palmistry::Application.routes.draw do
-  root 'palmistry#appraisal'
+  root 'palmistry#index'
 
   match '/result' , to:'palmistry#result', via:'get'
   match '/profile', to:'palmistry#profile',via:'get'
