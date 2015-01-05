@@ -1,16 +1,13 @@
 class PalmistryController < ApplicationController
-  skip_before_filter :verify_authenticity_token ,:only=>[:result]
+  skip_before_filter :verify_authenticity_token ,:only=>[:create]
 
-  def appraisal
+  def new
   end
 
-  def result
-    @uname = params[:uname]
-    user = User.create(uname: @uname, sex: params[:sex], marry_age: params[:marriageable])
-
+  def show
+    user = User.find(params[:id]) if params[:id]
+    @uname = user.uname
     @marriageable = Marriagable.new(user).result_marry_age
-
-    palm_info_insert(user);
 
     feeling_line = FeelingLine.new(user)
     @feeling_love = feeling_line.result_love
@@ -67,6 +64,21 @@ class PalmistryController < ApplicationController
     @life_flow = life_flow_line.result_flow
   end
 
+  def create
+    @user = User.create(uname: params[:uname], sex: params[:sex], marry_age: params[:marriageable])
+    palm_info_insert(@user);
+
+    respond_to do |format|
+      if @user.save!
+        format.html { redirect_to palmistry_path, notice: 'Micropost was successfully created.' }
+        format.json { render action: 'show', status: :created, location: palmistry_path }
+      else
+        format.html { render action: 'new' }
+        format.json { render json: @user.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
   def profile
   end
 
@@ -89,7 +101,6 @@ class PalmistryController < ApplicationController
     moon_insert(user);
     illness_insert(user);
     hand_shape_insert(user);
-    user.save!
   end
 
   def feeling_insert(user)
