@@ -9,7 +9,7 @@ $main:               #dbbea2;
 $main-gradient:      #eccfb3;
 $bright:             #f1f2f0;
 
-.navbar-collapse.collapse {
+.navbar {
   background-image: -webkit-gradient(linear,left 0,left 100%,from($main-gradient),to($main));
   background-image: linear-gradient(to bottom,$main-gradient 0,$main 100%);
   background-image: -webkit-linear-gradient(top,$main-gradient,0%,$main,100%);
