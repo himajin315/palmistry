@@ -8,7 +8,7 @@
     <form method="post" action="/palmistry">
       <h3>名前</h3>
       <p>あなたの名前を入力して下さい。</p>
-      <input type="text" class="form-control" name="uname" placeholder='(例) tesou_himajin' required='true'><br />
+      <input type="text"  maxlength="15" class="form-control" name="uname" placeholder='10文字以内' required='true'><br />
       <h3>性別</h3>
       <%= render partial: "radio_button", locals: { name: "sex", list: ['男性', '女性'] } %>
 
@@ -128,7 +128,7 @@
         ] } %>
       <br>
       <h3>管理者専用入力</h3>
-      <input type="text" class="form-control" placeholder='入力する必要はありません' name="twitter_link"><br />
+      <input type="text"  maxlength="400" class="form-control" placeholder='入力する必要はありません' name="twitter_link"><br />
 
       <button type="submit" class="btn btn-primary">鑑定結果</button>
 
