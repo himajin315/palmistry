@@ -1,6 +1,12 @@
 <h1><%= @uname %> さんの 手相鑑定結果</h1>
 <div class="row">
-  <div class="col-sm-7" id="profile">
+  <div class="col-sm-12 col-md-5">
+    <% if @twitter_link then %>
+    <%= @twitter_link.html_safe %>
+    <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+    <% end %>
+  </div>
+  <div class="col-sm-12 col-md-7" id="profile">
     <% if @marriageable.present? then %>
       <h3>婚期</h3>
       <%= @marriageable.html_safe %>
@@ -121,11 +127,5 @@
         <%= @life_flow.html_safe %>
       <% end %>
     </p>
-  </div>
-  <div class="col-sm-5">
-    <% if @twitter_link then %>
-      <%= @twitter_link.html_safe %>
-      <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-    <% end %>
   </div>
 </div>
