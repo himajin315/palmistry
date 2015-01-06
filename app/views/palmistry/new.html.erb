@@ -8,7 +8,7 @@
     <form method="post" action="/palmistry">
       <h3>名前</h3>
       <p>あなたの名前を入力して下さい。</p>
-      <input type="text" maxlength="15" class="form-control" name="uname" placeholder='10文字以内' required='true'><br />
+      <input type="text" maxlength="20" class="form-control" name="uname" placeholder='20文字以内' required='true'><br />
       <h3>性別</h3>
       <%= render partial: "radio_button", locals: { name: "sex", list: ['男性', '女性'] } %>
 
