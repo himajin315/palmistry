@@ -9,6 +9,17 @@ $main:               #dbbea2;
 $main-gradient:      #eccfb3;
 $bright:             #f1f2f0;
 
+/*
+$attention:          #ffb90a;
+$attention-gradient: #ffc010;
+$font:               #4ea6a6;
+$dark:               #347474;
+$dark-gradient:      #387a7a;
+$main:               #91d9d9;
+$main-gradient:      #96dfdf;
+$bright:             #fafafa;
+*/
+
 .navbar {
   background-image: -webkit-gradient(linear,left 0,left 100%,from($main-gradient),to($main));
   background-image: linear-gradient(to bottom,$main-gradient 0,$main 100%);
@@ -83,7 +94,9 @@ h3 {
   border-left: 3px solid $attention;
   border-bottom: 1px solid #eee;
 }
-
+p {
+  margin: 0 0 10px 10px;
+}
 #radio-info {
   background-color: $main;
   border: 1px solid $main;
