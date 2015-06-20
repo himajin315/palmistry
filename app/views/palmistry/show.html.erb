@@ -10,7 +10,7 @@
     <% end %>
     <p>
     </p>
-    <h3>恋愛／能力</h3>
+    <h3>恋愛</h3>
     <p>
       <!-- 恋愛 -->
       <% if @feeling_love then %>
@@ -22,17 +22,8 @@
       <% if @feeling_many_love then %>
         <%= @feeling_many_love.html_safe %>
       <% end %>
-      <% if @feeling_slow then %>
-        <%= @feeling_slow.html_safe %>
-      <% end %>
       <% if @sun_charm then %>
         <%= @sun_charm.html_safe %>
-      <% end %>
-      <% if @brain_life then %>
-        <%= @brain_life.html_safe %>
-      <% end %>
-      <% if @brain_hardworker then %>
-        <%= @brain_hardworker.html_safe %>
       <% end %>
       <% if @jupiter_social then %>
         <%= @jupiter_social.html_safe %>
@@ -40,8 +31,18 @@
       <% if @venus_kind_heart then %>
         <%= @venus_kind_heart.html_safe %>
       <% end %>
-
-      <!-- 能力 -->
+    </p>
+    <h3>性格／能力</h3>
+    <p>
+      <% if @feeling_slow then %>
+        <%= @feeling_slow.html_safe %>
+      <% end %>
+      <% if @brain_life then %>
+        <%= @brain_life.html_safe %>
+      <% end %>
+      <% if @brain_hardworker then %>
+        <%= @brain_hardworker.html_safe %>
+      <% end %>
       <% if @sun_skill_until then %>
         <%= @sun_skill_until.html_safe %>
       <% end %>
@@ -81,45 +82,45 @@
       <% if @sun_skill then %>
         <%= @sun_skill.html_safe %>
       <% end %>
-      <% if @life_live then %>
+    </p>
+    <% if @life_live then %>
+      <h3>住む場所</h3>
+      <p>
         <%= @life_live.html_safe %>
-      <% end %>
-
-      <!-- 健康 -->
+      </p>
+    <% end %>
+    <h3>健康面</h3>
+    <p>
       <% if @life_power then %>
         <%= @life_power.html_safe %>
       <% end %>
-      <% if @moon_fatigue then %>
-        <%= @moon_fatigue.html_safe %>
-        また、
-      <% end %>
-      <% if @illness_breath then %>
-        <%= @illness_breath.html_safe %>
-        さらに、
-      <% end %>
-      <% if @illness_blood then %>
-        <%= @illness_blood.html_safe %>
-        さらに、
-      <% end %>
-      <% if @illness_head then %>
-        <%= @illness_head.html_safe %>
-        さらに、
-      <% end %>
-      <% if @illness_eyes then %>
-        <%= @illness_eyes.html_safe %>
-        さらに、
-      <% end %>
-      <% if @illness_stomach then %>
-        <%= @illness_stomach.html_safe %>
-        さらに、
-      <% end %>
-      <% if @illness_liver then %>
-        <%= @illness_liver.html_safe %>
-      <% end %>
+      <ul>
+        <% if @moon_fatigue then %>
+          <li><%= @moon_fatigue.html_safe %></li>
+        <% end %>
+        <% if @illness_breath then %>
+          <li><%= @illness_breath.html_safe %></li>
+        <% end %>
+        <% if @illness_blood then %>
+          <li><%= @illness_blood.html_safe %></li>
+        <% end %>
+        <% if @illness_head then %>
+          <li><%= @illness_head.html_safe %></li>
+        <% end %>
+        <% if @illness_eyes then %>
+          <li><%= @illness_eyes.html_safe %></li>
+        <% end %>
+        <% if @illness_stomach then %>
+          <li><%= @illness_stomach.html_safe %></li>
+        <% end %>
+        <% if @illness_liver then %>
+          <li><%= @illness_liver.html_safe %></li>
+        <% end %>
+      </ul>
     </p>
+
     <h3>人生の流れ</h3>
     <p>
-      <!-- 人生の流れ -->
       <% if @life_flow then %>
         <%= @life_flow.html_safe %>
       <% end %>
