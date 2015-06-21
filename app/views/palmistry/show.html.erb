@@ -2,14 +2,14 @@
 <a href="https://twitter.com/share" class="twitter-share-button" data-via="tesou_himajin" data-hashtags="暇人手相">Tweet</a>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 
-<div class="row">
-  <div class="col-sm-12 col-md-7" id="profile">
+<div class="row" id="result-palmistry">
+  <div class="col-sm-12 col-md-6">
     <% if @marriageable.present? then %>
-      <h3>婚期</h3>
-      <%= @marriageable.html_safe %>
+        <h3>婚期</h3>
+        <p>
+        <%= @marriageable.html_safe %>
+        </p>
     <% end %>
-    <p>
-    </p>
     <h3>恋愛</h3>
     <p>
       <!-- 恋愛 -->
@@ -32,7 +32,63 @@
         <%= @venus_kind_heart.html_safe %>
       <% end %>
     </p>
-    <h3>性格／能力</h3>
+    <h3>金銭面</h3>
+    <p>
+      <% if @mercury_money then %>
+        <%= @mercury_money.html_safe %>
+      <% end %>
+      <% if @hand_shape_waste then %>
+        <%= @hand_shape_waste.html_safe %>
+      <% end %>
+      <% if @sun_skill then %>
+        <%= @sun_skill.html_safe %>
+      <% end %>
+    </p>
+    <% if @life_live then %>
+      <h3>住む場所</h3>
+      <p>
+        <%= @life_live.html_safe %>
+      </p>
+    <% end %>
+    <h3>健康面</h3>
+    <p>
+      <% if @life_power then %>
+        <%= @life_power.html_safe %>
+      <% end %>
+    </p>
+    <ul>
+      <% if @moon_fatigue then %>
+        <li><%= @moon_fatigue.html_safe %></li>
+      <% end %>
+      <% if @illness_breath then %>
+        <li><%= @illness_breath.html_safe %></li>
+      <% end %>
+      <% if @illness_blood then %>
+        <li><%= @illness_blood.html_safe %></li>
+      <% end %>
+      <% if @illness_head then %>
+        <li><%= @illness_head.html_safe %></li>
+      <% end %>
+      <% if @illness_eyes then %>
+        <li><%= @illness_eyes.html_safe %></li>
+      <% end %>
+      <% if @illness_stomach then %>
+        <li><%= @illness_stomach.html_safe %></li>
+      <% end %>
+      <% if @illness_liver then %>
+        <li><%= @illness_liver.html_safe %></li>
+      <% end %>
+    </ul>
+
+    <h3>人生の流れ</h3>
+    <p>
+      <% if @life_flow then %>
+        <%= @life_flow.html_safe %>
+      <% end %>
+    </p>
+  </div>
+  <div class="col-sm-12 col-md-6">
+    <h3>性格</h3>
     <p>
       <% if @feeling_slow then %>
         <%= @feeling_slow.html_safe %>
@@ -40,6 +96,9 @@
       <% if @brain_life then %>
         <%= @brain_life.html_safe %>
       <% end %>
+    </p>
+    <h3>能力</h3>
+    <p>
       <% if @brain_hardworker then %>
         <%= @brain_hardworker.html_safe %>
       <% end %>
@@ -73,64 +132,11 @@
       <% if @venus_virtuous then %>
         <%= @venus_virtuous.html_safe %>
       <% end %>
-      <% if @mercury_money then %>
-        <%= @mercury_money.html_safe %>
-      <% end %>
-      <% if @hand_shape_waste then %>
-        <%= @hand_shape_waste.html_safe %>
-      <% end %>
-      <% if @sun_skill then %>
-        <%= @sun_skill.html_safe %>
-      <% end %>
     </p>
-    <% if @life_live then %>
-      <h3>住む場所</h3>
-      <p>
-        <%= @life_live.html_safe %>
-      </p>
-    <% end %>
-    <h3>健康面</h3>
-    <p>
-      <% if @life_power then %>
-        <%= @life_power.html_safe %>
-      <% end %>
-      <ul>
-        <% if @moon_fatigue then %>
-          <li><%= @moon_fatigue.html_safe %></li>
-        <% end %>
-        <% if @illness_breath then %>
-          <li><%= @illness_breath.html_safe %></li>
-        <% end %>
-        <% if @illness_blood then %>
-          <li><%= @illness_blood.html_safe %></li>
-        <% end %>
-        <% if @illness_head then %>
-          <li><%= @illness_head.html_safe %></li>
-        <% end %>
-        <% if @illness_eyes then %>
-          <li><%= @illness_eyes.html_safe %></li>
-        <% end %>
-        <% if @illness_stomach then %>
-          <li><%= @illness_stomach.html_safe %></li>
-        <% end %>
-        <% if @illness_liver then %>
-          <li><%= @illness_liver.html_safe %></li>
-        <% end %>
-      </ul>
-    </p>
-
-    <h3>人生の流れ</h3>
-    <p>
-      <% if @life_flow then %>
-        <%= @life_flow.html_safe %>
-      <% end %>
-    </p>
-  </div>
-  <div class="col-sm-12 col-md-5">
     <% if @twitter_link then %>
     <%= @twitter_link.html_safe %>
     <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
     <% end %>
-    <div id="opinion">ご意見・ご要望は<a href="https://twitter.com/tesou_himajin">@tesou_himajin</a>までお願いします。</div>
   </div>
 </div>
+<div id="opinion">ご意見・ご要望は<a href="https://twitter.com/tesou_himajin">Twitter:@tesou_himajin</a>までお願いします。</div>
