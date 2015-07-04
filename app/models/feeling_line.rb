@@ -22,31 +22,24 @@ class FeelingLine
   end
 
   def result_happy
-    result = nil
     if @user.palm.feeling_happy then
-      result = @user.uname + " さんは人を幸せにする力を持っています。<br>" + @user.uname + " さんの周りの人はとても幸せな気持ちになることでしょう。<br> 結婚するなら" + @user.uname + " さんのような人がすごく良いでしょう。<br>"
+      I18n.t('models.feeling_line.happy', uname: @user.uname)
+    else
+      nil
   	end
   end
 
   def result_many_love
-    result = nil
     if @user.palm.feeling_many_love then
-      result = @user.uname + " さんは数多くの恋愛を経験する人です。<br>
-      恋愛の切り替えが早く、失恋してもすぐに次の恋愛に行ける人です。<br>
-      好きな人がよく変わる人だと思われやすいですが、切り替えが早いのは良いことです。<br>
-      次のチャンスを逃さないためにも、恋愛のチャンスがあるならば飛び込むことも良いことでしょう。<br>"
+      I18n.t('models.feeling_line.many_love', uname: @user.uname)
+    else
+      nil
     end
   end
 
   def result_slow
-    result = nil
     if @user.palm.feeling_slow then
-      @love_other_slow =
-      @user.uname + " さんはおっとりタイプの性格をしてます。<br>
-      周りから天然っぽいと思われていることが多いでしょう。<br>
-      ゆっくりマイペースなので、周りからの影響を受けにくいです。<br>
-      また、あまり怒りにくい性格でもあります。<br>
-      自分のペースを大事にすることが精神衛生上によろしいでしょう。<br>"
+      I18n.t('models.feeling_line.slow', uname: @user.uname)
     end
   end
 end
