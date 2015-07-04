@@ -12,7 +12,7 @@ class Marriagable
           result += ", "
         end
       end
-      result += "歳<br>この時期には結婚したいと思う人がいることでしょう。<br> "
+      result +=  I18n.t('models.marriagable')
     end
   end
 end
