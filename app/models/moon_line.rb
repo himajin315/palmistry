@@ -6,8 +6,7 @@ class MoonLine
 
   def result_like
     if @user.palm.moon_like then
-      result = "さらに、" + @user.uname + " さんは好かれやすい人でもあります。<br>
-      接客業や営業など人と接することが多い仕事に就くのもよいでしょう。<br>"
+      I18n.t('models.moon.like', uname: @user.uname)
     else
       nil
     end
@@ -15,8 +14,7 @@ class MoonLine
 
   def result_fatigue
     if @user.palm.moon_fatigue then
-      result = @user.uname + " さんは現在疲れがたまっているます。<br>
-      休める時にはちゃんと休むようにして下さい。<br>"
+      I18n.t('models.moon.fatigue', uname: @user.uname)
     else
       nil
     end
