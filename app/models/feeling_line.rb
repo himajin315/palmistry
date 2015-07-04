@@ -7,17 +7,17 @@ class FeelingLine
   def result_love
     case @user.palm.feeling_love
     when 0 then
-      I18n.t('models.feeling_line.suddenly', uname: @user.uname)
+      I18n.t('models.feeling_line.love.suddenly', uname: @user.uname)
     when 1 then
-      I18n.t('models.feeling_line.calm', uname: @user.uname)
+      I18n.t('models.feeling_line.love.calm', uname: @user.uname)
     when 2 then
-      I18n.t('models.feeling_line.nagative', uname: @user.uname)
+      I18n.t('models.feeling_line.love.nagative', uname: @user.uname)
     when 3 then
-      I18n.t('models.feeling_line.deep', uname: @user.uname)
+      I18n.t('models.feeling_line.love.deep', uname: @user.uname)
     when 4 then
-      I18n.t('models.feeling_line.kind', uname: @user.uname)
+      I18n.t('models.feeling_line.love.kind', uname: @user.uname)
     when 5 then
-      I18n.t('models.feeling_line.easier', uname: @user.uname, sex_human: @sex_human)
+      I18n.t('models.feeling_line.love.easier', uname: @user.uname, sex_human: @sex_human)
     end
   end
 
