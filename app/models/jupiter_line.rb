@@ -7,16 +7,15 @@ class JupiterLine
   def result_social
     result = nil
     if @user.palm.jupiter_social then
-      result = "さらに" + @user.uname + " さんは社会的に成功したいと思っている人です。<br>
-      仕事に対して真面目で、一生懸命に頑張ることができます。<br>"
+      I18n.t('models.jupiter.social', uname: @user.uname)
     end
   end
 
   def result_reader
-    result = nil
     if @user.palm.jupiter_reader then
-      result = "さらに" + @user.uname + " さんはリーダータイプでもあります。<br>
-      誰かに指示されて動くよりも、自分から周りを引っ張っていく方が良いでしょう。<br>"
+      I18n.t('models.jupiter.reader', uname: @user.uname)
+    else
+      nil
     end
   end
 end
