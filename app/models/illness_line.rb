@@ -5,51 +5,46 @@ class IllnessLine
   end
 
   def result_breath
-    result = nil
     if @user.palm.illness_breath then
-      result = @user.uname + " さんは呼吸器系が弱っています。<br>
-      部屋の空気を綺麗にし、住み良い環境を作るようにして下さい。<br>"
+      I18n.t('models.illness.breath', uname: @user.uname)
+    else
+      nil
     end
   end
 
   def result_blood
-    result = nil
     if @user.palm.illness_blood then
-      result = @user.uname + " さんは循環器系に負担をかけています。<br>
-      脂っこい食事や塩分の摂り過ぎには注意してください。<br>"
+      I18n.t('models.illness.blood', uname: @user.uname)
+    else
+      nil
     end
   end
 
   def result_head
-    result = nil
     if @user.palm.illness_head then
-      result = @user.uname + " さんは注意力が足りないため、事故に合いやすいです。<br>
-      疲れがたまってる時の運転など、無理のないよう気をつけて下さい。<br>"
+      I18n.t('models.illness.head', uname: @user.uname)
     end
   end
 
   def result_eyes
-    result = nil
     if @user.palm.illness_eyes then
-      result = @user.uname + " さんは目の疲れが溜まっています。<br>
-      視力低下や目の病気になりやすいです。<br>
-      目を酷使させすぎないよう休ませるようにして下さい。<br>"
+      I18n.t('models.illness.eyes', uname: @user.uname)
     end
   end
 
   def result_stomach
-    result = nil
     if @user.palm.illness_stomach then
-      result = @user.uname + " さんは胃や小腸などの消化器官系に負担をかけています。<br>
-      おかなを壊しやすい状態なので、食生活の改善が必要です。<br>"
+      I18n.t('models.illness.stomach', uname: @user.uname)
+    else
+      nil
     end
   end
 
   def result_liver
-    result = nil
     if @user.palm.illness_liver then
-      result = @user.uname + " さんは腎臓・肝臓に負担をかけています。<br>
-      お酒の飲み過ぎには注意してください。たまには休肝日を設けるとよいでしょう。<br>"
+      I18n.t('models.illness.liver', uname: @user.uname)
+    else
+      nil
     end
   end
 end
