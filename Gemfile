@@ -37,7 +37,6 @@ group :production do
   gem 'rails_12factor', '0.0.2'
 end
 
-# Twitter Bootstrap 3.0
 gem 'bootstrap-sass', '3.0.2.0'
 
 gem 'jquery-ui-rails'
@@ -46,3 +45,5 @@ gem 'thread_safe', '0.2.0'
 gem 'wicked_pdf'
 gem 'wkhtmltopdf-binary'
 gem 'nokogiri'
+gem 'rqrcode'
+gem 'rqrcode_png'

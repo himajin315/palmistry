@@ -8,4 +8,8 @@ deploy:
   app: palmistry
   on:
     repo: himajin315/palmistry
-  script: bundle exec rspec spec
+script: bundle exec rspec spec
+before_script:
+  - mysql -e 'create database palmistry_test;'
+  - RAILS_ENV=test bundle exec rake db:migrate --trace
+  - bundle exec rake db:test:prepare
