@@ -64,6 +64,14 @@ class PalmistryController < ApplicationController
 
     life_flow_line = LifeFlowLine.new(user)
     @life_flow = life_flow_line.result_flow
+
+    respond_to do |format|
+      format.pdf do
+        send_data render_to_pdf, filename: "#{user.palm_id}.pdf", disposition: 'inline'
+      end
+      format.html
+    end
+
   end
 
   def create
