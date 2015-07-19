@@ -9,3 +9,5 @@ deploy:
   on:
     repo: himajin315/palmistry
 script: bundle exec rspec spec
+before_script:
+  - mysql -e 'create database palmistry_test;'
