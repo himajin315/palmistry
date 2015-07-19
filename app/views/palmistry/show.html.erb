@@ -1,6 +1,13 @@
 <h1><%= @uname %> さんの 手相鑑定結果</h1>
-<a href="https://twitter.com/share" class="twitter-share-button" data-via="tesou_himajin" data-hashtags="暇人手相">Tweet</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-sm">QRコードを表示する</button>
+<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <h3>QRコード</h3>
+      <center><%= image_tag @qr %></center>
+    </div>
+  </div>
+</div>
 
 <div class="row" id="result-palmistry">
   <div class="col-sm-12 col-md-6">
@@ -139,4 +146,8 @@
     <% end %>
   </div>
 </div>
-<div id="opinion">ご意見・ご要望は<a href="https://twitter.com/tesou_himajin">Twitter:@tesou_himajin</a>までお願いします。</div>
+<div class="sns-button">
+  <a href="https://twitter.com/share" class="twitter-share-button" data-via="tesou_himajin" data-hashtags="暇人手相">Tweet</a>
+  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+</div>
+<div id="opinion">ご意見・ご要望は<a href="https://twitter.com/tesou_himajin" target="_blank">Twitter:@tesou_himajin</a>までお願いします。</div>

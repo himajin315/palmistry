@@ -22,7 +22,14 @@
 }
 
 #opinion {
+  float: right;
+  text-align: left;
+  clear: right;
   margin: 10px 0px 20px;
   padding: 10px 0 10px;
-  text-align: right;
+}
+
+.sns-button {
+  float: right;
+  margin-top: 20px;
 }
