@@ -3,8 +3,10 @@
 <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
   <div class="modal-dialog modal-sm">
     <div class="modal-content">
-      <h3>QRコード</h3>
-      <center><%= image_tag @qr %></center>
+      <div class="result-qrcode">
+        <h3>QRコード</h3>
+        <center><%= image_tag @qr %></center>
+      </div>
     </div>
   </div>
 </div>
@@ -13,137 +15,155 @@
 <div class="row" id="result-palmistry">
   <div class="col-sm-12 col-md-6">
     <% if @marriageable.present? then %>
+      <div id="result-marriageable">
         <h3>婚期</h3>
         <p>
-        <%= @marriageable.html_safe %>
+          <%= @marriageable.html_safe %>
         </p>
+      </div>
     <% end %>
-    <h3>恋愛</h3>
-    <p>
-      <!-- 恋愛 -->
-      <% if @feeling_love then %>
-        <%= @feeling_love.html_safe %>
-      <% end %>
-      <% if @feeling_happy then %>
-        <%= @feeling_happy.html_safe %>
-      <% end %>
-      <% if @feeling_many_love then %>
-        <%= @feeling_many_love.html_safe %>
-      <% end %>
-      <% if @sun_charm then %>
-        <%= @sun_charm.html_safe %>
-      <% end %>
-      <% if @jupiter_social then %>
-        <%= @jupiter_social.html_safe %>
-      <% end %>
-      <% if @venus_kind_heart then %>
-        <%= @venus_kind_heart.html_safe %>
-      <% end %>
-    </p>
-    <h3>金銭面</h3>
-    <p>
-      <% if @mercury_money then %>
-        <%= @mercury_money.html_safe %>
-      <% end %>
-      <% if @hand_shape_waste then %>
-        <%= @hand_shape_waste.html_safe %>
-      <% end %>
-      <% if @sun_skill then %>
-        <%= @sun_skill.html_safe %>
-      <% end %>
-    </p>
-    <% if @life_live then %>
-      <h3>住む場所</h3>
+    <div id="result-love">
+      <h3>恋愛</h3>
       <p>
-        <%= @life_live.html_safe %>
+        <!-- 恋愛 -->
+        <% if @feeling_love then %>
+          <%= @feeling_love.html_safe %>
+        <% end %>
+        <% if @feeling_happy then %>
+          <%= @feeling_happy.html_safe %>
+        <% end %>
+        <% if @feeling_many_love then %>
+          <%= @feeling_many_love.html_safe %>
+        <% end %>
+        <% if @sun_charm then %>
+          <%= @sun_charm.html_safe %>
+        <% end %>
+        <% if @jupiter_social then %>
+          <%= @jupiter_social.html_safe %>
+        <% end %>
+        <% if @venus_kind_heart then %>
+          <%= @venus_kind_heart.html_safe %>
+        <% end %>
       </p>
+    </div>
+    <div id="result-money">
+    <h3>金銭面</h3>
+      <p>
+        <% if @mercury_money then %>
+          <%= @mercury_money.html_safe %>
+        <% end %>
+        <% if @hand_shape_waste then %>
+          <%= @hand_shape_waste.html_safe %>
+        <% end %>
+        <% if @sun_skill then %>
+          <%= @sun_skill.html_safe %>
+        <% end %>
+      </p>
+    </div>
+    <% if @life_live then %>
+      <div id="result-live">
+        <h3>住む場所</h3>
+        <p>
+          <%= @life_live.html_safe %>
+        </p>
+      </div>
     <% end %>
-    <h3>健康面</h3>
-    <p>
-      <% if @life_power then %>
-        <%= @life_power.html_safe %>
-      <% end %>
-    </p>
-    <ul>
-      <% if @moon_fatigue then %>
-        <li><%= @moon_fatigue.html_safe %></li>
-      <% end %>
-      <% if @illness_breath then %>
-        <li><%= @illness_breath.html_safe %></li>
-      <% end %>
-      <% if @illness_blood then %>
-        <li><%= @illness_blood.html_safe %></li>
-      <% end %>
-      <% if @illness_head then %>
-        <li><%= @illness_head.html_safe %></li>
-      <% end %>
-      <% if @illness_eyes then %>
-        <li><%= @illness_eyes.html_safe %></li>
-      <% end %>
-      <% if @illness_stomach then %>
-        <li><%= @illness_stomach.html_safe %></li>
-      <% end %>
-      <% if @illness_liver then %>
-        <li><%= @illness_liver.html_safe %></li>
-      <% end %>
-    </ul>
+    <div id="result-illness">
+      <h3>健康面</h3>
+      <p>
+        <% if @life_power then %>
+          <%= @life_power.html_safe %>
+        <% end %>
+      </p>
+      <ul>
+        <% if @moon_fatigue then %>
+          <li><%= @moon_fatigue.html_safe %></li>
+        <% end %>
+        <% if @illness_breath then %>
+          <li><%= @illness_breath.html_safe %></li>
+        <% end %>
+        <% if @illness_blood then %>
+          <li><%= @illness_blood.html_safe %></li>
+        <% end %>
+        <% if @illness_head then %>
+          <li><%= @illness_head.html_safe %></li>
+        <% end %>
+        <% if @illness_eyes then %>
+          <li><%= @illness_eyes.html_safe %></li>
+        <% end %>
+        <% if @illness_stomach then %>
+          <li><%= @illness_stomach.html_safe %></li>
+        <% end %>
+        <% if @illness_liver then %>
+          <li><%= @illness_liver.html_safe %></li>
+        <% end %>
+      </ul>
+    </div>
   </div>
   <div class="col-sm-12 col-md-6">
-    <h3>性格</h3>
-    <p>
-      <% if @feeling_slow then %>
-        <%= @feeling_slow.html_safe %>
-      <% end %>
-      <% if @brain_life then %>
-        <%= @brain_life.html_safe %>
-      <% end %>
-    </p>
-    <h3>能力</h3>
-    <p>
-      <% if @brain_hardworker then %>
-        <%= @brain_hardworker.html_safe %>
-      <% end %>
-      <% if @sun_skill_until then %>
-        <%= @sun_skill_until.html_safe %>
-      <% end %>
-      <% if @brain_think then %>
-        <%= @brain_think.html_safe %>
-      <% end %>
-      <% if @brain_indecision then %>
-        <%= @brain_indecision.html_safe %>
-      <% end %>
-      <% if @moon_like then %>
-        <%= @moon_like.html_safe %>
-      <% end %>
-      <% if @brain_many_skill then %>
-        <%= @brain_many_skill.html_safe %>
-      <% end %>
-      <% if @brain_speed_think then %>
-        <%= @brain_speed_think.html_safe %>
-      <% end %>
-      <% if @brain_genius then %>
-        <%= @brain_genius.html_safe %>
-      <% end %>
-      <% if @jupiter_reader then %>
-        <%= @jupiter_reader.html_safe %>
-      <% end %>
-      <% if @hand_shape_report then %>
-        <%= @hand_shape_report.html_safe %>
-      <% end %>
-      <% if @venus_virtuous then %>
-        <%= @venus_virtuous.html_safe %>
-      <% end %>
-    </p>
-    <% if @life_flow then %>
-      <h3>人生の流れ</h3>
+    <div id="result-character">
+      <h3>性格</h3>
       <p>
-        <%= @life_flow.html_safe %>
+        <% if @feeling_slow then %>
+          <%= @feeling_slow.html_safe %>
+        <% end %>
+        <% if @brain_life then %>
+          <%= @brain_life.html_safe %>
+        <% end %>
       </p>
+    </div>
+    <div id="result-skill">
+      <h3>能力</h3>
+      <p>
+        <% if @brain_hardworker then %>
+          <%= @brain_hardworker.html_safe %>
+        <% end %>
+        <% if @sun_skill_until then %>
+          <%= @sun_skill_until.html_safe %>
+        <% end %>
+        <% if @brain_think then %>
+          <%= @brain_think.html_safe %>
+        <% end %>
+        <% if @brain_indecision then %>
+          <%= @brain_indecision.html_safe %>
+        <% end %>
+        <% if @moon_like then %>
+          <%= @moon_like.html_safe %>
+        <% end %>
+        <% if @brain_many_skill then %>
+          <%= @brain_many_skill.html_safe %>
+        <% end %>
+        <% if @brain_speed_think then %>
+          <%= @brain_speed_think.html_safe %>
+        <% end %>
+        <% if @brain_genius then %>
+          <%= @brain_genius.html_safe %>
+        <% end %>
+        <% if @jupiter_reader then %>
+          <%= @jupiter_reader.html_safe %>
+        <% end %>
+        <% if @hand_shape_report then %>
+          <%= @hand_shape_report.html_safe %>
+        <% end %>
+        <% if @venus_virtuous then %>
+          <%= @venus_virtuous.html_safe %>
+        <% end %>
+      </p>
+    </div>
+    <% if @life_flow then %>
+      <div id="result-flow">
+        <h3>人生の流れ</h3>
+        <p>
+          <%= @life_flow.html_safe %>
+        </p>
+      </div>
     <% end %>
 
     <% if @twitter_link then %>
-    <%= @twitter_link.html_safe %>
-    <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+      <div id="tiwtter-link">
+        <%= @twitter_link.html_safe %>
+        <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+      </div>
     <% end %>
   </div>
 </div>
@@ -152,3 +172,7 @@
   <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 </div>
 <div id="opinion">ご意見・ご要望は<a href="https://twitter.com/tesou_himajin" target="_blank">Twitter:@tesou_himajin</a>までお願いします。</div>
+<div id="pdf-qrcode">
+  <%= image_tag @qr %>  <p>恋愛・性格・能力を載せています。それ以外の情報は以下のURLまたは右のQRコードより見ることができます。※個別に発行されてるQRコードです。再発行できません。</p>
+  <p id="result-url"> http://himajin315.com<%= palmistry_path %> </p>
+</div>
