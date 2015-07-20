@@ -1,0 +1,23 @@
+/********************
+  create PDf style
+*********************/
+#pdf-container p {
+  font-size: 13px;
+}
+
+#pdf-container img {
+  width: 100px;
+  height: 100px;
+}
+
+#pdf-container button {
+  display: none;
+}
+
+#pdf-container .qrcode {
+  display: none;
+}
+
+#pdf-container .btn-primary {
+  display: none;
+}
