@@ -1,6 +1,10 @@
 /********************
   create PDf style
 *********************/
+html {
+  font-family: 'IPAexゴシック', 'IPA Pゴシック', 'ヒラギノ角ゴ ProN W3', 'Hiragino Kaku Gothic ProN', 'メイリオ', Meiryo, 'MS Pゴシック', sans-serif;
+}
+
 #pdf-container p {
   font-size: 13px;
 }
