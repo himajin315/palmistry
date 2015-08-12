@@ -6,7 +6,7 @@ html {
 }
 
 #pdf-container p {
-  font-family: 'ヒラギノ角ゴ ProN W3';
+  letter-spacing: 0.3em;
   font-size: 13px;
 }
 
