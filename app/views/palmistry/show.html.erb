@@ -5,7 +5,7 @@
     <div class="modal-content">
       <div class="result-qrcode">
         <h3>QRコード</h3>
-        <center><%= image_tag @qr %></center>
+        <center><%= image_tag @qr_url %></center>
       </div>
     </div>
   </div>
@@ -173,6 +173,6 @@
 </div>
 <div id="opinion">ご意見・ご要望は<a href="https://twitter.com/tesou_himajin" target="_blank">Twitter:@tesou_himajin</a>までお願いします。</div>
 <div id="pdf-qrcode">
-  <%= image_tag @qr %>  <p>恋愛・性格・能力を載せています。それ以外の情報は以下のURLまたは右のQRコードより見ることができます。※個別に発行されてるQRコードです。再発行できません。</p>
+  <%= image_tag @qr_url %>  <p>恋愛・性格・能力を載せています。それ以外の情報は以下のURLまたは右のQRコードより見ることができます。※個別に発行されてるQRコードです。再発行できません。</p>
   <p id="result-url"> http://himajin315.com<%= palmistry_path %> </p>
 </div>

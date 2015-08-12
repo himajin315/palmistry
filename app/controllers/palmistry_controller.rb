@@ -5,7 +5,7 @@ class PalmistryController < ApplicationController
   end
 
   def show
-    @qr = RQRCode::QRCode.new(request.url).to_img.resize(300, 300).to_data_url
+    @qr_url = RQRCode::QRCode.new(request.url).to_img.resize(300, 300).to_data_url
 
     user = User.find_by(access_token: params[:access_token]) if params[:access_token]
     @uname = user.uname
