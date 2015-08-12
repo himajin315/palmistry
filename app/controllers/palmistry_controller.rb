@@ -76,7 +76,7 @@ class PalmistryController < ApplicationController
 
   def create
     user = User.create(uname: params[:uname], sex: params[:sex], marry_age: params[:marriageable])
-    twitter_link_insert(user);
+    #twitter_link_insert(user);
     palm_info_insert(user);
 
     respond_to do |format|
