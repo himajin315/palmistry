@@ -4,7 +4,11 @@
   <title>Palmistry</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  <%= wicked_pdf_stylesheet_link_tag asset_path("pdf.css") %>
+  <% if Rails.env == 'production' %>
+    <%= wicked_pdf_stylesheet_link_tag asset_path("pdf.css") %>
+  <% else %>
+    <%= wicked_pdf_stylesheet_link_tag "pdf.css" %>
+  <% end %>
   <%= csrf_meta_tags %>
   <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
