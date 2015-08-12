@@ -28,6 +28,9 @@
   margin: 10px 0px 20px;
   padding: 10px 0 10px;
 }
+#pdf-opinion, #pdf-qrcode {
+  display: none;
+}
 
 .sns-button {
   float: right;

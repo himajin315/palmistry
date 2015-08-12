@@ -196,6 +196,9 @@ GEM
     websocket-driver (0.5.4)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.2)
+    wicked_pdf (0.11.0)
+      rails
+    wkhtmltopdf-binary (0.9.9.3)
     xpath (2.0.0)
       nokogiri (~> 1.3)
 
@@ -211,6 +214,7 @@ DEPENDENCIES
   jquery-rails (= 3.0.4)
   jquery-ui-rails
   mysql2
+  nokogiri
   poltergeist
   pry-byebug
   pry-rails
@@ -230,6 +234,8 @@ DEPENDENCIES
   turbolinks (= 1.1.1)
   turnip
   uglifier (= 2.1.1)
+  wicked_pdf
+  wkhtmltopdf-binary
 
 BUNDLED WITH
    1.10.5

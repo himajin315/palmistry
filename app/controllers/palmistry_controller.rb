@@ -9,6 +9,7 @@ class PalmistryController < ApplicationController
 
     user = User.find_by(access_token: params[:access_token]) if params[:access_token]
     @uname = user.uname
+    @userid = user.palm_id
     @marriageable = Marriagable.new(user).result_marry_age
     @twitter_link = user.twitter_link
     feeling_line = FeelingLine.new(user)
@@ -64,6 +65,13 @@ class PalmistryController < ApplicationController
 
     life_flow_line = LifeFlowLine.new(user)
     @life_flow = life_flow_line.result_flow
+
+    respond_to do |format|
+      format.pdf do
+        send_data render_to_pdf, filename: "#{@userid}.pdf", disposition: 'inline'
+      end
+      format.html
+    end
   end
 
   def create
