@@ -11,13 +11,15 @@ class FeelingLine
     when 1 then
       I18n.t('models.feeling_line.love.calm', uname: @user.uname)
     when 2 then
-      I18n.t('models.feeling_line.love.nagative', uname: @user.uname)
+      I18n.t('models.feeling_line.love.want', uname: @user.uname)
     when 3 then
       I18n.t('models.feeling_line.love.deep', uname: @user.uname)
     when 4 then
       I18n.t('models.feeling_line.love.kind', uname: @user.uname)
     when 5 then
       I18n.t('models.feeling_line.love.easier', uname: @user.uname, sex_human: @sex_human)
+    when 6 then
+      I18n.t('models.feeling_line.love.nagative', uname: @user.uname)
     end
   end
 
