@@ -34,9 +34,14 @@ html {
   display: none;
 }
 
-#pdf-container #result-marriageable, #pdf-container #result-money, #pdf-container #result-live,
+#pdf-container #result-money, #pdf-container #result-live,
 #pdf-container #result-illness, #pdf-container #result-flow{
   display: none;
+}
+
+#pdf-container h1 {
+  text-align: center;
+  margin-bottom: 50px
 }
 
 #pdf-qrcode {
@@ -49,4 +54,11 @@ html {
 }
 
 #result-url {
+}
+
+#pdf-ryudaisai {
+  float: right;
+  position: fixed;
+  top: -20px;
+  right: 0px;
 }
