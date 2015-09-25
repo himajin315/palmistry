@@ -40,6 +40,7 @@ html {
 }
 
 #pdf-container h1 {
+  text-align: center;
   margin-bottom: 50px
 }
 
@@ -57,4 +58,7 @@ html {
 
 #pdf-ryudaisai {
   float: right;
+  position: fixed;
+  top: -20px;
+  right: 0px;
 }
