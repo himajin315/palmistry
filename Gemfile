@@ -24,7 +24,7 @@ group :doc do
 end
 
 group :development, :test do
-  gem 'mysql2'
+  gem 'mysql2', '~> 0.3.18'
   gem 'spring'
   gem 'spring-commands-rspec'
   gem 'pry-byebug'
@@ -41,6 +41,6 @@ group :test do
 end
 
 group :production do
-  gem 'mysql2'
+  gem 'mysql2', '~> 0.3.18'
   gem 'rails_12factor', '0.0.2'
 end
