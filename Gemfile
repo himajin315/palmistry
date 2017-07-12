@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 ruby '2.4.1'
 
 gem 'bootstrap-sass'
+gem 'coffee-rails', :git => 'https://github.com/rails/coffee-rails.git'
 gem 'jbuilder'
 gem 'jquery-ui-rails'
 gem 'jquery-rails'
@@ -11,17 +12,14 @@ gem 'rails-flog'
 gem 'rails-i18n'
 gem 'rqrcode'
 gem 'rqrcode_png'
+gem 'sass-rails', :git => 'https://github.com/rails/sass-rails.git'
+gem 'sprockets-rails', :git => 'https://github.com/rails/sprockets-rails.git'
 gem 'thread_safe'
 gem 'turbolinks'
 gem 'uglifier'
 gem 'wicked_pdf'
 gem 'wkhtmltopdf-binary'
 
-group :assets do
-  gem 'sprockets-rails', :git => 'https://github.com/rails/sprockets-rails.git'
-  gem 'coffee-rails', :git => 'https://github.com/rails/coffee-rails.git'
-  gem 'sass-rails', :git => 'https://github.com/rails/sass-rails.git'
-end
 group :doc do
   gem 'sdoc', '0.3.20', require: false
 end
