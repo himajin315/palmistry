@@ -19,7 +19,7 @@ test: &test
   adapter: mysql2
   encoding: utf8
   database: palmistry_test
-  username: travis
+  username: root
 
 production:
   adapter: mysql2
