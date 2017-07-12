@@ -1,4 +1,4 @@
-class CreatePalms < ActiveRecord::Migration
+class CreatePalms < ActiveRecord::Migration[5.1]
   def change
     create_table :palms do |t|
       t.integer :feeling_love
