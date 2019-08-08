@@ -92,6 +92,7 @@ class PalmistryController < ApplicationController
   end
 
   private
+
   def twitter_link_insert(user)
     twitter_link = params[:twitter_link]
     if ( twitter_link.include?('@himajin315') or twitter_link.include?('@himajin315') ) and !twitter_link.include?('script') then
